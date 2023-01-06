@@ -1,15 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector('.main-swiper-btns')) {
+
+  if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
+    const swiper = new Swiper('.main-swiper', {
+      effect: 'fade',
+      direction: 'horizontal',
+      speed: 1000,
+      spaceBetween: 100,
+      loop: true,
+      allowTouchMove: false,
+    });
+
     class SliderController {
-      constructor(container) {
+      constructor(container, swiper) {
         this.container = document.querySelector(container);
         this.btnsList = [...this.container.children];
+        this.swiper = swiper;
         this.init();
       }
 
       init() {
-        this.btnsList.forEach(btn => {
-          btn.onclick = () => this.setActive(btn);
+        this.btnsList.forEach((btn, index) => {
+          btn.onclick = () => {
+            this.setActive(btn);
+            this.swiper.slideTo(index);
+          };
         })
       }
 
@@ -24,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    new SliderController('.main-swiper-btns');
+    new SliderController('.main-swiper-btns', swiper);
   }
+
 })
