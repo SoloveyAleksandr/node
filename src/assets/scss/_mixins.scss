@@ -1,0 +1,49 @@
+@import "./vars";
+
+@mixin breakpoint($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+// @mixin title {
+//   font-family: "Montserrat";
+//   font-weight: 600;
+//   color: $grey_1;
+// }
+
+// @mixin title_1 {
+//   @include title();
+//   font-size: 10rem;
+// }
+
+// @mixin title_2 {
+//   @include title();
+//   font-size: 6.4rem;
+// }
+
+// @mixin title_3 {
+//   @include title();
+//   font-size: 2.6rem;
+// }
+
+// @mixin title_4 {
+//   @include title();
+//   font-size: 1.8rem;
+// }
+
+// @mixin text {
+//   font-family: "Montserrat";
+//   font-weight: 400;
+//   color: $grey_1;
+// }
+
+// @mixin text_1 {
+//   @include text();
+//   font-size: 2rem;
+// }
+
+// @mixin text_2 {
+//   @include text();
+//   font-size: 1.6rem;
+// }

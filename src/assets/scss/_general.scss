@@ -1,0 +1,20 @@
+@import "./vars";
+@import "./mixins";
+
+html,
+body {
+  background-color: $white;
+}
+
+*,
+*::before,
+*::after {
+  font-family: 'Montserrat';
+  color: #040404;
+  line-height: 100%;
+}
+
+.container {
+  max-width: 176rem;
+  margin: 0 auto;
+}

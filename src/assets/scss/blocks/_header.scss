@@ -1,0 +1,35 @@
+@import "../vars";
+
+.header {
+  padding-top: 1rem;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-btn {
+    pointer-events: all;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    &__icon {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      fill: #000000;
+    }
+  }
+}
