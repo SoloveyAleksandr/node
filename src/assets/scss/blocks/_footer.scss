@@ -1,0 +1,110 @@
+.footer {
+  background-color: #333333;
+
+  &-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 8rem 0rem 7.5rem 0rem;
+  }
+
+  &-social {
+    display: flex;
+    flex-direction: column;
+    gap: 5.1rem;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &-item {
+        &__link {
+          font-size: 1.4rem;
+          font-weight: $font_r;
+          line-height: 150%;
+          color: rgba(255, 255, 255, 0.5);
+          transition: 0.3s;
+
+          &:hover {
+            text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
+          }
+        }
+      }
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__link {
+      font-size: 1.6rem;
+      font-weight: $font_r;
+      line-height: 150%;
+      color: rgb(255, 255, 255);
+      transition: 0.3s;
+
+      &:hover {
+        text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 11.9rem;
+
+    &__link {
+      font-size: 1.8rem;
+      font-weight: $font_s;
+      line-height: 120%;
+      color: rgb(255, 255, 255);
+      transition: 0.3s;
+      width: fit-content;
+
+      &:hover {
+        text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &__phones {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 11.1rem;
+    margin-left: auto;
+
+    &__text {
+      font-size: 1.8rem;
+      font-weight: $font_s;
+      line-height: 120%;
+      color: #ffffff;
+    }
+
+    &-legal {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__link {
+        font-size: 1.4rem;
+        font-weight: $font_r;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.5);
+        transition: .3s;
+
+        &:hover {
+          text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+}
