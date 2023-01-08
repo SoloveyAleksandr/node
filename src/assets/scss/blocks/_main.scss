@@ -1,4 +1,8 @@
 .main {
+  &-video-anim-container {
+    overflow: hidden;
+  }
+
   &-header {
     padding-top: 2rem;
     display: grid;
@@ -44,7 +48,7 @@
     }
   }
 
-  &__title {
+  &-title {
     position: relative;
     display: flex;
     align-items: center;
@@ -54,14 +58,25 @@
     text-transform: uppercase;
     letter-spacing: calc(1em * 0.03 * -1);
     margin-bottom: 9.8rem;
+    position: relative;
 
-    &::before {
-      content: "";
-      width: 0.2rem;
-      height: 15rem;
-      background-color: #040404;
-      margin-right: -0.1rem;
-      animation: printAnim 0.9s ease infinite;
+    &__text {
+      &_hidden {
+        opacity: 0;
+      }
+    }
+
+    &-anim {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &__cursor {
+        width: 0.3rem;
+        height: 100%;
+        background-color: #000000;
+      }
     }
   }
 
@@ -72,6 +87,7 @@
     letter-spacing: calc(1em * 0.02 * -1);
     margin-bottom: 6rem;
     max-width: 41.1rem;
+    position: relative;
   }
 
   &-video {

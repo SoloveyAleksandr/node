@@ -1,4 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector('.main-title');
+  if (title) {
+    gsap.to('.main-title-anim__cursor', {
+      opacity: 0,
+      duration: 0.9,
+      ease: "power2.inOut",
+      repeat: -1,
+    });
+    const text = title.querySelector('.main-title__text_hidden');
+
+    gsap.to('.main-title-anim__text', {
+      delay: 1,
+      duration: 2,
+      text: text.textContent,
+      ease: "none.none"
+    });
+  }
+
+  if (document.querySelector('.main-video-anim-container')) {
+    const triggerContainer = document.querySelector('.main-video-anim-container');
+    const text = document.querySelector('.main__text');
+    const video = document.querySelector('.main-video-inner');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerContainer,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      }
+    });
+    tl.from(text, {
+      y: '15.7rem'
+    }, 'anim')
+    tl.from(video, {
+      width: '88.6rem',
+      height: '80.6rem',
+      y: '-2.9rem',
+      x: '100%',
+    }, '')
+  }
 
   if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
     const swiper = new Swiper('.main-swiper', {
