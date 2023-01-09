@@ -1,5 +1,7 @@
 .footer {
   background-color: #333333;
+  transform-origin: center bottom;
+  overflow: hidden;
 
   &-inner {
     display: grid;

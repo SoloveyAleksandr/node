@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // MAIN
   const title = document.querySelector('.main-title');
   if (title) {
     gsap.to('.main-title-anim__cursor', {
@@ -32,13 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     tl.from(text, {
       y: '15.7rem'
-    }, 'anim')
-    tl.from(video, {
-      width: '88.6rem',
-      height: '80.6rem',
-      y: '-2.9rem',
-      x: '100%',
-    }, '')
+    }, 'moveY')
+      .from(video, {
+        width: '88.6rem',
+        height: '80.6rem',
+        y: '-2.9rem',
+        x: '100%',
+      }, 'moveY')
   }
 
   if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
@@ -132,5 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Select('.main-form-select');
   }
+  // ==>
 
 })
