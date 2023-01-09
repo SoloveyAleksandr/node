@@ -462,63 +462,7 @@
     </div>
 
     <div class="main-form-wrapper">
-      <div class="main-form-info">
-        <h4 class="main-form-info__title">
-          давай начнем!
-        </h4>
-
-        <p class="main-form-info__text">
-          Оставь заявку, и мы ответим!
-        </p>
-      </div>
-
-      <form action="#" class="main-form">
-        <input type="text" class="main-form__input" placeholder="Имя">
-
-        <input type="email" class="main-form__input" placeholder="E-mail">
-
-        <div class="main-form-select">
-          <input type="text" class="main-form-select__value" value="">
-          <button type="button" class="main-form-select__btn _placeholder">
-            Выберите из списка
-          </button>
-          <ul class="main-form-select-list">
-            <li class="main-form-select-list-item">
-              <button type="button" class="main-form-select-list-item__btn" data-value="1">
-                Архитекторы и дизайнеры
-              </button>
-            </li>
-
-            <li class="main-form-select-list-item">
-              <button type="button" class="main-form-select-list-item__btn" data-value="2">
-                Производители
-              </button>
-            </li>
-
-            <li class="main-form-select-list-item">
-              <button type="button" class="main-form-select-list-item__btn" data-value="3">
-                Девелоперы
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <input type="email" class="main-form__input" placeholder="Опишите задачу">
-
-        <button type="submit" class="main-form-btn">
-          отправить заявку
-
-          <span class="main-form-btn-icon">
-            <svg class="main-form-btn-icon__icon main-form-btn-icon__icon_1">
-              <use href="#arrow-icon-big"></use>
-            </svg>
-
-            <svg class="main-form-btn-icon__icon main-form-btn-icon__icon_2">
-              <use href="#arrow-icon-big"></use>
-            </svg>
-          </span>
-        </button>
-      </form>
+      {{> _form }}
     </div>
   </div>
 

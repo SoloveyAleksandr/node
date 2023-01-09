@@ -1,0 +1,73 @@
+@import "../vars";
+
+.portfolio {
+  padding-top: 18.1rem;
+
+  &-info {
+    margin-bottom: 10rem;
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+
+    &-wrapper {
+      border-bottom: 0.2rem solid #000000;
+      margin-bottom: 8rem;
+    }
+
+    &-item {
+      &__link {
+        display: inline-block;
+        font-size: 1.8rem;
+        font-weight: $font_r;
+        line-height: 140%;
+        color: #000000;
+        border-bottom: 0.4rem solid transparent;
+        padding-bottom: 1.4rem;
+
+        &._active {
+          font-weight: $font_b;
+          border-bottom: 0.4rem solid #000000;
+        }
+      }
+    }
+  }
+
+  &-sections {
+
+    &-border {
+      height: 0.2rem;
+      background-color: #000000;
+    }
+  }
+
+  &-block {
+    padding-top: 4rem;
+    margin-bottom: 20rem;
+
+    &__title {
+      font-size: 4.8rem;
+      font-weight: $font_s;
+      line-height: 120%;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+      font-weight: $font_r;
+      line-height: 140%;
+      margin-bottom: 8rem;
+      max-width: 110.8rem;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      row-gap: 8.15rem;
+    }
+  }
+}
