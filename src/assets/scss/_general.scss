@@ -21,9 +21,8 @@ body {
 
 .page {
   &-info {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &-title {
@@ -39,7 +38,7 @@ body {
     font-weight: $font_m;
     line-height: 140%;
     max-width: 71.1rem;
-    margin-right: 16.9rem;
+    margin-right: auto;
   }
 }
 

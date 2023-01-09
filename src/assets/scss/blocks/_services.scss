@@ -1,0 +1,70 @@
+.services {
+  padding-top: 18.2rem;
+
+  &-info {
+    margin-bottom: 11.7rem;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15.8rem;
+    margin-bottom: 20rem;
+
+    &-item {
+      border-top: 0.2rem solid #040404;
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-info {
+        padding-top: 4rem;
+        max-width: 51.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      &__title {
+        width: 100%;
+        font-size: 4.8rem;
+        font-weight: $font_s;
+        line-height: 140%;
+        margin-bottom: 8rem;
+      }
+
+      &__description {
+        font-size: 1.6rem;
+        font-weight: $font_r;
+        line-height: 140%;
+        flex: 1;
+      }
+
+      &__link {
+        position: static;
+        opacity: 1;
+        pointer-events: all;
+        width: fit-content;
+        transform: translate(0);
+      }
+
+      &-img {
+        width: 108rem;
+        height: 77rem;
+
+        &__img {
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-form {
+    margin-bottom: 19.1rem;
+  }
+}
