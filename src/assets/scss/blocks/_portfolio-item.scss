@@ -1,0 +1,16 @@
+.portfolio-item {
+  padding-top: 12.2rem;
+
+  &-info {
+    margin-bottom: 8rem;
+  }
+
+  &-list {
+    padding-top: 4rem;
+    margin-bottom: 20rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    row-gap: 8rem;
+  }
+}

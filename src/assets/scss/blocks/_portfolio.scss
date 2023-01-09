@@ -26,9 +26,14 @@
         color: #000000;
         border-bottom: 0.4rem solid transparent;
         padding-bottom: 1.4rem;
+        transition: .3s;
 
         &._active {
           font-weight: $font_b;
+          border-bottom: 0.4rem solid #000000;
+        }
+
+        &:hover {
           border-bottom: 0.4rem solid #000000;
         }
       }
