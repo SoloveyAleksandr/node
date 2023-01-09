@@ -14,6 +14,10 @@ body {
   line-height: 100%;
 }
 
+body._scroll-disable {
+  overflow: hidden;
+}
+
 .container {
   max-width: 176rem;
   margin: 0 auto;

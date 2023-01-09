@@ -1,4 +1,6 @@
 .main {
+  padding-top: 21.9rem;
+
   &-video-anim-container {
     overflow: hidden;
   }
@@ -8,59 +10,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 13.1rem;
-
-    &-logo {
-      width: 16.9rem;
-      height: 6.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      &__img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    &-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-
-      &__link {
-        width: fit-content;
-        font-size: 1.6rem;
-        line-height: 2rem;
-        font-weight: $font_m;
-        color: #828282;
-        transition: 0.3s;
-
-        &:first-child {
-          font-size: 1.8rem;
-          line-height: 2.2rem;
-        }
-
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
   }
 
   &-title {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 15rem;
-    line-height: 18.3rem;
-    font-weight: $font_s;
-    text-transform: uppercase;
-    letter-spacing: calc(1em * 0.03 * -1);
     margin-bottom: 9.8rem;
     position: relative;
 
     &__text {
+      font-size: 15rem;
+      line-height: 18.3rem;
+      font-weight: $font_s;
+      text-transform: uppercase;
+      letter-spacing: calc(1em * 0.03 * -1);
+
       &_hidden {
         opacity: 0;
       }
@@ -583,9 +548,10 @@
         transition: .3s;
         overflow: hidden;
 
-        & li + li {
+        & li+li {
           border-top: 0.1rem solid #4f4f4f;
         }
+
         &-item {
           &__btn {
             border: none;
@@ -598,10 +564,10 @@
             text-align: left;
             transition: .3s;
 
-            &:hover  {
+            &:hover {
               padding-left: 3rem;
             }
-            
+
             &:focus {
               padding-left: 3rem;
             }

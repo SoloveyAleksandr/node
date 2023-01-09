@@ -1,4 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // LOADER 
+  const BODY = document.querySelector('body');
+  const LOADER = document.querySelector('.loader');
+  if (LOADER) {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        BODY.classList.remove('_scroll-disable');
+        LOADER.classList.remove('_active');
+      }
+    });
+    tl.to('.loader-text', {
+      delay: 0,
+      duration: 0.5,
+      text: 'NODE.',
+      ease: "none.none"
+    })
+  }
+  // <==
+
+  // HEADER
+  if (document.querySelector('.header')) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: BODY,
+        start: "top top",
+        end: "+=200rem",
+        scrub: true,
+        markers: true,
+      }
+    })
+      .to('.header-logo', {
+        margin: 0,
+        height: '4rem',
+      }, 'anim')
+      .to('.header-info', {
+        height: 0,
+        y: '-10rem',
+      }, 'anim')
+      .to('.header', {
+        duration: 1,
+        boxShadow: '0 0.1rem 1rem rgba(0, 0, 0, 0.15)',
+      })
+  }
+  // <==
 
   // MAIN
   const title = document.querySelector('.main-title');
@@ -12,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = title.querySelector('.main-title__text_hidden');
 
     gsap.to('.main-title-anim__text', {
-      delay: 1,
+      // delay: 5,
+      delay: 1.5,
       duration: 2,
       text: text.textContent,
       ease: "none.none"
@@ -134,6 +179,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Select('.main-form-select');
   }
-  // ==>
-
+  // <==
 })
