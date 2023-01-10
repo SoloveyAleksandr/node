@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const BODY = document.querySelector('body');
+  const LOADER = document.querySelector('.loader');
+  const HEADER = document.querySelector('.header');
+  const MENU = document.querySelector('.menu');
+  const MENU_BTN = document.querySelector('.header-btn');
+
+  class MainInfo {
+    constructor() {
+      this.scrollWidth = window.innerWidth - document.body.clientWidth + 'px';
+    }
+  }
+
+  const MAIN_INFO = new MainInfo();
 
   class SwiperController {
     constructor(container, swiper) {
@@ -30,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // LOADER 
-  const BODY = document.querySelector('body');
-  const LOADER = document.querySelector('.loader');
   if (LOADER) {
+    BODY.classList.add('_hide');
     const tl = gsap.timeline({
       onComplete: () => {
         LOADER.classList.remove('_active');
+        BODY.classList.remove('_hide');
       }
     });
     tl.to('.loader-text', {
@@ -48,27 +61,65 @@ document.addEventListener("DOMContentLoaded", () => {
   // <==
 
   // HEADER
-  if (document.querySelector('.header')) {
+  if (HEADER) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: BODY,
-        start: "top top",
-        end: "+=200rem",
-        scrub: true,
+        start: "top +=100rem",
+        end: "+=100rem top",
+        toggleActions: "reverse play reverse play",
       }
     })
       .to('.header-info', {
         height: 0,
         y: '-10rem',
-      })
+        duration: 0.3,
+      }, 'anim')
       .to('.header-logo', {
         margin: 0,
         height: '4rem',
-      })
+        duration: 0.3,
+      }, 'anim')
       .to('.header', {
-        duration: 1,
         boxShadow: '0 0.1rem 1rem rgba(0, 0, 0, 0.15)',
-      })
+        duration: 0.3,
+      }, 'anim')
+
+    // MENU
+    if (MENU) {
+      class Menu {
+        constructor(btn, menu) {
+          this.btn = btn;
+          this.menu = menu;
+          this.init();
+        }
+
+        init() {
+          this.setMax();
+          this.btn.onclick = this.toggleMenu.bind(this);
+        }
+
+        setMax() {
+          BODY.style.setProperty('--scroll', MAIN_INFO.scrollWidth);
+          HEADER.style.setProperty('--scroll', MAIN_INFO.scrollWidth);
+          MENU.style.setProperty('--scroll', MAIN_INFO.scrollWidth);
+        }
+
+        toggleMenu() {
+          this.btn.classList.toggle('_active');
+          this.menu.classList.toggle('_active');
+          BODY.classList.toggle('_hide');
+          if (this.btn.classList.contains('_active')) {
+            tl.reverse();
+          } else {
+            tl.play();
+          }
+        }
+      }
+
+      new Menu(MENU_BTN, MENU);
+    }
+    // <==
   }
   // <==
 

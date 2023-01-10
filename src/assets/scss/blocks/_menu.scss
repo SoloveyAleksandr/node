@@ -1,0 +1,32 @@
+@import "../vars";
+
+.menu {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  width: 100vw;
+  height: 100vh;
+  max-width: calc(100vw - var(--scroll));
+  padding-top: 17.2rem;
+  transform: translateY(-100%);
+  transition: .5s ease;
+
+  &._active {
+    transform: translateY(0);
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4.5rem;
+
+    &__link {
+      font-size: 3.2rem;
+      font-weight: $font-s;
+      line-height: 120%;
+    }
+  }
+}
