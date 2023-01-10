@@ -1,3 +1,64 @@
 @import "../vars";
 
-.contacts {}
+.contacts {
+  padding-top: 15.2rem;
+
+  &-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20rem;
+  }
+
+  &-title {
+    font-size: 6.4rem;
+    font-weight: $font-s;
+    text-transform: uppercase;
+    line-height: 120%;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__text {
+        font-size: 2.4rem;
+        font-weight: $font-s;
+        line-height: 120%;
+      }
+
+      &__link {
+        transition: .3s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &-form {
+    margin: 0;
+    width: 100%;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      margin-right: 4rem;
+    }
+
+    &__title {
+      font-size: 3.2rem;
+      font-weight: $font-m;
+      line-height: 140%;
+      width: fit-content;
+    }
+  }
+}
