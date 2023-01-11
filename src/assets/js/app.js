@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // <==
 
-  // HEADER
+  // HEADER + MENU
   if (HEADER) {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -245,6 +245,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     new SwiperController('.about-swiper-btns', swiper);
+  }
+  // <==
+
+  // VISUALIZATION
+  if (document.querySelector('.visualization-swiper-container')) {
+    const swiper = new Swiper('.visualization-swiper', {
+      speed: 400,
+      slidesPerView: 'auto',
+      navigation: {
+        nextEl: '.visualization-swiper-btn_next',
+        prevEl: '.visualization-swiper-btn_prev',
+      },
+    });
   }
   // <==
 })

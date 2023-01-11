@@ -13,6 +13,10 @@ body {
     overflow: hidden;
     margin: 0 auto 0 0;
   }
+
+  &.compensate-for-scrollbar {
+    padding: 0;
+  }
 }
 
 *,
