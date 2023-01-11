@@ -112,7 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
           if (this.btn.classList.contains('_active')) {
             tl.reverse();
           } else {
-            tl.play();
+            if (tl.scrollTrigger.progress === 1) tl.play();
+            return;
           }
         }
       }

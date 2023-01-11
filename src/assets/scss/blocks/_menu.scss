@@ -8,25 +8,99 @@
   background-color: $white;
   width: 100vw;
   height: 100vh;
-  max-width: calc(100vw - var(--scroll));
+  // max-width: calc(100vw - var(--scroll));
   padding-top: 17.2rem;
   transform: translateY(-100%);
-  transition: .5s ease;
+  transition: 0.5s ease;
+  overflow-y: scroll;
 
   &._active {
     transform: translateY(0);
   }
 
-  &-head {
+  &-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 4.5rem;
+  }
 
-    &__link {
+  &-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:nth-child(3) {
+      align-items: center;
+    }
+
+    &__inner {
+      width: 100%;
+      padding-top: 23.3rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8rem;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__link {
+    &_medium {
+      font-size: 2rem;
+      font-weight: $font-m;
+      line-height: 140%;
+      margin-bottom: 3rem;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &_main {
       font-size: 3.2rem;
       font-weight: $font-s;
       line-height: 120%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        left: 0;
+        width: 0;
+        height: 0.2rem;
+        background-color: #040404;
+        transition: 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &_grey {
+      font-size: 1.8rem;
+      font-weight: $font-r;
+      line-height: 140%;
+      color: #333333;
+      margin-bottom: 2rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: #040404;
+        opacity: 0.5;
+      }
     }
   }
 }
