@@ -13,6 +13,10 @@
   transition: 0.5s ease;
   overflow-y: scroll;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 9.4rem;
+  }
+
   &._active {
     transform: translateY(0);
   }
