@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // HEADER + MENU
   if (HEADER) {
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: BODY,
@@ -138,20 +139,22 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "reverse play reverse play",
       }
     })
-      .to('.header-info', {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+      tl.to('.header-info', {
         height: 0,
         y: '-10rem',
         duration: 0.3,
       }, 'anim')
-      .to('.header-logo', {
+      tl.to('.header-logo', {
         margin: 0,
         height: '4rem',
         duration: 0.3,
       }, 'anim')
-      .to('.header', {
+      tl.to('.header', {
         boxShadow: '0 0.1rem 1rem rgba(0, 0, 0, 0.15)',
         duration: 0.3,
       }, 'anim')
+    }
 
     // MENU
     if (MENU) {
@@ -274,23 +277,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = document.querySelector('.main__text');
     const video = document.querySelector('.main-video-inner');
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerContainer,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 2,
-      }
-    });
-    tl.from(text, {
-      y: '15.7rem'
-    }, 'moveY')
-      .from(video, {
-        width: '88.6rem',
-        height: '80.6rem',
-        y: '-2.9rem',
-        x: '100%',
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: triggerContainer,
+    //     start: "top top",
+    //     end: "bottom bottom",
+    //     scrub: 2,
+    //   }
+    // });
+
+    let tl;
+
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerContainer,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+        }
+      });
+
+      tl.from(text, {
+        y: '15.7rem'
       }, 'moveY')
+        .from(video, {
+          width: '88.6rem',
+          height: '80.6rem',
+          y: '-2.9rem',
+          x: '100%',
+        }, 'moveY')
+    } else if (window.matchMedia("(min-width: 851px)").matches) {
+    }
   }
 
   if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
