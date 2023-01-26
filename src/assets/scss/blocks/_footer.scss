@@ -7,6 +7,22 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 8rem 0rem 7.5rem 0rem;
+
+    @include breakpoint($xl-bp) {
+      padding: 8rem 0rem 6rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
   }
 
   &-social {
@@ -19,6 +35,10 @@
       flex-direction: column;
       gap: 1rem;
 
+      @include breakpoint($sm-bp) {
+        display: none;
+      }
+
       &-item {
         &__link {
           font-size: 1.4rem;
@@ -26,10 +46,22 @@
           line-height: 150%;
           color: rgba(255, 255, 255, 0.5);
           transition: 0.3s;
+          width: fit-content;
 
           &:hover {
             text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
           }
+        }
+      }
+
+      &_mob {
+        display: none;
+
+        @include breakpoint($sm-bp) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
         }
       }
     }
@@ -40,12 +72,21 @@
     flex-direction: column;
     gap: 2rem;
 
+    @include breakpoint($jb-bp) {
+      align-items: flex-end;
+    }
+
+    @include breakpoint($sm-bp) {
+      align-items: center;
+    }
+
     &__link {
       font-size: 1.6rem;
       font-weight: $font_r;
       line-height: 150%;
       color: rgb(255, 255, 255);
       transition: 0.3s;
+      width: fit-content;
 
       &:hover {
         text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
@@ -57,6 +98,14 @@
     display: flex;
     flex-direction: column;
     gap: 11.9rem;
+
+    @include breakpoint($jb-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      align-items: center;
+    }
 
     &__link {
       font-size: 1.8rem;
@@ -84,11 +133,30 @@
     gap: 11.1rem;
     margin-left: auto;
 
+    @include breakpoint($jb-bp) {
+      gap: 4rem;
+      align-items: flex-end;
+    }
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+      align-items: center;
+      margin-left: 0;
+    }
+
     &__text {
       font-size: 1.8rem;
       font-weight: $font_s;
       line-height: 120%;
       color: #ffffff;
+
+      @include breakpoint($jb-bp) {
+        text-align: right;
+      }
+
+      @include breakpoint($sm-bp) {
+        text-align: center;
+      }
     }
 
     &-legal {
@@ -96,12 +164,21 @@
       flex-direction: column;
       gap: 1rem;
 
+      @include breakpoint($jb-bp) {
+        align-items: flex-end;
+      }
+
+      @include breakpoint($sm-bp) {
+        align-items: center;
+      }
+
       &__link {
         font-size: 1.4rem;
         font-weight: $font_r;
         line-height: 140%;
         color: rgba(255, 255, 255, 0.5);
         transition: .3s;
+        width: fit-content;
 
         &:hover {
           text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
