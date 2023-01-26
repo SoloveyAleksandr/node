@@ -41,6 +41,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class DropdownBtn {
+    constructor(container) {
+      this.wrapper = document.querySelector(container);
+      this.btn = this.wrapper.querySelector(".dropdown-btn");
+      this.container = this.wrapper.querySelector(".dropdown-container");
+      this.isOpen = this.wrapper.getAttribute("data-open") !== null;
+      this.init();
+    }
+
+    init() {
+      this.maxHeight = this.container.scrollHeight * 2 / 20 + "rem";
+      this.btn.addEventListener("click", this.handleClick.bind(this));
+      if (this.isOpen) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
+
+    handleClick() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+      this.isOpen = !this.isOpen;
+    }
+
+    open() {
+      this.wrapper.classList.add("_active");
+      this.container.style.maxHeight = this.maxHeight;
+    }
+
+    close() {
+      this.wrapper.classList.remove("_active");
+      this.container.style.maxHeight = 0;
+    }
+  }
+
   // SMOOTH SCROLL
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды
@@ -148,6 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       new Menu(MENU_BTN, MENU);
+
+      if (window.matchMedia("(max-width: 1025px)").matches) {
+        new DropdownBtn(".menu-dropdown");
+      }
     }
     // <==
   }
