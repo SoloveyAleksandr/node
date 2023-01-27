@@ -37,6 +37,12 @@ body {
   &-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include breakpoint($xl-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
   }
 
   &-title {
@@ -44,7 +50,12 @@ body {
     font-weight: $font_s;
     text-transform: uppercase;
     white-space: nowrap;
-    line-height: 128%;
+    line-height: 7.8rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-description {
@@ -53,6 +64,10 @@ body {
     line-height: 140%;
     max-width: 71.1rem;
     margin-right: auto;
+
+    @include breakpoint($xl-bp) {
+      
+    }
   }
 }
 

@@ -13,12 +13,14 @@
     line-height: 2.8rem;
     font-weight: $font-m;
 
-    svg {
-      object-fit: contain;
-      object-position: center center;
-      width: 2.4rem;
-      height: 2.4rem;
-      transition: .3s;
+    &.dropdown-btn_icon {
+      svg {
+        object-fit: contain;
+        object-position: center center;
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: .3s;
+      }
     }
   }
 
@@ -29,8 +31,10 @@
 
   &._active & {
     &-btn {
-      svg {
-        transform: rotate(180deg);
+      &.dropdown-btn_icon {
+        svg {
+          transform: rotate(180deg);
+        }
       }
     }
   }

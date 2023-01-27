@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  class DropdownBtn {
+  class MenuDropdownBtn {
     constructor(container) {
       this.wrapper = container;
       this.btn = this.wrapper.querySelector(".dropdown-btn");
@@ -77,6 +77,62 @@ document.addEventListener("DOMContentLoaded", () => {
     close() {
       this.wrapper.classList.remove("_active");
       this.container.style.maxHeight = 0;
+    }
+  }
+
+  class DropdownBtn {
+    constructor(container) {
+      this.wrapper = container;
+      this.btn = this.wrapper.querySelector(".dropdown-btn");
+      this.container = this.wrapper.querySelector(".dropdown-container");
+      this.isOpen = this.wrapper.getAttribute("data-open") !== null;
+      this.init();
+    }
+
+    init() {
+      this.maxHeight = this.container.scrollHeight * 2 / 10 + "rem";
+      if (this.isOpen) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
+
+    open() {
+      this.wrapper.classList.add("_active");
+      this.btn.classList.add("_active");
+      this.container.style.maxHeight = this.maxHeight;
+      this.isOpen = true;
+    }
+
+    close() {
+      this.wrapper.classList.remove("_active");
+      this.btn.classList.remove("_active");
+      this.container.style.maxHeight = 0;
+      this.isOpen = false;
+    }
+  }
+
+  class DropdownController {
+    constructor(items) {
+      this.controlledItem = items;
+      this.init();
+    }
+
+    init() {
+      this.controlledItem.forEach((item, index) => {
+        item.btn.addEventListener("click", this.handleClick.bind(this, index));
+      })
+    }
+
+    handleClick(targetIndex) {
+      this.controlledItem.forEach((item, index) => {
+        if (index !== targetIndex) {
+          item.close();
+        } else {
+          item.isOpen ? item.close() : item.open();
+        }
+      })
     }
   }
 
@@ -193,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (window.matchMedia("(max-width: 1025px)").matches) {
         const menuDropdown = document.querySelector(".menu-dropdown");
-        new DropdownBtn(menuDropdown);
+        new MenuDropdownBtn(menuDropdown);
       }
     }
     // <==
@@ -342,59 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new SwiperController(swiperBtns, swiper);
     } else if (window.matchMedia("(max-width: 650px)").matches) {
-      class DropdownBtn {
-        constructor(container) {
-          this.wrapper = container;
-          this.btn = this.wrapper.querySelector(".dropdown-btn");
-          this.container = this.wrapper.querySelector(".dropdown-container");
-          this.isOpen = this.wrapper.getAttribute("data-open") !== null;
-          this.init();
-        }
 
-        init() {
-          this.maxHeight = this.container.scrollHeight * 2 / 10 + "rem";
-          if (this.isOpen) {
-            this.open();
-          } else {
-            this.close();
-          }
-        }
-
-        open() {
-          this.wrapper.classList.add("_active");
-          this.btn.classList.add("_active");
-          this.container.style.maxHeight = this.maxHeight;
-        }
-
-        close() {
-          this.wrapper.classList.remove("_active");
-          this.btn.classList.remove("_active");
-          this.container.style.maxHeight = 0;
-        }
-      }
-
-      class DropdownController {
-        constructor(items) {
-          this.controlledItem = items;
-          this.init();
-        }
-
-        init() {
-          this.controlledItem.forEach((item, index) => {
-            item.btn.addEventListener("click", this.handleClick.bind(this, index));
-          })
-        }
-
-        handleClick(targetIndex) {
-          this.controlledItem.forEach((item, index) => {
-            if (index !== targetIndex) {
-              item.close();
-            } else {
-              item.open();
-            }
-          })
-        }
-      }
 
       const dropdownBtns = [];
 
@@ -409,15 +413,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ABOUT 
   if (document.querySelector('.about-swiper')) {
-    const swiper = new Swiper('.about-swiper', {
-      effect: 'fade',
-      direction: 'horizontal',
-      speed: 1000,
-      spaceBetween: 100,
-      allowTouchMove: false,
-    });
+    const dropdownContainers = gsap.utils.toArray(".about-swiper-dropdown");
 
-    new SwiperController('.about-swiper-btns', swiper);
+    if (window.matchMedia("(min-width: 1331px)").matches) {
+
+      (() => {
+        const swiperWrapper = document.querySelector(".about-swiper-wrapper");
+        const docFragment = document.createDocumentFragment();
+
+        dropdownContainers.forEach(item => {
+          const slide = document.createElement("div");
+          slide.className = "about-swiper-slide swiper-slide";
+          const slideContent = item.querySelector(".dropdown-container").childNodes;
+          slide.append(...slideContent);
+          docFragment.appendChild(slide);
+        })
+        swiperWrapper.appendChild(docFragment);
+      })()
+
+      const swiper = new Swiper('.about-swiper', {
+        effect: 'fade',
+        direction: 'horizontal',
+        speed: 1000,
+        spaceBetween: 100,
+        allowTouchMove: false,
+      });
+
+      const swiperBtns = gsap.utils.toArray(".about-swiper-btns-btn");
+      new SwiperController(swiperBtns, swiper);
+    } else if (window.matchMedia("(max-width: 1330px)").matches) {
+      
+      const dropdownBtns = [];
+      dropdownContainers.forEach(item => {
+        dropdownBtns.push(new DropdownBtn(item));
+      })
+
+      new DropdownController(dropdownBtns);
+    }
   }
   // <==
 
