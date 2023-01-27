@@ -1,8 +1,16 @@
 .portfolio-item {
   padding-top: 12.2rem;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 7.4rem;
+  }
+
   &-info {
     margin-bottom: 8rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 3rem;
+    }
   }
 
   &-list {
@@ -12,5 +20,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     row-gap: 8rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 10rem;
+      grid-template-columns: 1fr;
+      row-gap: 4rem;
+    }
   }
 }
