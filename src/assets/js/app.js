@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAIN_INFO = new MainInfo();
 
   class SwiperController {
-    constructor(container, swiper) {
-      this.container = document.querySelector(container);
-      this.btnsList = [...this.container.children];
+    constructor(btns, swiper) {
+      this.btnsList = btns;
       this.swiper = swiper;
       this.init();
     }
@@ -28,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this.swiper.slideTo(index);
         };
       })
+      this.setActive(this.btnsList[0]);
     }
 
     setActive(btn) {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   class DropdownBtn {
     constructor(container) {
-      this.wrapper = document.querySelector(container);
+      this.wrapper = container;
       this.btn = this.wrapper.querySelector(".dropdown-btn");
       this.container = this.wrapper.querySelector(".dropdown-container");
       this.isOpen = this.wrapper.getAttribute("data-open") !== null;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     init() {
-      this.maxHeight = this.container.scrollHeight * 2 / 20 + "rem";
+      this.maxHeight = this.container.scrollHeight * 2 / 10 + "rem";
       this.btn.addEventListener("click", this.handleClick.bind(this));
       if (this.isOpen) {
         this.open();
@@ -192,7 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
       new Menu(MENU_BTN, MENU);
 
       if (window.matchMedia("(max-width: 1025px)").matches) {
-        new DropdownBtn(".menu-dropdown");
+        const menuDropdown = document.querySelector(".menu-dropdown");
+        new DropdownBtn(menuDropdown);
       }
     }
     // <==
@@ -312,15 +313,97 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
-    const swiper = new Swiper('.main-swiper', {
-      effect: 'fade',
-      direction: 'horizontal',
-      speed: 1000,
-      spaceBetween: 100,
-      allowTouchMove: false,
-    });
+    const swiperDropDownContainers = gsap.utils.toArray(".main-swiper-dropdown");
 
-    new SwiperController('.main-swiper-btns', swiper);
+    if (window.matchMedia("(min-width: 651px)").matches) {
+      const swiperWrapper = document.querySelector(".main-swiper-wrapper");
+
+      (() => {
+        const docFragment = document.createDocumentFragment();
+        swiperDropDownContainers.forEach(container => {
+          const slide = document.createElement("div")
+          slide.className = "swiper-slide main-swiper-slide";
+          const slideContent = container.querySelector(".dropdown-container").childNodes;
+          slide.append(...slideContent);
+          docFragment.appendChild(slide);
+        })
+        swiperWrapper.appendChild(docFragment)
+      })()
+
+      const swiper = new Swiper('.main-swiper', {
+        effect: 'fade',
+        direction: 'horizontal',
+        speed: 1000,
+        spaceBetween: 100,
+        allowTouchMove: false,
+      });
+
+      const swiperBtns = gsap.utils.toArray(".main-swiper-btns-btn");
+
+      new SwiperController(swiperBtns, swiper);
+    } else if (window.matchMedia("(max-width: 650px)").matches) {
+      class DropdownBtn {
+        constructor(container) {
+          this.wrapper = container;
+          this.btn = this.wrapper.querySelector(".dropdown-btn");
+          this.container = this.wrapper.querySelector(".dropdown-container");
+          this.isOpen = this.wrapper.getAttribute("data-open") !== null;
+          this.init();
+        }
+
+        init() {
+          this.maxHeight = this.container.scrollHeight * 2 / 10 + "rem";
+          if (this.isOpen) {
+            this.open();
+          } else {
+            this.close();
+          }
+        }
+
+        open() {
+          this.wrapper.classList.add("_active");
+          this.btn.classList.add("_active");
+          this.container.style.maxHeight = this.maxHeight;
+        }
+
+        close() {
+          this.wrapper.classList.remove("_active");
+          this.btn.classList.remove("_active");
+          this.container.style.maxHeight = 0;
+        }
+      }
+
+      class DropdownController {
+        constructor(items) {
+          this.controlledItem = items;
+          this.init();
+        }
+
+        init() {
+          this.controlledItem.forEach((item, index) => {
+            item.btn.addEventListener("click", this.handleClick.bind(this, index));
+          })
+        }
+
+        handleClick(targetIndex) {
+          this.controlledItem.forEach((item, index) => {
+            if (index !== targetIndex) {
+              item.close();
+            } else {
+              item.open();
+            }
+          })
+        }
+      }
+
+      const dropdownBtns = [];
+
+      swiperDropDownContainers.forEach(item => {
+        dropdownBtns.push(new DropdownBtn(item));
+      })
+
+      new DropdownController(dropdownBtns);
+    }
   }
   // <==
 
