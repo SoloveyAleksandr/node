@@ -61,13 +61,9 @@ body {
   &-description {
     font-size: 1.8rem;
     font-weight: $font_m;
-    line-height: 140%;
+    line-height: 2.5rem;
     max-width: 71.1rem;
     margin-right: auto;
-
-    @include breakpoint($xl-bp) {
-      
-    }
   }
 }
 
@@ -83,6 +79,23 @@ body {
     margin-bottom: 2rem;
     overflow: hidden;
 
+    @include breakpoint($xl-bp) {
+      height: 46rem;
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      height: 36rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 30rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      height: 26.4rem;
+    }
+
     &__img {
       object-fit: cover;
       object-position: center center;
@@ -97,24 +110,42 @@ body {
     flex-direction: column;
     gap: 1.15rem;
 
+    @include breakpoint($xl-bp) {
+      gap: 1rem;
+    }
+
     &__head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 0.2rem solid #000;
       padding-bottom: 0.7rem;
+
+      @include breakpoint($xl-bp) {
+        padding-bottom: 0.8rem;
+      }
     }
 
     &__title {
       font-size: 2rem;
       font-weight: $font_s;
       line-height: 120%;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
     }
 
     &__date {
       font-size: 1.4rem;
       font-weight: $font_r;
       line-height: 136%;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
     }
 
     &__box {
@@ -122,11 +153,30 @@ body {
       align-items: center;
       gap: 2.4rem;
 
+      @include breakpoint($cos-bp) {
+        gap: 0rem;
+        justify-content: space-between;
+      }
+
+      @include breakpoint($xl-bp) {
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+
+      @include breakpoint($sm-bp) {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+      }
+
       & span+span {
         &::before {
           content: '+';
           display: inline-block;
           margin-right: 0.8rem;
+
+          @include breakpoint($sm-bp) {
+            display: none;
+          }
         }
       }
     }
@@ -136,6 +186,25 @@ body {
       font-weight: $font_r;
       line-height: 120%;
       color: #828282;
+      white-space: nowrap;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        &:nth-child(even) {
+          // flex: 1;
+          // margin-right: auto;
+
+          &::before {
+            content: '+';
+            display: inline-block;
+            margin-right: 0.8rem;
+          }
+        }
+      }
     }
   }
 }

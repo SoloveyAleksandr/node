@@ -3,8 +3,16 @@
 .portfolio {
   padding-top: 18.1rem;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 11.4rem;
+  }
+
   &-info {
     margin-bottom: 10rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 6rem;
+    }
   }
 
   &-nav {
@@ -12,9 +20,39 @@
     align-items: center;
     gap: 6rem;
 
+    @include breakpoint($jb-bp) {
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: center;
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+
+      @include breakpoint($jb-bp) {
+        width: 100%;
+        justify-content: center;
+        border-bottom: 0.2rem solid #000000;
+      }
+
+      @include breakpoint($sm-bp) {
+        gap: 3rem;
+      }
+    }
+
     &-wrapper {
       border-bottom: 0.2rem solid #000000;
       margin-bottom: 8rem;
+
+      @include breakpoint($xl-bp) {
+        margin-bottom: 2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        border-bottom: none;
+      }
     }
 
     &-item {
@@ -26,7 +64,14 @@
         color: #000000;
         border-bottom: 0.4rem solid transparent;
         padding-bottom: 1.4rem;
+        white-space: nowrap;
         transition: .3s;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          padding-bottom: 0.4rem;
+        }
 
         &._active {
           font-weight: $font_b;
@@ -52,12 +97,22 @@
     padding-top: 4rem;
     margin-bottom: 20rem;
 
+    @include breakpoint($xl-bp) {
+      margin-bottom: 10rem;
+    }
+
     &__title {
       font-size: 4.8rem;
       font-weight: $font_s;
       line-height: 120%;
       text-transform: uppercase;
       margin-bottom: 4rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        margin-bottom: 2rem;
+      }
     }
 
     &__text {
@@ -66,6 +121,12 @@
       line-height: 140%;
       margin-bottom: 8rem;
       max-width: 110.8rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-bottom: 4rem;
+      }
     }
 
     &-list {
@@ -73,6 +134,11 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 4rem;
       row-gap: 8.15rem;
+
+      @include breakpoint($xl-bp) {
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+      }
     }
   }
 }
