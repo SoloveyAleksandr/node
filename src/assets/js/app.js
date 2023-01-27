@@ -442,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const swiperBtns = gsap.utils.toArray(".about-swiper-btns-btn");
       new SwiperController(swiperBtns, swiper);
     } else if (window.matchMedia("(max-width: 1330px)").matches) {
-      
+
       const dropdownBtns = [];
       dropdownContainers.forEach(item => {
         dropdownBtns.push(new DropdownBtn(item));
