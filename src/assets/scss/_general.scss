@@ -49,7 +49,7 @@ body {
     font-size: 6.4rem;
     font-weight: $font_s;
     text-transform: uppercase;
-    white-space: nowrap;
+    // white-space: nowrap;
     line-height: 7.8rem;
 
     @include breakpoint($xl-bp) {
