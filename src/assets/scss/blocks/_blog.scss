@@ -3,11 +3,24 @@
 .blog {
   padding-top: 22.6rem;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 12.1rem;
+  }
+
   &-title {
     font-size: 6.4rem;
     font-weight: $font-s;
     text-transform: uppercase;
     margin-bottom: 10.8rem;
+
+    @include breakpoint($cos-bp) {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-inner {
@@ -16,6 +29,15 @@
     align-items: flex-start;
     position: relative;
     margin-bottom: 20rem;
+
+    @include breakpoint($cos-bp) {
+      flex-direction: column;
+      gap: 6rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 10rem;
+    }
   }
 
   &-filter {
@@ -25,6 +47,45 @@
     gap: 3rem;
     position: sticky;
     top: 6.5rem;
+
+    @include breakpoint($cos-bp) {
+      position: static;
+    }
+
+    &-dropdown {
+
+      @include breakpoint($cos-bp) {
+        &._active & {
+          &-btn {
+            margin-bottom: 3rem;
+          }
+        }
+      }
+
+      &-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        pointer-events: none;
+        margin-bottom: 3rem;
+
+        @include breakpoint($cos-bp) {
+          pointer-events: all;
+          margin-bottom: 0;
+          transition: .3s;
+          border-bottom: 0.2rem solid #000;
+        }
+
+        &__icon {
+          display: none;
+
+          @include breakpoint($cos-bp) {
+            display: block;
+          }
+        }
+      }
+    }
 
     &__title {
       font-size: 2.4rem;
@@ -71,6 +132,16 @@
     max-width: 142rem;
     margin-bottom: 8rem;
 
+    @include breakpoint($xl-bp) {
+      gap: 4rem;
+      row-gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      grid-template-columns: 1fr;
+    }
+
     &-item {
       display: flex;
       flex-direction: column;
@@ -89,6 +160,23 @@
         margin-bottom: 2rem;
         overflow: hidden;
 
+        @include breakpoint($xl-bp) {
+          margin-bottom: 1rem;
+          height: 40rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          height: 36rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 30rem;
+        }
+
+        @include breakpoint($xs-bp) {
+          height: 24.6rem;
+        }
+
         &__img {
           object-fit: cover;
           object-position: center center;
@@ -103,6 +191,12 @@
         font-weight: $font-s;
         line-height: 140%;
         margin-bottom: 1.5rem;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          margin-bottom: 1rem;
+        }
       }
 
       &__description {
@@ -111,6 +205,11 @@
         line-height: 140%;
         margin-bottom: 2rem;
         max-width: 59.7rem;
+
+        @include breakpoint($xl-bp) {
+          margin-bottom: 1rem;
+          max-width: 100%;
+        }
       }
 
       &__date {
@@ -125,6 +224,10 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @include breakpoint($xl-bp) {
+      justify-content: flex-end;
+    }
 
     &__link {
       font-size: 2rem;

@@ -472,4 +472,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   // <==
+
+  // BLOG
+  if (document.querySelector(".blog-filter-dropdown")) {
+    const filterDropdown = document.querySelector(".blog-filter-dropdown");
+
+    if (window.matchMedia("(max-width: 1330px)").matches) {
+      new MenuDropdownBtn(filterDropdown);
+    }
+  }
+  //<==
 })
