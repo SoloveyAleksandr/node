@@ -462,6 +462,13 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: '.visualization-swiper-btn_next',
         prevEl: '.visualization-swiper-btn_prev',
       },
+      spaceBetween: 15,
+
+      breakpoints: {
+        1025: {
+          spaceBetween: 40,
+        }
+      }
     });
   }
   // <==
