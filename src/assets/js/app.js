@@ -312,6 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // MAIN
   const title = document.querySelector('.main-title');
+  const mainVideo = document.querySelector(".main-video__video");
   if (title) {
     gsap.to('.main-title-anim__cursor', {
       opacity: 0,
@@ -409,6 +410,16 @@ document.addEventListener("DOMContentLoaded", () => {
       new DropdownController(dropdownBtns);
     }
   }
+
+  // if (mainVideo) {
+  //   mainVideo.addEventListener("mouseenter", () => {
+  //     mainVideo.play();
+  //   });
+
+  //   mainVideo.addEventListener("mouseleave", () => {
+  //     mainVideo.pause();
+  //   });
+  // }
   // <==
 
   // ABOUT 
