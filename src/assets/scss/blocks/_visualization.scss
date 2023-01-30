@@ -3,8 +3,16 @@
 .visualization {
   padding-top: 12.2rem;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 7.4rem;
+  }
+
   &-links {
     margin-bottom: 5.9rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 3rem;
+    }
   }
 
   &-head {
