@@ -3,17 +3,50 @@
 .tour {
   padding-top: 12.2rem;
 
+  @include breakpoint($xl-bp) {
+    padding-top: 7.4rem;
+  }
+
   &-links {
     margin-bottom: 7.9rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 3rem;
+    }
   }
 
   &-head {
     margin-bottom: 11.5rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 3rem;
+    }
   }
 
   &-img {
     height: 83rem;
     margin-bottom: 12.3rem;
+
+    @include breakpoint($xl-bp) {
+      height: 60rem;
+      margin-bottom: 6.8rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      height: 50rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      height: 40rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 30rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      height: 18.6rem;
+    }
 
     &__img {
       object-fit: cover;
@@ -29,24 +62,43 @@
     line-height: 140%;
     max-width: 110rem;
     margin-bottom: 12rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      margin-bottom: 10rem;
+    }
   }
 
   &-portfolio {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 16rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    &-box {
+    @include breakpoint($cos-bp) {
+      column-gap: 6.4rem;
+    }
+
+    @include breakpoint($xl-bp) {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      max-width: 73.9rem;
+      margin-bottom: 10rem;
     }
 
     &__text {
       font-size: 1.8rem;
       font-weight: $font-r;
       line-height: 140%;
+      max-width: 73.9rem;
+      grid-area: 1/1/2/2;
+
+      @include breakpoint($xl-bp) {
+        order: 2;
+        margin-bottom: 4rem;
+        max-width: 100%;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
     }
 
     &__link {
@@ -54,11 +106,54 @@
       opacity: 1;
       pointer-events: all;
       transform: translate(0);
+      grid-area: 2/1/3/2;
+      width: fit-content;
+      height: fit-content;
+      margin-top: auto;
+      order: 3;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+      }
+
+      @include breakpoint($xs-bp) {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     &-img {
       width: 88rem;
       height: 66rem;
+      grid-area: 1/2/3/3;
+
+
+      @include breakpoint($cos-bp) {
+        width: 100%;
+      }
+
+      @include breakpoint($xl-bp) {
+        height: 60rem;
+        order: 1;
+        margin-bottom: 2rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        height: 50rem;
+      }
+  
+      @include breakpoint($lb-bp) {
+        height: 40rem;
+      }
+  
+      @include breakpoint($sm-bp) {
+        height: 30rem;
+      }
+  
+      @include breakpoint($xs-bp) {
+        height: 25.8rem;
+      }
 
       &__img {
         object-fit: cover;
@@ -70,16 +165,19 @@
   }
 
   &-info {
-    display: flex;
-    align-items: center;
-    gap: 7rem;
     margin-bottom: 20rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    &-box {
-      flex: 1;
+    @include breakpoint($cos-bp) {
+      column-gap: 6.4rem;
+    }
+
+    @include breakpoint($xl-bp) {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 15rem;
     }
 
     &__title {
@@ -87,17 +185,65 @@
       font-weight: $font-s;
       line-height: 140%;
       margin-bottom: 6rem;
+      grid-area: 1/1/2/2;
+      margin-top: auto;
+
+      @include breakpoint($cos-bp) {
+        margin-bottom: 2rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        order: 1;
+        margin: 0;
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+      }
     }
 
     &__text {
       font-size: 2rem;
       font-weight: $font-r;
       line-height: 140%;
+      grid-area: 2/1/3/2;
+      max-width: 81.6rem;
+
+      @include breakpoint($xl-bp) {
+        order: 3;
+        max-width: 100%;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
     }
 
     &-img {
       width: 88rem;
       height: 66rem;
+      grid-area: 1/2/3/3;
+
+      @include breakpoint($cos-bp) {
+        width: 100%;
+      }
+
+      @include breakpoint($xl-bp) {
+        order: 2;
+        height: 60rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        height: 50rem;
+      }
+  
+      @include breakpoint($lb-bp) {
+        height: 40rem;
+      }
+  
+      @include breakpoint($sm-bp) {
+        height: 30rem;
+      }
+  
+      @include breakpoint($xs-bp) {
+        height: 25.8rem;
+      }
 
       &__img {
         object-fit: cover;
@@ -110,5 +256,9 @@
 
   &-form {
     margin-bottom: 19.2rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 0;
+    }
   }
 }
