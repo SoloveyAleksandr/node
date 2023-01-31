@@ -68,6 +68,8 @@ body {
 }
 
 .project-card {
+  cursor: pointer;
+
   &:hover &-img {
     &__img {
       transform: scale(1.05);

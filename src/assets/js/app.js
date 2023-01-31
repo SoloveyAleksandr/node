@@ -136,6 +136,82 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  class ProjectModal {
+    constructor() {
+      this.wrapper = document.querySelector(".project-modal");
+      this.bg = this.wrapper.querySelector(".project-modal-bg");
+      this.btn = this.wrapper.querySelector(".project-modal-btn");
+      this.title = this.wrapper.querySelector(".project-modal-head__title");
+      this.date = this.wrapper.querySelector(".project-modal-head__date");
+      this.service = this.wrapper.querySelector(".project-modal-head-service");
+      this.description = this.wrapper.querySelector(".project-modal__description");
+      this.images = this.wrapper.querySelector(".project-modal-images");
+      this.data = {
+        title: null,
+        date: null,
+        service: null,
+        description: null,
+        images: null,
+      };
+      this.dataTarget = null;
+      this.init();
+    }
+
+    init() {
+      this.bg.addEventListener("click", this.close.bind(this));
+      this.btn.addEventListener("click", this.close.bind(this));
+    }
+
+    close() {
+      this.wrapper.classList.remove("_active");
+      this.data.title = "";
+      this.data.date = "";
+      this.data.service = "";
+      this.data.description = "";
+      this.data.images = "";
+      this.wrapper.scrollTo(0, 0);
+      BODY.classList.remove('_hide');
+    }
+
+    open(target) {
+      this.dataTarget = target;
+      this.getData();
+      this.renderData();
+      this.wrapper.classList.add("_active");
+      BODY.classList.add('_hide');
+    }
+
+    getData() {
+      if (this.dataTarget) {
+        const templateContainer = this.dataTarget.querySelector("template");
+        const template = templateContainer ? templateContainer.content : null;
+        this.data.title = this.dataTarget.querySelector(".project-card-info__title").innerText;
+        this.data.date = this.dataTarget.querySelector(".project-card-info__date").innerText;
+        this.data.service = this.dataTarget.querySelectorAll(".project-card-info__name");
+        if (template) {
+          this.data.description = template.querySelector(".project-modal__description").cloneNode(true).innerHTML;
+          this.data.images = template.querySelector(".project-modal-images").innerHTML;
+        }
+      }
+    }
+
+    renderData() {
+      this.title.innerText = this.data.title;
+      this.date.innerText = this.data.date;
+      const serviceFragment = document.createDocumentFragment();
+      [...this.data.service].forEach(item => {
+        const newItem = document.createElement("li");
+        newItem.className = "project-modal-head-service-item";
+        newItem.innerText = item.innerText;
+        serviceFragment.appendChild(newItem);
+      })
+      this.service.innerHTML = "";
+      this.service.append(serviceFragment);
+      this.description.innerHTML = this.data.description;
+      this.images.innerHTML = this.data.images;
+    }
+  }
+
   // SMOOTH SCROLL
   SmoothScroll({
     // Время скролла 400 = 0.4 секунды
@@ -497,6 +573,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.matchMedia("(max-width: 1330px)").matches) {
       new MenuDropdownBtn(filterDropdown);
     }
+  }
+  //<==
+
+  // PROJECT-MODAL
+  if (document.querySelector(".project-modal")) {
+    const projectModal = new ProjectModal();
+
+    const projectsList = gsap.utils.toArray(".project-card");
+
+    projectsList.forEach(item => {
+      item.addEventListener("click", (function () {
+        projectModal.open(this)
+      }));
+    })
   }
   //<==
 })
