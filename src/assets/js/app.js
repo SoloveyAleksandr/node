@@ -311,115 +311,121 @@ document.addEventListener("DOMContentLoaded", () => {
   // <==
 
   // MAIN
-  const title = document.querySelector('.main-title');
-  const mainVideo = document.querySelector(".main-video__video");
-  if (title) {
-    gsap.to('.main-title-anim__cursor', {
-      opacity: 0,
-      duration: 0.9,
-      ease: "power2.inOut",
-      repeat: -1,
-    });
-    const text = title.querySelector('.main-title__text_hidden');
+  if (document.querySelector(".main")) {
+    const title = document.querySelector('.main-title');
+    // const mainVideoContainer = document.querySelector(".main-video-inner");
+    // const mainVideo = document.querySelector(".main-video__video");
+    // const mainVideoPreview = document.querySelector(".main-video__preview");
+    if (title) {
+      gsap.to('.main-title-anim__cursor', {
+        opacity: 0,
+        duration: 0.9,
+        ease: "power2.inOut",
+        repeat: -1,
+      });
+      const text = title.querySelector('.main-title__text_hidden');
 
-    gsap.to('.main-title-anim__text', {
-      delay: 5,
-      duration: 2,
-      text: text.textContent,
-      ease: "none.none"
-    });
-  }
+      gsap.to('.main-title-anim__text', {
+        delay: 5,
+        duration: 2,
+        text: text.textContent,
+        ease: "none.none"
+      });
+    }
 
-  if (document.querySelector('.main-video-anim-container')) {
-    const triggerContainer = document.querySelector('.main-video-anim-container');
-    const text = document.querySelector('.main__text');
-    const video = document.querySelector('.main-video-inner');
+    if (document.querySelector('.main-video-anim-container')) {
+      const triggerContainer = document.querySelector('.main-video-anim-container');
+      const text = document.querySelector('.main__text');
+      const video = document.querySelector('.main-video-inner');
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: triggerContainer,
-    //     start: "top top",
-    //     end: "bottom bottom",
-    //     scrub: 2,
-    //   }
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: triggerContainer,
+      //     start: "top top",
+      //     end: "bottom bottom",
+      //     scrub: 2,
+      //   }
+      // });
+
+      let tl;
+
+      if (window.matchMedia("(min-width: 1025px)").matches) {
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerContainer,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+          }
+        });
+
+        tl.from(text, {
+          y: '15.7rem'
+        }, 'moveY')
+          .from(video, {
+            width: '88.6rem',
+            height: '80.6rem',
+            y: '-2.9rem',
+            x: '100%',
+          }, 'moveY')
+      } else if (window.matchMedia("(min-width: 851px)").matches) {
+      }
+    }
+
+    if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
+      const swiperDropDownContainers = gsap.utils.toArray(".main-swiper-dropdown");
+
+      if (window.matchMedia("(min-width: 651px)").matches) {
+        const swiperWrapper = document.querySelector(".main-swiper-wrapper");
+
+        (() => {
+          const docFragment = document.createDocumentFragment();
+          swiperDropDownContainers.forEach(container => {
+            const slide = document.createElement("div")
+            slide.className = "swiper-slide main-swiper-slide";
+            const slideContent = container.querySelector(".dropdown-container").childNodes;
+            slide.append(...slideContent);
+            docFragment.appendChild(slide);
+          })
+          swiperWrapper.appendChild(docFragment)
+        })()
+
+        const swiper = new Swiper('.main-swiper', {
+          effect: 'fade',
+          direction: 'horizontal',
+          speed: 1000,
+          spaceBetween: 100,
+          allowTouchMove: false,
+        });
+
+        const swiperBtns = gsap.utils.toArray(".main-swiper-btns-btn");
+
+        new SwiperController(swiperBtns, swiper);
+      } else if (window.matchMedia("(max-width: 650px)").matches) {
+
+
+        const dropdownBtns = [];
+
+        swiperDropDownContainers.forEach(item => {
+          dropdownBtns.push(new DropdownBtn(item));
+        })
+
+        new DropdownController(dropdownBtns);
+      }
+    }
+
+    // if (mainVideoContainer) {
+    // mainVideoContainer.addEventListener("mouseenter", () => {
+    // mainVideoPreview.classList.add("_active");
+    // mainVideo.play();
     // });
 
-    let tl;
-
-    if (window.matchMedia("(min-width: 1025px)").matches) {
-      tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerContainer,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 2,
-        }
-      });
-
-      tl.from(text, {
-        y: '15.7rem'
-      }, 'moveY')
-        .from(video, {
-          width: '88.6rem',
-          height: '80.6rem',
-          y: '-2.9rem',
-          x: '100%',
-        }, 'moveY')
-    } else if (window.matchMedia("(min-width: 851px)").matches) {
-    }
+    // mainVideoContainer.addEventListener("mouseleave", () => {
+    // mainVideoPreview.classList.remove("_active");
+    // mainVideo.pause();
+    // });
+    // }
   }
-
-  if (document.querySelector('.main-swiper') && document.querySelector('.main-swiper-btns')) {
-    const swiperDropDownContainers = gsap.utils.toArray(".main-swiper-dropdown");
-
-    if (window.matchMedia("(min-width: 651px)").matches) {
-      const swiperWrapper = document.querySelector(".main-swiper-wrapper");
-
-      (() => {
-        const docFragment = document.createDocumentFragment();
-        swiperDropDownContainers.forEach(container => {
-          const slide = document.createElement("div")
-          slide.className = "swiper-slide main-swiper-slide";
-          const slideContent = container.querySelector(".dropdown-container").childNodes;
-          slide.append(...slideContent);
-          docFragment.appendChild(slide);
-        })
-        swiperWrapper.appendChild(docFragment)
-      })()
-
-      const swiper = new Swiper('.main-swiper', {
-        effect: 'fade',
-        direction: 'horizontal',
-        speed: 1000,
-        spaceBetween: 100,
-        allowTouchMove: false,
-      });
-
-      const swiperBtns = gsap.utils.toArray(".main-swiper-btns-btn");
-
-      new SwiperController(swiperBtns, swiper);
-    } else if (window.matchMedia("(max-width: 650px)").matches) {
-
-
-      const dropdownBtns = [];
-
-      swiperDropDownContainers.forEach(item => {
-        dropdownBtns.push(new DropdownBtn(item));
-      })
-
-      new DropdownController(dropdownBtns);
-    }
-  }
-
-  // if (mainVideo) {
-  //   mainVideo.addEventListener("mouseenter", () => {
-  //     mainVideo.play();
-  //   });
-
-  //   mainVideo.addEventListener("mouseleave", () => {
-  //     mainVideo.pause();
-  //   });
-  // }
   // <==
 
   // ABOUT 
