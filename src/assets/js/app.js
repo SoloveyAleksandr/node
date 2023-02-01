@@ -384,6 +384,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Select('.form-select');
   }
+
+  if (document.querySelector(".form")) {
+    const form = document.querySelector(".form");
+    const send = document.querySelector(".form-send");
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      send.classList.add("_active")
+    })
+  }
   // <==
 
   // MAIN
