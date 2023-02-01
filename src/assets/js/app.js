@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       openList() {
-        this.list.style.maxHeight = `${this.listHeight}rem`;
+        this.list.style.maxHeight = `${this.listHeight * 2}rem`;
         this.isOpen = true;
       }
 
