@@ -446,27 +446,41 @@ document.addEventListener("DOMContentLoaded", () => {
       //   }
       // });
 
-      let tl;
+      const tl_1 = gsap.timeline({
+        scrollTrigger: {
+          start: "top top",
+          end: "bottom bottom",
+          endTrigger: ".main-video",
+          scrub: 2,
+        }
+      });
+      const tl_2 = gsap.timeline({
+        scrollTrigger: {
+          start: "top top",
+          end: "bottom bottom",
+          endTrigger: ".main-video",
+          scrub: 2,
+        }
+      });
 
       if (window.matchMedia("(min-width: 1025px)").matches) {
-        tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: triggerContainer,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 2,
-          }
-        });
+        tl_1.from(text, {
+          y: '15.7rem',
+        }, "sin")
 
-        tl.from(text, {
-          y: '15.7rem'
-        }, 'moveY')
-          .from(video, {
-            width: '88.6rem',
-            height: '80.6rem',
-            y: '-2.9rem',
-            x: '100%',
-          }, 'moveY')
+        tl_2.fromTo(video, {
+          y: "-2.9rem",
+          width: "50%",
+        }, {
+          y: "0rem",
+          width: "50%",
+        })
+
+        tl_2.fromTo(video, {
+          width: "50%",
+        }, {
+          width: "100%",
+        })
       } else if (window.matchMedia("(min-width: 851px)").matches) {
       }
     }

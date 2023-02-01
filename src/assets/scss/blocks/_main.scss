@@ -79,9 +79,10 @@
   }
 
   &-video {
-    width: 100vw;
     height: 98.5rem;
-    width: 100%;
+    // width: 100%;
+    display: flex;
+    justify-content: flex-end;
 
     @include breakpoint($xl-bp) {
       height: 50rem;
@@ -96,12 +97,16 @@
     }
 
     &-inner {
-      width: 100%;
-      height: 100%;
+      // width: 100%;
+      // height: 100%;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      // width: 50%;
+      height: 100%;
+      position: relative;
+      // top: -2.9rem;
     }
 
     &__video {
