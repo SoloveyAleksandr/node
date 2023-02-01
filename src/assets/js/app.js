@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".form")) {
     const form = document.querySelector(".form");
     const send = document.querySelector(".form-send");
-    
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       send.classList.add("_active")
@@ -409,14 +409,27 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.inOut",
         repeat: -1,
       });
-      const text = title.querySelector('.main-title__text_hidden');
 
-      gsap.to('.main-title-anim__text', {
-        delay: 5,
-        duration: 2,
-        text: text.textContent,
-        ease: "none.none"
+      const mainTl = gsap.timeline({
+        repeat: -1,
       });
+
+      const content = gsap.utils.toArray(".main-title-content__text").map(i => i.innerText);
+      content.forEach(item => {
+        const tl = gsap.timeline()
+        tl.to(".main-title-anim__text", {
+          duration: 2,
+          delay: 3,
+          text: item,
+          ease: "none",
+        }).to(".main-title-anim__text", {
+          duration: 1,
+          delay: 2,
+          text: "",
+          ease: "none",
+        })
+        mainTl.add(tl);
+      })
     }
 
     if (document.querySelector('.main-video-anim-container')) {
