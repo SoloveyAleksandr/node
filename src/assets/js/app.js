@@ -425,18 +425,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const content = gsap.utils.toArray(".main-title-content__text").map(i => i.innerText);
       content.forEach(item => {
-        const tl = gsap.timeline()
+        const tl = gsap.timeline({
+          yoyo: true,
+          repeat: 1,
+          delay: 3,
+          repeatDelay: 1,
+        })
         tl.to(".main-title-anim__text", {
           duration: 2,
-          delay: 3,
+          // delay: 3,
           text: item,
           ease: "none",
-        }).to(".main-title-anim__text", {
-          duration: 1,
-          delay: 2,
-          text: "",
-          ease: "none",
         })
+        // .to(".main-title-anim__text", {
+        //   duration: 1,
+        //   delay: 2,
+        //   text: "",
+        //   ease: "none",
+        // })
         mainTl.add(tl);
       })
     }
@@ -461,7 +467,6 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "bottom 0%",
           endTrigger: ".main-title",
           scrub: 2,
-          markers: true,
         }
       });
       const tl_2 = gsap.timeline({
