@@ -15,7 +15,7 @@
 
   &-list {
     padding-top: 4rem;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
@@ -25,6 +25,14 @@
       margin-bottom: 10rem;
       grid-template-columns: 1fr;
       row-gap: 4rem;
+    }
+  }
+
+  &-pagination {
+    margin-bottom: 20rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 10rem;
     }
   }
 }

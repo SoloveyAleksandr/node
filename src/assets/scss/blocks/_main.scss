@@ -334,17 +334,21 @@
         transform: translateX(5rem);
         transition: 0.5s 0.5s;
 
-        &:hover &-icon {
-          &__icon {
-            &_1 {
-              left: 200%;
-            }
+        // &:hover &-icon {
+        //   &__icon {
+        //     animation: btnIcon 0.5s linear;
 
-            &_2 {
-              left: 0;
-            }
-          }
-        }
+        //     &_1 {
+        //       // left: 200%;
+        //       // animation: btnIcon 0.5s linear;
+        //     }
+
+        //     &_2 {
+        //       // left: 0;
+        //       // animation: btnIcon 0.5s linear;
+        //     }
+        //   }
+        // }
 
         @include breakpoint($xl-bp) {
           position: static;
@@ -380,6 +384,14 @@
 
             &_2 {
               left: -200%;
+            }
+          }
+        }
+
+        &._animated & {
+          &-icon {
+            &__icon {
+              animation: btnIcon 0.5s linear;
             }
           }
         }
@@ -709,5 +721,15 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes btnIcon {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(200%);
   }
 }

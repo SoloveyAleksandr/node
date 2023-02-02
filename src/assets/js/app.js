@@ -629,4 +629,33 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  // ANIMATED BTNS
+    const animatedBtns = gsap.utils.toArray(".main-swiper-slide-btn");
+
+    animatedBtns.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        const icon = btn.querySelector(".main-swiper-slide-btn-icon__icon");
+
+        btn.classList.add("_animated");
+
+        icon.addEventListener("animationend", () => {
+          btn.classList.remove("_animated");
+        })
+      })
+    })
+
+    const formBtns = gsap.utils.toArray(".form-btn");
+    formBtns.forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        const icon = btn.querySelector(".form-btn-icon__icon");
+
+        btn.classList.add("_animated");
+
+        icon.addEventListener("animationend", () => {
+          btn.classList.remove("_animated");
+        })
+      })
+    })
+  //<==
 })

@@ -141,17 +141,17 @@
     align-items: center;
     justify-content: space-between;
 
-    &:hover &-icon {
-      &__icon {
-        &_1 {
-          left: 200%;
-        }
+    // &:hover &-icon {
+    //   &__icon {
+    //     &_1 {
+    //       left: 200%;
+    //     }
 
-        &_2 {
-          left: 0;
-        }
-      }
-    }
+    //     &_2 {
+    //       left: 0;
+    //     }
+    //   }
+    // }
 
     &-icon {
       width: 8.2rem;
@@ -176,6 +176,14 @@
 
         &_2 {
           left: -200%;
+        }
+      }
+    }
+
+    &._animated & {
+      &-icon {
+        &__icon {
+          animation: btnIcon 0.5s linear;
         }
       }
     }
