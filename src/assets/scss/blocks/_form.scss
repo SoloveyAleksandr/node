@@ -102,6 +102,30 @@
     &::placeholder {
       color: #828282;
     }
+
+    &_task {
+      height: 4.9rem;
+      resize: none;
+      transition: .3s;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #828282;
+        border-radius: 1rem;
+      }
+
+      &:focus {
+        height: 20rem;
+      }
+    }
   }
 
   &-btn {
