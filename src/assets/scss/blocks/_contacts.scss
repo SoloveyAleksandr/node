@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: column;
     gap: 6rem;
+    margin-top: 1rem;
 
     @include breakpoint($cos-bp) {
       margin: auto 0 auto 4rem;
@@ -90,6 +91,7 @@
       flex-direction: column;
       gap: 4rem;
       margin-right: 4rem;
+      margin-top: 2.7rem;
 
       @include breakpoint($jb-bp) {
         margin: 0 auto 0 auto;
