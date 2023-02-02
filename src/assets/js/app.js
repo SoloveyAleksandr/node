@@ -399,6 +399,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // MAIN
   if (document.querySelector(".main")) {
     const title = document.querySelector('.main-title');
+    const mainSection = document.querySelector(".main");
+
+    mainSection.style = `--window-height: ${(window.innerHeight / 2 - title.offsetHeight) / 10}rem`;
     // const mainVideoContainer = document.querySelector(".main-video-inner");
     // const mainVideo = document.querySelector(".main-video__video");
     // const mainVideoPreview = document.querySelector(".main-video__preview");

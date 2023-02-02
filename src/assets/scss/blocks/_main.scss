@@ -1,5 +1,6 @@
 .main {
-  padding-top: 21.9rem;
+  // padding-top: 21.9rem;
+  padding-top: var(--window-height, 21.9rem);
 
   @include breakpoint($xl-bp) {
     padding-top: 21.4rem;
@@ -20,7 +21,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 9.8rem;
+    // margin-bottom: 9.8rem;
     position: relative;
 
     @include breakpoint($lb-bp) {
