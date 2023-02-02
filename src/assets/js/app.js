@@ -401,9 +401,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // MAIN
   if (document.querySelector(".main")) {
     const title = document.querySelector('.main-title');
+    const titleText = document.querySelector(".main-title-anim__text");
     const mainSection = document.querySelector(".main");
 
-    mainSection.style = `--window-height: ${(window.innerHeight / 2 - title.offsetHeight) / 10}rem`;
+    const titleSize = window.getComputedStyle(titleText, null).fontSize.slice(0, -2);
+    // console.log(titleSize.slice(0, -2));
+
+    mainSection.style = `--window-height: ${(window.innerHeight / 2 - titleSize) / 10}rem`;
     // const mainVideoContainer = document.querySelector(".main-video-inner");
     // const mainVideo = document.querySelector(".main-video__video");
     // const mainVideoPreview = document.querySelector(".main-video__preview");
@@ -454,9 +458,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const tl_1 = gsap.timeline({
         scrollTrigger: {
           start: "top top",
-          end: "bottom bottom",
-          endTrigger: ".main-video",
+          end: "bottom 0%",
+          endTrigger: ".main-title",
           scrub: 2,
+          markers: true,
         }
       });
       const tl_2 = gsap.timeline({
@@ -473,19 +478,11 @@ document.addEventListener("DOMContentLoaded", () => {
           y: '15.7rem',
         }, "sin")
 
-        tl_2.fromTo(video, {
-          y: "-2.9rem",
-          width: "50%",
-        }, {
-          y: "0rem",
-          width: "50%",
-        })
-
-        tl_2.fromTo(video, {
-          width: "50%",
-        }, {
+        tl_2.to(video, {
+          y: 0,
           width: "100%",
-        })
+        }, "sin")
+
       } else if (window.matchMedia("(min-width: 851px)").matches) {
       }
     }
