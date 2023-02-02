@@ -272,11 +272,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     if (window.matchMedia("(min-width: 1025px)").matches) {
-      tl.to('.header-info', {
-        height: 0,
-        y: '-10rem',
-        duration: 0.3,
-      }, 'anim')
+      if (document.querySelector(".header-info")) {
+        tl.to('.header-info', {
+          height: 0,
+          y: '-10rem',
+          duration: 0.3,
+        }, 'anim')
+      }
       tl.to('.header-logo', {
         margin: 0,
         height: '4rem',
@@ -631,31 +633,31 @@ document.addEventListener("DOMContentLoaded", () => {
   //<==
 
   // ANIMATED BTNS
-    const animatedBtns = gsap.utils.toArray(".main-swiper-slide-btn");
+  const animatedBtns = gsap.utils.toArray(".main-swiper-slide-btn");
 
-    animatedBtns.forEach(btn => {
-      btn.addEventListener("mouseenter", () => {
-        const icon = btn.querySelector(".main-swiper-slide-btn-icon__icon");
+  animatedBtns.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      const icon = btn.querySelector(".main-swiper-slide-btn-icon__icon");
 
-        btn.classList.add("_animated");
+      btn.classList.add("_animated");
 
-        icon.addEventListener("animationend", () => {
-          btn.classList.remove("_animated");
-        })
+      icon.addEventListener("animationend", () => {
+        btn.classList.remove("_animated");
       })
     })
+  })
 
-    const formBtns = gsap.utils.toArray(".form-btn");
-    formBtns.forEach(btn => {
-      btn.addEventListener("mouseenter", () => {
-        const icon = btn.querySelector(".form-btn-icon__icon");
+  const formBtns = gsap.utils.toArray(".form-btn");
+  formBtns.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      const icon = btn.querySelector(".form-btn-icon__icon");
 
-        btn.classList.add("_animated");
+      btn.classList.add("_animated");
 
-        icon.addEventListener("animationend", () => {
-          btn.classList.remove("_animated");
-        })
+      icon.addEventListener("animationend", () => {
+        btn.classList.remove("_animated");
       })
     })
+  })
   //<==
 })
