@@ -459,6 +459,11 @@
           border-bottom: 0.2rem solid #040404;
           padding-bottom: 0.8rem;
           margin-bottom: 1.1rem;
+          transition: .3s;
+
+          &:hover {
+            padding-left: 0.5rem;
+          }
 
           @include breakpoint($xl-bp) {
             margin-bottom: 1rem;
@@ -483,6 +488,13 @@
         &-img {
           height: 80rem;
           width: 100%;
+          overflow: hidden;
+
+          &:hover & {
+            &__img {
+              transform: scale(1.05);
+            }
+          }
 
           @include breakpoint($cos-bp) {
             height: 60rem;
@@ -497,6 +509,7 @@
             object-position: center center;
             width: 100%;
             height: 100%;
+            transition: .3s;
           }
         }
       }
