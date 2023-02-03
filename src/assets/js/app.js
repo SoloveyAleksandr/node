@@ -405,12 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainSection = document.querySelector(".main");
 
     const titleSize = window.getComputedStyle(titleText, null).fontSize.slice(0, -2);
-    // console.log(titleSize.slice(0, -2));
 
-    mainSection.style = `--window-height: ${(window.innerHeight / 2 - titleSize) / 10}rem`;
-    // const mainVideoContainer = document.querySelector(".main-video-inner");
-    // const mainVideo = document.querySelector(".main-video__video");
-    // const mainVideoPreview = document.querySelector(".main-video__preview");
+    // mainSection.style = `--window-height: ${(window.innerHeight / 2 - titleSize) / 10}rem`;
     if (title) {
       gsap.to('.main-title-anim__cursor', {
         opacity: 0,
@@ -432,17 +428,10 @@ document.addEventListener("DOMContentLoaded", () => {
           repeatDelay: 1,
         })
         tl.to(".main-title-anim__text", {
-          duration: 2,
-          // delay: 3,
+          duration: 1,
           text: item,
           ease: "none",
         })
-        // .to(".main-title-anim__text", {
-        //   duration: 1,
-        //   delay: 2,
-        //   text: "",
-        //   ease: "none",
-        // })
         mainTl.add(tl);
       })
     }
@@ -452,16 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = document.querySelector('.main__text');
       const video = document.querySelector('.main-video-inner');
 
-      // const tl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: triggerContainer,
-      //     start: "top top",
-      //     end: "bottom bottom",
-      //     scrub: 2,
-      //   }
-      // });
-
-      const tl_1 = gsap.timeline({
+      const textTL = gsap.timeline({
         scrollTrigger: {
           start: "top top",
           end: "bottom 0%",
@@ -469,24 +449,45 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: 2,
         }
       });
-      const tl_2 = gsap.timeline({
+      // const tl_2 = gsap.timeline({
+      //   scrollTrigger: {
+      //     start: "top top",
+      //     end: "0% bottom",
+      //     endTrigger: ".main-video",
+      //     scrub: 2,
+      //     markers: true,
+      //   }
+      // });
+
+      const videoTL = gsap.timeline({
         scrollTrigger: {
           start: "top top",
-          end: "bottom bottom",
+          end: "85% bottom",
           endTrigger: ".main-video",
           scrub: 2,
+          markers: true,
         }
       });
 
       if (window.matchMedia("(min-width: 1025px)").matches) {
-        tl_1.from(text, {
+        textTL.from(text, {
           y: '15.7rem',
-        }, "sin")
+        })
 
-        tl_2.to(video, {
-          y: 0,
-          width: "100%",
-        }, "sin")
+        videoTL.add(gsap.to(video, { y: 0 }).timeScale(2));
+        videoTL.add(gsap.to(video, { width: "100%" }));
+
+        // const videoStep_1 = gsap.timeline().timeScale(2);
+        // videoStep_1.to(video, {
+        //   y: 0,
+        // })
+        // videoTL.add(videoStep_1);
+
+        // const videoStep_2 = gsap.timeline();
+        // videoStep_2.to(video, {
+        //   width: "100%",
+        // })
+        // videoTL.add(videoStep_2)
 
       } else if (window.matchMedia("(min-width: 851px)").matches) {
       }

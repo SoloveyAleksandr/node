@@ -1,6 +1,7 @@
 .main {
   // padding-top: 21.9rem;
-  padding-top: var(--window-height, 21.9rem);
+  // padding-top: var(--window-height, 21.9rem);
+  padding-top: calc(50vh - 15rem);
 
   @include breakpoint($xl-bp) {
     padding-top: 21.4rem;
@@ -50,8 +51,10 @@
     }
 
     &-anim {
-      // position: absolute;
-      // height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
       display: flex;
       align-items: center;
 
