@@ -402,11 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".main")) {
     const title = document.querySelector('.main-title');
     const titleText = document.querySelector(".main-title-anim__text");
-    const mainSection = document.querySelector(".main");
 
-    const titleSize = window.getComputedStyle(titleText, null).fontSize.slice(0, -2);
-
-    // mainSection.style = `--window-height: ${(window.innerHeight / 2 - titleSize) / 10}rem`;
     if (title) {
       gsap.to('.main-title-anim__cursor', {
         opacity: 0,
@@ -520,6 +516,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         new DropdownController(dropdownBtns);
       }
+    }
+
+    if (document.querySelector(".main-render-list")) {
+      const items = gsap.utils.toArray(".main-render-list-item-video");
+
+      items.forEach(item => {
+        const video = item.querySelector(".main-render-list-item-video__video");
+
+        item.addEventListener("mouseenter", () => {
+          video.play();
+        })
+        item.addEventListener("mouseout", () => {
+          video.pause();
+          video.currentTime = 0;
+        })
+      })
     }
   }
   // <==
