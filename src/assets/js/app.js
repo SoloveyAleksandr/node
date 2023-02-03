@@ -465,7 +465,6 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "85% bottom",
           endTrigger: ".main-video",
           scrub: 2,
-          markers: true,
         }
       });
 
@@ -476,18 +475,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         videoTL.add(gsap.to(video, { y: 0 }).timeScale(2));
         videoTL.add(gsap.to(video, { width: "100%" }));
-
-        // const videoStep_1 = gsap.timeline().timeScale(2);
-        // videoStep_1.to(video, {
-        //   y: 0,
-        // })
-        // videoTL.add(videoStep_1);
-
-        // const videoStep_2 = gsap.timeline();
-        // videoStep_2.to(video, {
-        //   width: "100%",
-        // })
-        // videoTL.add(videoStep_2)
 
       } else if (window.matchMedia("(min-width: 851px)").matches) {
       }
@@ -534,18 +521,6 @@ document.addEventListener("DOMContentLoaded", () => {
         new DropdownController(dropdownBtns);
       }
     }
-
-    // if (mainVideoContainer) {
-    // mainVideoContainer.addEventListener("mouseenter", () => {
-    // mainVideoPreview.classList.add("_active");
-    // mainVideo.play();
-    // });
-
-    // mainVideoContainer.addEventListener("mouseleave", () => {
-    // mainVideoPreview.classList.remove("_active");
-    // mainVideo.pause();
-    // });
-    // }
   }
   // <==
 
