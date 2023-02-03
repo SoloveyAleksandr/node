@@ -118,7 +118,6 @@
       object-position: center center;
       width: 100%;
       height: 100%;
-      border: 0.1rem solid $white;
     }
 
     &__preview {
@@ -500,14 +499,15 @@
           }
         }
 
-        &-img {
+        &-video {
           height: 80rem;
           width: 100%;
           overflow: hidden;
+          position: relative;
 
           &:hover & {
-            &__img {
-              transform: scale(1.05);
+            &__poster {
+              opacity: 0;
             }
           }
 
@@ -519,7 +519,17 @@
             height: 48.4rem;
           }
 
-          &__img {
+          &__video {
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+          }
+
+          &__poster {
+            position: absolute;
+            top: 0;
+            left: 0;
             object-fit: cover;
             object-position: center center;
             width: 100%;
