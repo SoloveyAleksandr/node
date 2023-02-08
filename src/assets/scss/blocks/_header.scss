@@ -30,11 +30,11 @@
     position: relative;
     margin-top: 1rem;
 
-    @include breakpoint($xl-bp) {
-      width: 3rem;
-      height: 3rem;
-      margin-top: 1.2rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   width: 3rem;
+    //   height: 3rem;
+    //   margin-top: 1.2rem;
+    // }
 
     &__icon {
       position: absolute;
@@ -76,10 +76,10 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    @include breakpoint($xl-bp) {
-      width: 9.5rem;
-      height: 3.4rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   width: 9.5rem;
+    //   height: 3.4rem;
+    // }
 
     &__img {
       object-fit: contain;
@@ -97,13 +97,13 @@
     flex-direction: column;
     gap: 0.3rem;
 
-    @include breakpoint($cos-bp) {
-      margin-left: 0;
-    }
+    // @include breakpoint($cos-bp) {
+    //   margin-left: 0;
+    // }
 
-    @include breakpoint($xl-bp) {
-      display: none;
-    }
+    // @include breakpoint($xl-bp) {
+    //   display: none;
+    // }
 
     &__link {
       width: fit-content;

@@ -3,9 +3,9 @@
   // padding-top: var(--window-height, 21.9rem);
   padding-top: calc(50vh - 15rem);
 
-  @include breakpoint($xl-bp) {
-    padding-top: 21.4rem;
-  }
+  // @include breakpoint($xl-bp) {
+  //   padding-top: 21.4rem;
+  // }
 
   &-video-anim-container {
     overflow: hidden;
@@ -18,9 +18,9 @@
     // margin-bottom: 9.8rem;
     position: relative;
 
-    @include breakpoint($xl-bp) {
-      margin-bottom: 19.9rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   margin-bottom: 19.9rem;
+    // }
 
     &-content {
       display: none;
@@ -33,10 +33,10 @@
       text-transform: uppercase;
       letter-spacing: calc(1em * 0.03 * -1);
 
-      @include breakpoint($xl-bp) {
-        font-size: 6.4rem;
-        line-height: 6.4rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   font-size: 6.4rem;
+      //   line-height: 6.4rem;
+      // }
 
       &_hidden {
         opacity: 0;
@@ -57,9 +57,9 @@
         height: 18.3rem;
         background-color: #000000;
 
-        @include breakpoint($xl-bp) {
-          height: 6.4rem;
-        }
+        // @include breakpoint($xl-bp) {
+        //   height: 6.4rem;
+        // }
       }
     }
   }
@@ -73,11 +73,11 @@
     max-width: 41.1rem;
     position: relative;
 
-    @include breakpoint($xl-bp) {
-      font-size: 2.4rem;
-      line-height: 3.1rem;
-      margin-bottom: 2rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   font-size: 2.4rem;
+    //   line-height: 3.1rem;
+    //   margin-bottom: 2rem;
+    // }
   }
 
   &-video {
@@ -86,17 +86,17 @@
     display: flex;
     justify-content: flex-end;
 
-    @include breakpoint($xl-bp) {
-      height: 50rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   height: 50rem;
+    // }
 
-    @include breakpoint($lb-bp) {
-      height: 40rem;
-    }
+    // @include breakpoint($lb-bp) {
+    //   height: 40rem;
+    // }
 
-    @include breakpoint($sm-bp) {
-      height: 31.6rem;
-    }
+    // @include breakpoint($sm-bp) {
+    //   height: 31.6rem;
+    // }
 
     &-inner {
       // width: 100%;
@@ -110,10 +110,10 @@
       position: relative;
       top: -2.9rem;
 
-      @include breakpoint($xl-bp) {
-        width: 100%;
-        position: static;
-      }
+      // @include breakpoint($xl-bp) {
+      //   width: 100%;
+      //   position: static;
+      // }
     }
 
     &__video {
@@ -141,46 +141,46 @@
   &-swiper {
     width: 100%;
 
-    @include breakpoint($cos-bp) {
-      width: 60%;
-      margin: 0;
-    }
+    // @include breakpoint($cos-bp) {
+    //   width: 60%;
+    //   margin: 0;
+    // }
 
-    @include breakpoint($jb-bp) {
-      width: 50%;
-    }
+    // @include breakpoint($jb-bp) {
+    //   width: 50%;
+    // }
 
-    @include breakpoint($lb-bp) {
-      display: none;
-    }
+    // @include breakpoint($lb-bp) {
+    //   display: none;
+    // }
 
     &-dropdown> {
       .dropdown-container {
         display: none;
 
-        @include breakpoint($lb-bp) {
-          display: block;
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
+        // @include breakpoint($lb-bp) {
+        //   display: block;
+        //   display: flex;
+        //   flex-direction: column;
+        //   gap: 2rem;
 
-          >:first-child {
-            padding-top: 3.3rem;
-          }
+        //   >:first-child {
+        //     padding-top: 3.3rem;
+        //   }
 
-          >:last-child {
-            margin-bottom: 1.5rem;
-          }
-        }
+        //   >:last-child {
+        //     margin-bottom: 1.5rem;
+        //   }
+        // }
       }
     }
 
     &-container {
       padding-top: 20rem;
 
-      @include breakpoint($xl-bp) {
-        padding-top: 10rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   padding-top: 10rem;
+      // }
     }
 
     &__title {
@@ -190,11 +190,11 @@
       line-height: 7.8rem;
       margin-bottom: 7.7rem;
 
-      @include breakpoint($xl-bp) {
-        font-size: 3.4rem;
-        line-height: 4.4rem;
-        margin-bottom: 5.7rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   font-size: 3.4rem;
+      //   line-height: 4.4rem;
+      //   margin-bottom: 5.7rem;
+      // }
     }
 
     &-inner {
@@ -205,15 +205,15 @@
       position: relative;
       margin-bottom: 20rem;
 
-      @include breakpoint($cos-bp) {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
+      // @include breakpoint($cos-bp) {
+      //   display: flex;
+      //   align-items: flex-start;
+      //   justify-content: space-between;
+      // }
 
-      @include breakpoint($xl-bp) {
-        margin-bottom: 10rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   margin-bottom: 10rem;
+      // }
     }
 
     &-btns {
@@ -222,13 +222,13 @@
       align-items: flex-start;
       gap: 1.5rem;
 
-      @include breakpoint($cos-bp) {
-        flex: none;
-      }
+      // @include breakpoint($cos-bp) {
+      //   flex: none;
+      // }
 
-      @include breakpoint($lb-bp) {
-        width: 100%;
-      }
+      // @include breakpoint($lb-bp) {
+      //   width: 100%;
+      // }
 
       &-btn {
         border: none;
@@ -264,10 +264,10 @@
           }
         }
 
-        @include breakpoint($xl-bp) {
-          font-size: 1.6rem;
-          line-height: 2rem;
-        }
+        // @include breakpoint($xl-bp) {
+        //   font-size: 1.6rem;
+        //   line-height: 2rem;
+        // }
       }
     }
 
@@ -436,9 +436,9 @@
   &-render {
     margin-bottom: 20rem;
 
-    @include breakpoint($xl-bp) {
-      margin-bottom: 10rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   margin-bottom: 10rem;
+    // }
 
     &__title {
       font-size: 6.4rem;
@@ -459,10 +459,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
 
-      @include breakpoint($xl-bp) {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   grid-template-columns: 1fr;
+      //   gap: 4rem;
+      // }
 
       &-item {
         display: flex;
@@ -482,9 +482,9 @@
             padding-left: 0.5rem;
           }
 
-          @include breakpoint($xl-bp) {
-            margin-bottom: 1rem;
-          }
+          // @include breakpoint($xl-bp) {
+          //   margin-bottom: 1rem;
+          // }
         }
 
         &__description {
@@ -514,13 +514,13 @@
             }
           }
 
-          @include breakpoint($cos-bp) {
-            height: 60rem;
-          }
+          // @include breakpoint($cos-bp) {
+          //   height: 60rem;
+          // }
 
-          @include breakpoint($xl-bp) {
-            height: 48.4rem;
-          }
+          // @include breakpoint($xl-bp) {
+          //   height: 48.4rem;
+          // }
 
           &__video {
             object-fit: cover;
@@ -539,9 +539,9 @@
             height: 100%;
             // transition: .5s;
 
-            @include breakpoint($xl-bp) {
-              display: none;
-            }
+            // @include breakpoint($xl-bp) {
+            //   display: none;
+            // }
           }
         }
       }
@@ -551,9 +551,9 @@
   &-about {
     margin-bottom: 20rem;
 
-    @include breakpoint($xl-bp) {
-      margin-bottom: 10rem;
-    }
+    // @include breakpoint($xl-bp) {
+    //   margin-bottom: 10rem;
+    // }
 
     &__title {
       text-transform: uppercase;
@@ -564,11 +564,11 @@
       padding-bottom: 7.6rem;
       margin-bottom: 2.1rem;
 
-      @include breakpoint($xl-bp) {
-        font-size: 3.6rem;
-        line-height: 4.4rem;
-        padding-bottom: 5.7rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   font-size: 3.6rem;
+      //   line-height: 4.4rem;
+      //   padding-bottom: 5.7rem;
+      // }
     }
 
     &__description {
@@ -578,47 +578,47 @@
       max-width: 73.4rem;
       margin-bottom: 4rem;
 
-      @include breakpoint($xl-bp) {
-        font-size: 2rem;
-        line-height: 2.8rem;
-        margin-bottom: 3rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   font-size: 2rem;
+      //   line-height: 2.8rem;
+      //   margin-bottom: 3rem;
+      // }
     }
 
     &-inner {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
-      @include breakpoint($xl-bp) {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   display: flex;
+      //   flex-direction: column;
+      //   gap: 3rem;
+      // }
     }
 
     &-video {
       width: 100%;
       height: 108rem;
 
-      @include breakpoint($xl-bp) {
-        height: 100rem;
-      }
+      // @include breakpoint($xl-bp) {
+      //   height: 100rem;
+      // }
 
-      @include breakpoint($jb-bp) {
-        height: 80rem;
-      }
+      // @include breakpoint($jb-bp) {
+      //   height: 80rem;
+      // }
 
-      @include breakpoint($lb-bp) {
-        height: 64rem;
-      }
+      // @include breakpoint($lb-bp) {
+      //   height: 64rem;
+      // }
 
-      @include breakpoint($sm-bp) {
-        height: 46rem;
-      }
+      // @include breakpoint($sm-bp) {
+      //   height: 46rem;
+      // }
 
-      @include breakpoint($xs-bp) {
-        height: 42.5rem;
-      }
+      // @include breakpoint($xs-bp) {
+      //   height: 42.5rem;
+      // }
 
       &__preview {
         object-fit: cover;
@@ -635,14 +635,14 @@
       flex-direction: column;
       align-items: flex-start;
 
-      @include breakpoint($cos-bp) {
-        padding-left: 6rem;
-        padding-top: 8rem;
-      }
+      // @include breakpoint($cos-bp) {
+      //   padding-left: 6rem;
+      //   padding-top: 8rem;
+      // }
 
-      @include breakpoint($xl-bp) {
-        padding: 0;
-      }
+      // @include breakpoint($xl-bp) {
+      //   padding: 0;
+      // }
 
       &-list {
         display: flex;
@@ -650,9 +650,9 @@
         gap: 4rem;
         margin-bottom: 10rem;
 
-        @include breakpoint($xl-bp) {
-          margin-bottom: 6rem;
-        }
+        // @include breakpoint($xl-bp) {
+        //   margin-bottom: 6rem;
+        // }
 
         &-item {
           display: flex;
@@ -664,10 +664,10 @@
             font-weight: $font_s;
             line-height: 2.4rem;
 
-            @include breakpoint($xl-bp) {
-              font-size: 1.4rem;
-              line-height: 2.1rem;
-            }
+            // @include breakpoint($xl-bp) {
+            //   font-size: 1.4rem;
+            //   line-height: 2.1rem;
+            // }
           }
         }
       }
@@ -687,14 +687,14 @@
         gap: 2rem;
         margin-bottom: 4.5rem;
 
-        @include breakpoint($xl-bp) {
-          margin-bottom: 3rem;
-          max-width: 80%;
-        }
+        // @include breakpoint($xl-bp) {
+        //   margin-bottom: 3rem;
+        //   max-width: 80%;
+        // }
 
-        @include breakpoint($jb-bp) {
-          max-width: 100%;
-        }
+        // @include breakpoint($jb-bp) {
+        //   max-width: 100%;
+        // }
       }
 
       &__text {
@@ -702,10 +702,10 @@
         font-weight: $font_r;
         line-height: 2.2rem;
 
-        @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
+        // @include breakpoint($xl-bp) {
+        //   font-size: 1.4rem;
+        //   line-height: 2rem;
+        // }
       }
 
       &__link {
