@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      if (window.matchMedia("(min-width: 1025px)").matches) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         textTL.from(text, {
           y: '15.7rem',
         })
@@ -658,7 +658,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //<==
 
   // VIDEO / IMAGE
-  if (window.matchMedia("(max-width: 1024px)").matches) {
+  if (window.matchMedia("(max-width: 1023px)").matches) {
     const mediaItems = gsap.utils.toArray("[data-mobile]");
     // console.log(mediaItems)
     mediaItems.forEach(item => {

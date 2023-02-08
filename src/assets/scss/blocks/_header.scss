@@ -92,14 +92,16 @@
   &-info {
     pointer-events: all;
     margin-top: 1rem;
-    margin-left: 9.3rem;
+    // margin-left: 9.3rem;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    position: absolute;
+    left: 50vw;
 
-    @include breakpoint($cos-bp) {
-      margin-left: 0;
-    }
+    // @include breakpoint($cos-bp) {
+    //   margin-left: 0;
+    // }
 
     @include breakpoint($xl-bp) {
       display: none;
