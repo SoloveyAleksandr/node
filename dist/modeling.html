@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+  <title>DEFAULT</title>
+  
+  
+  <!-- fonts -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?Montserrat+Alternates:wght@600&family=Fira+Sans:wght@800&family=Jost:wght@300;400;600&display=swap"
+      rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.min.css"></head>
+
+<body>
+
+  <svg style="display: none;">
+  
+    <symbol id="burger-menu-icon" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 2.375H0V0.5H30V2.375ZM30 17.375H0V15.5H30V17.375ZM30 9.86H0V8H30V9.86Z" fill="black" />
+    </symbol>
+  
+    <symbol id="close-menu-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9.00001 10.3256L15.8363 17.1637L17.1638 15.8381L10.3256 8.99993L17.1638 2.16368L15.8381 0.836182L9.00001 7.67431L2.16376 0.836182L0.838135 2.16368L7.67439 8.99993L0.838135 15.8362L2.16376 17.1637L9.00001 10.3256Z"
+        fill="black" />
+    </symbol>
+  
+    <symbol id="arrow-icon" viewBox="0 0 61 16" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M60.7071 8.70711C61.0976 8.31658 61.0976 7.68342 60.7071 7.29289L54.3432 0.928932C53.9526 0.538408 53.3195 0.538408 52.9289 0.928932C52.5384 1.31946 52.5384 1.95262 52.9289 2.34315L58.5858 8L52.9289 13.6569C52.5384 14.0474 52.5384 14.6805 52.9289 15.0711C53.3195 15.4616 53.9526 15.4616 54.3432 15.0711L60.7071 8.70711ZM0 9H60V7H0V9Z" />
+    </symbol>
+  
+    <symbol id="arrow-icon-big" viewBox="0 0 82 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM81.5303 6.53033C81.8232 6.23744 81.8232 5.76256 81.5303 5.46967L76.7574 0.696699C76.4645 0.403806 75.9896 0.403806 75.6967 0.696699C75.4038 0.989592 75.4038 1.46447 75.6967 1.75736L79.9393 6L75.6967 10.2426C75.4038 10.5355 75.4038 11.0104 75.6967 11.3033C75.9896 11.5962 76.4645 11.5962 76.7574 11.3033L81.5303 6.53033ZM1 6.75H81V5.25H1V6.75Z"
+        fill="#040404" />
+    </symbol>
+  
+  
+    <symbol id="arrow-icon-medium" viewBox="0 0 61 16" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M60.7071 8.70711C61.0976 8.31658 61.0976 7.68342 60.7071 7.29289L54.3432 0.928932C53.9526 0.538408 53.3195 0.538408 52.9289 0.928932C52.5384 1.31946 52.5384 1.95262 52.9289 2.34315L58.5858 8L52.9289 13.6569C52.5384 14.0474 52.5384 14.6805 52.9289 15.0711C53.3195 15.4616 53.9526 15.4616 54.3432 15.0711L60.7071 8.70711ZM0 9H60V7H0V9Z" />
+    </symbol>
+  
+    <symbol id="arrow-icon-medium_left" viewBox="0 0 61 16" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.292889 7.2929C-0.0976334 7.68342 -0.0976333 8.31659 0.292889 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07106 15.0711C8.46159 14.6805 8.46159 14.0474 8.07106 13.6569L2.41421 8.00001L8.07106 2.34315C8.46159 1.95263 8.46159 1.31946 8.07106 0.928937C7.68054 0.538412 7.04737 0.538413 6.65685 0.928937L0.292889 7.2929ZM61 7L0.999996 7.00001L0.999996 9.00001L61 9L61 7Z" />
+    </symbol>
+  
+    <symbol id="arrow-icon-small" viewBox="0 0 41 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40.7071 8.70711C41.0976 8.31658 41.0976 7.68342 40.7071 7.29289L34.3431 0.928932C33.9526 0.538408 33.3195 0.538408 32.9289 0.928932C32.5384 1.31946 32.5384 1.95262 32.9289 2.34315L38.5858 8L32.9289 13.6569C32.5384 14.0474 32.5384 14.6805 32.9289 15.0711C33.3195 15.4616 33.9526 15.4616 34.3431 15.0711L40.7071 8.70711ZM0 9H40V7H0V9Z"
+        fill="black" />
+    </symbol>
+  
+  
+    <symbol id="dropdown-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.41 8.59003L12 13.17L16.59 8.59003L18 10L12 16L6 10L7.41 8.59003Z" fill="#040404" />
+    </symbol>
+  
+  </svg>
+  <div class="page">
+    <nav class="menu">
+      <div class="container menu-container">
+    
+        <div class="menu-inner">
+          <div class="menu-box">
+            <a href="#" class="menu__link menu__link_main">
+              Портфолио
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              Для архитекторов и дизайнеров
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              Для девелоперов
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              Для производителей
+            </a>
+          </div>
+    
+          <div class="menu-box">
+            <a href="#" class="menu__link menu__link_main">
+              Услуги
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              3D-моделирование
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              3D-анимация
+            </a>
+    
+            <a href="#" class="menu__link menu__link_medium">
+              3D-тур
+            </a>
+    
+            <!-- dropdown -->
+            <div class="dropdown menu-dropdown">
+              <button type="button" class="dropdown-btn dropdown-btn_icon menu__link menu__link_medium menu-dropdown-btn">
+                Визуализация
+                <svg class="menu-dropdown-btn__icon">
+                  <use href="#dropdown-icon"></use>
+                </svg>
+              </button>
+    
+              <div class="dropdown-container menu-dropdown-container">
+                <ul class="menu-dropdown-list">
+                  <li class="menu-dropdown-list-item">
+                    <a href="#" class="menu__link menu__link_grey">
+                      Экстерьера
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Архитектурная
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Ландшафтная
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Дома
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Площадок
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Посёлков
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Комплексной застройки
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Для застройщиков
+                    </a>
+                  </li>
+    
+                  <li class="menu-dropdown-list-item">
+                    <a href="#" class="menu__link menu__link_grey">
+                      Интерьера
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Квартиры
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Ванной комнаты
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Кухни
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Офиса
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Ресторана
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Магазина
+                    </a>
+                  </li>
+    
+                  <li class="menu-dropdown-list-item">
+                    <a href="#" class="menu__link menu__link_grey">
+                      Предметная
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Мебели
+                    </a>
+    
+                    <a href="#" class="menu__link menu__link_grey">
+                      Объекта
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="menu-inner">
+          <div class="menu-box">
+            <a href="#" class="menu__link menu__link_main">
+              О нас
+            </a>
+          </div>
+    
+          <div class="menu-box">
+            <a href="#" class="menu__link menu__link_main">
+              Блог
+            </a>
+          </div>
+    
+          <div class="menu-box menu-contacts">
+            <a href="#" class="menu__link menu__link_main">
+              Контакты
+            </a>
+    
+            <div class="menu-contacts-inner">
+              <a href="#" class="menu-contacts__link">Instagram</a>
+              <a href="#" class="menu-contacts__link">Facebook</a>
+              <a href="#" class="menu-contacts__link">Behance</a>
+              <a href="#" class="menu-contacts__link">Artstation</a>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </nav>
+    <div class="project-modal">
+      <div class="project-modal-inner">
+        <div class="project-modal-bg"></div>
+    
+        <div class="project-modal-container">
+          <button type="button" class="project-modal-btn">
+            <svg>
+              <use href="#close-menu-icon"></use>
+            </svg>
+          </button>
+    
+          <div class="project-modal-head">
+            <div class="project-modal-head-info">
+              <h3 class="project-modal-head__title">
+              </h3>
+    
+              <span class="project-modal-head__date">
+              </span>
+            </div>
+    
+            <ul class="project-modal-head-service">
+              <template class="project-modal-service-item-template">
+                <li class="project-modal-head-service-item">
+                  ВИД УСЛУГИ
+                </li>
+              </template>
+              <!-- <li class="project-modal-head-service-item">
+                ВИД УСЛУГИ
+              </li>
+              <li class="project-modal-head-service-item">
+                ВИД УСЛУГИ
+              </li>
+              <li class="project-modal-head-service-item">
+                ВИД УСЛУГИ
+              </li> -->
+            </ul>
+          </div>
+    
+          <p class="project-modal__description">
+          </p>
+    
+          <div class="project-modal-images">
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header-container">
+    
+        <a href="#" class="header-logo">
+          <img src="assets/images/node_logo.svg" alt="logo" class="header-logo__img">
+        </a>
+    
+        <div class="header-info">
+          <a href="#" class="header-info__link">noderender@gmail.com</a>
+          <a href="#" class="header-info__link">+0 (000) 000-00-00</a>
+          <a href="#" class="header-info__link">+0 (000) 000-00-00</a>
+        </div>
+    
+        <button class="header-btn" type="button">
+          <svg class="header-btn__icon header-btn__icon_open">
+            <use href="#burger-menu-icon"></use>
+          </svg>
+    
+          <svg class="header-btn__icon header-btn__icon_close">
+            <use href="#close-menu-icon"></use>
+          </svg>
+        </button>
+    
+      </div>
+    </header>
+    <section class="modeling">
+      <div class="container">
+    
+        <div class="page-links modeling-links">
+          <a href="#" class="page-links__link">
+            Главная
+          </a>
+    
+          <a href="#" class="page-links__link">
+            Услуги
+          </a>
+    
+          <a href="#" class="page-links__link _active">
+            3D-моделирование
+          </a>
+        </div>
+    
+        <div class="page-info modeling-page-info">
+          <h2 class="page-title modeling-page-info__title">
+            3D-моделирование
+          </h2>
+    
+          <p class="page-description">
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus <br>
+            consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper
+            facilisis turpis dolor sit.
+          </p>
+        </div>
+    
+        <div class="modeling-img">
+          <img src="assets/images/modeling-main.jpg" alt="modeling" class="modeling-img__img">
+        </div>
+    
+        <div class="modeling-portfolio">
+          <div class="modeling-portfolio-img">
+            <img src="assets/images/3d-modeling.jpg" alt="modeling" class="modeling-portfolio-img__img">
+          </div>
+    
+          <p class="modeling-portfolio__subtitle">
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur
+            semper facilisis turpis.
+          </p>
+    
+          <p class="modeling-portfolio__text">
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur
+            semper facilisis turpis. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper
+            facilisis turpis. Cursus proin egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh
+            condimentum amet vel. Sollicitudin malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur.
+            Libero sed et lacus consectetur semper facilisis turpis.
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur
+            semper facilisis turpis.
+          </p>
+    
+          <a href="#" class="main-swiper-slide-btn modeling-portfolio__link">
+            ПОСМОТРЕТЬ ПОРТФОЛИО
+            <span class="main-swiper-slide-btn-icon">
+              <svg class="main-swiper-slide-btn-icon__icon main-swiper-slide-btn-icon__icon_1">
+                <use href="#arrow-icon"></use>
+              </svg>
+    
+              <svg class="main-swiper-slide-btn-icon__icon main-swiper-slide-btn-icon__icon_2">
+                <use href="#arrow-icon"></use>
+              </svg>
+            </span>
+          </a>
+        </div>
+    
+        <div class="modeling-info">
+          <h4 class="modeling-info__title">
+            Lorem ipsum dolor sit amet consectetur
+          </h4>
+    
+          <p class="modeling-info__text">
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur
+            semper facilisis turpis. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper
+            facilisis turpis. Cursus proin egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh
+            condimentum amet vel. Sollicitudin malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur.
+            Libero sed et lacus consectetur semper facilisis turpis.
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur semper facilisis turpis. Cursus proin
+            egestas libero eleifend ac facilisi. Fringilla sit iaculis nunc nibh condimentum amet vel. Sollicitudin
+            malesuada massa eu eget praesent. Lorem ipsum dolor sit amet consectetur. Libero sed et lacus consectetur
+            semper facilisis turpis.
+          </p>
+    
+          <div class="modeling-info-img">
+            <img src="assets/images/modeling-info.jpg" alt="modeling" class="modeling-info-img__img">
+          </div>
+        </div>
+    
+        <div class="modeling-form">
+          <div class="form-wrapper">
+            <div class="form-info">
+              <h4 class="form-info__title">
+                давай начнем!
+              </h4>
+          
+              <p class="form-info__text">
+                Оставь заявку, и мы ответим!
+              </p>
+            </div>
+          
+            <form action="#" class="form">
+              <div class="form-send">
+                <h5 class="form-send__title">Ваше письмо успешно отправлено!</h5>
+                <p class="form-send__subtitle">Мы свяжемся с вами в ближайшее время</p>
+              </div>
+          
+              <input type="text" class="form__input" placeholder="Имя">
+          
+              <input type="email" class="form__input" placeholder="E-mail">
+          
+              <div class="form-select">
+                <input type="text" class="form-select__value" value="">
+                <button type="button" class="form-select__btn _placeholder">
+                  Тема запроса
+                </button>
+                <ul class="form-select-list">
+                  <li class="form-select-list-item">
+                    <button type="button" class="form-select-list-item__btn" data-value="1">
+                      Архитекторы и дизайнеры
+                    </button>
+                  </li>
+          
+                  <li class="form-select-list-item">
+                    <button type="button" class="form-select-list-item__btn" data-value="2">
+                      Производители
+                    </button>
+                  </li>
+          
+                  <li class="form-select-list-item">
+                    <button type="button" class="form-select-list-item__btn" data-value="3">
+                      Девелоперы
+                    </button>
+                  </li>
+                </ul>
+              </div>
+          
+              <textarea type="email" class="form__input form__input_task" placeholder="Опишите задачу"></textarea>
+          
+              <button type="submit" class="form-btn">
+                отправить заявку
+          
+                <span class="form-btn-icon">
+                  <svg class="form-btn-icon__icon form-btn-icon__icon_1">
+                    <use href="#arrow-icon-big"></use>
+                  </svg>
+          
+                  <svg class="form-btn-icon__icon form-btn-icon__icon_2">
+                    <use href="#arrow-icon-big"></use>
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>    </div>
+    
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+    
+          <div class="footer-social">
+            <a href="#" class="footer-logo">
+              <img class="footer-logo__img" src="assets/images/logo-white.svg" alt="logo">
+            </a>
+    
+            <ul class="footer-social-list">
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Instagram
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Facebook
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Behance
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Artstation
+                </a>
+              </li>
+            </ul>
+          </div>
+    
+          <nav class="footer-nav">
+            <a href="#" class="footer-nav__link">
+              Портфолио
+            </a>
+    
+            <a href="#" class="footer-nav__link">
+              Услуги
+            </a>
+    
+            <a href="#" class="footer-nav__link">
+              О нас
+            </a>
+    
+            <a href="#" class="footer-nav__link">
+              Блог
+            </a>
+    
+            <a href="#" class="footer-nav__link">
+              Контакты
+            </a>
+          </nav>
+    
+          <div class="footer-contacts">
+            <div class="footer-contacts__phones">
+              <a href="tel:+00000000000" class="footer-contacts__link">
+                +0 (000) 000-00-00
+              </a>
+    
+              <a href="tel:+00000000000" class="footer-contacts__link">
+                +0 (000) 000-00-00
+              </a>
+            </div>
+    
+            <a href="mailto:noderender@gmail.com" class="footer-contacts__link">
+              noderender@gmail.com
+            </a>
+          </div>
+    
+          <div class="footer-info">
+            <p class="footer-info__text">
+              г. Минск,
+              <br>
+              пл. Свободы 23-64
+            </p>
+    
+            <ul class="footer-social-list footer-social-list_mob">
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Instagram
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Facebook
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Behance
+                </a>
+              </li>
+    
+              <li class="footer-social-list-item">
+                <a href="#" class="footer-social-list-item__link">
+                  Artstation
+                </a>
+              </li>
+            </ul>
+    
+            <div class="footer-info-legal">
+              <p class="footer-info-legal__link">
+                2022 © Node Render
+              </p>
+    
+              <a href="https://bydesign.by/" target="_blank" class="footer-info-legal__link">
+                Разработка сайта: Студия ЯР
+              </a>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+    integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
