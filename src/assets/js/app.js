@@ -413,14 +413,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const mainTl = gsap.timeline({
         repeat: -1,
+        repeatDelay: 2
       });
 
       const content = gsap.utils.toArray(".main-title-content__text").map(i => i.innerText);
-      content.forEach(item => {
+      content.forEach((item, index) => {
         const tl = gsap.timeline({
           yoyo: true,
           repeat: 1,
-          delay: 3,
+          delay: index ? 3 : 1,
           repeatDelay: 1,
         })
         tl.to(".main-title-anim__text", {

@@ -11,13 +11,6 @@
     overflow: hidden;
   }
 
-  &-header {
-    padding-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 13.1rem;
-  }
-
   &-title {
     position: relative;
     display: flex;
@@ -25,7 +18,7 @@
     // margin-bottom: 9.8rem;
     position: relative;
 
-    @include breakpoint($lb-bp) {
+    @include breakpoint($xl-bp) {
       margin-bottom: 19.9rem;
     }
 
@@ -47,6 +40,7 @@
 
       &_hidden {
         opacity: 0;
+        pointer-events: none;
       }
     }
 
@@ -62,6 +56,10 @@
         width: 0.3rem;
         height: 18.3rem;
         background-color: #000000;
+
+        @include breakpoint($xl-bp) {
+          height: 6.4rem;
+        }
       }
     }
   }
@@ -111,6 +109,11 @@
       height: 100%;
       position: relative;
       top: -2.9rem;
+
+      @include breakpoint($xl-bp) {
+        width: 100%;
+        position: static;
+      }
     }
 
     &__video {
