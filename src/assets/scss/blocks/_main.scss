@@ -522,6 +522,10 @@
             height: 48.4rem;
           }
 
+          @include breakpoint($jb-bp) {
+            height: calc((100vw - 3rem) * 1.4);
+          }
+
           &__video {
             object-fit: cover;
             object-position: center center;
