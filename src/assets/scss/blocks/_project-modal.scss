@@ -192,7 +192,8 @@
 
     @include breakpoint($xl-bp) {
       margin: 0rem -1rem;
-      gap: 2rem;
+      gap: 1rem;
+      padding: 1rem;
     }
   }
 

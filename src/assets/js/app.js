@@ -520,19 +520,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (document.querySelector(".main-render-list")) {
-      const items = gsap.utils.toArray(".main-render-list-item-video");
 
-      items.forEach(item => {
-        const video = item.querySelector(".main-render-list-item-video__video");
+      if (window.matchMedia("(min-width: 1025px)").matches) {
+        const items = gsap.utils.toArray(".main-render-list-item-video");
 
-        item.addEventListener("mouseenter", () => {
-          video.play();
-        })
-        item.addEventListener("mouseout", () => {
+        items.forEach(item => {
+          const video = item.querySelector(".main-render-list-item-video__video");
           video.pause();
           video.currentTime = 0;
+
+          item.addEventListener("mouseenter", () => {
+            video.play();
+          })
+          item.addEventListener("mouseout", () => {
+            video.pause();
+            video.currentTime = 0;
+          })
         })
-      })
+      }
     }
   }
   // <==
@@ -650,5 +655,35 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   })
+  //<==
+
+  // VIDEO / IMAGE
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    const mediaItems = gsap.utils.toArray("[data-mobile]");
+    // console.log(mediaItems)
+    mediaItems.forEach(item => {
+      const data = item.getAttribute("data-mobile");
+
+      if (item.nodeName === "SOURCE") return;
+
+      if (item.nodeName === "VIDEO") {
+        const source = item.querySelector("source");
+        const sourceData = source.getAttribute("data-mobile");
+
+        item.pause();
+        item.setAttribute("poster", data);
+
+        source.removeAttribute("src");
+        source.setAttribute("src", sourceData);
+        item.load();
+        item.play();
+      } else {
+        if (item.hasAttribute("src")) {
+          item.removeAttribute("src");
+          item.setAttribute("src", data);
+        }
+      }
+    })
+  }
   //<==
 })
