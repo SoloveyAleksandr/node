@@ -686,4 +686,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+  const startWindowWidth = window.innerWidth;
+  window.addEventListener("resize", (e) => {
+    if (e.currentTarget.innerWidth < startWindowWidth * 0.9  || e.currentTarget.innerWidth > startWindowWidth * 1.1) {
+      location.reload();
+    }
+  })
 })
