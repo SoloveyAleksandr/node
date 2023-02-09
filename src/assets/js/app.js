@@ -660,15 +660,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.matchMedia("(max-width: 1023px)").matches) {
     const mediaItems = gsap.utils.toArray("[data-mobile]");
     mediaItems.forEach(video => {
+      let videoIsLoaded = false;
       const data = video.getAttribute("data-mobile");
 
       const source = video.querySelector("source");
 
+      source.removeAttribute("src");
       source.setAttribute("src", data);
       video.load();
 
       video.addEventListener("canplay", () => {
-        video.play();
+        if (!videoIsLoaded) {
+          video.play();
+        }
       })
     })
   }
@@ -676,30 +680,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const mediaItems = gsap.utils.toArray("[data-desktop]");
 
     mediaItems.forEach(video => {
+      let videoIsLoaded = false;
       const data = video.getAttribute("data-desktop");
 
       const source = video.querySelector("source");
 
+      source.removeAttribute("src");
       source.setAttribute("src", data);
       video.load();
 
       video.addEventListener("canplay", () => {
-
-        if (video.classList.contains("main-render-list-item-video__video")) {
-          video.pause();
-          const parent = video.parentElement;
-
-          parent.addEventListener("mouseenter", () => {
-            video.currentTime = 0;
-            video.play();
-          })
-
-          parent.addEventListener("mouseleave", () => {
+        if (!videoIsLoaded) {
+          if (video.classList.contains("main-render-list-item-video__video")) {
             video.pause();
-          })
-        } else {
-          video.play();
+            video.currentTime = 0;
+            const parent = video.parentElement;
+
+            parent.addEventListener("mouseenter", () => {
+              video.play();
+            })
+
+            parent.addEventListener("mouseleave", () => {
+              video.pause();
+              video.currentTime = 0;
+            })
+          } else {
+            video.play();
+          }
         }
+        videoIsLoaded = true;
       })
     })
   }
