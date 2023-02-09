@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.querySelector(".main-render-list")) {
 
-      if (window.matchMedia("(min-width: 1025px)").matches) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         const items = gsap.utils.toArray(".main-render-list-item-video");
 
         items.forEach(item => {
