@@ -659,62 +659,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // VIDEO / IMAGE
   if (window.matchMedia("(max-width: 1023px)").matches) {
     const mediaItems = gsap.utils.toArray("[data-mobile]");
-    // console.log(mediaItems)
-    mediaItems.forEach(item => {
-      const data = item.getAttribute("data-mobile");
+    mediaItems.forEach(video => {
+      const data = video.getAttribute("data-mobile");
 
-      if (item.nodeName === "SOURCE") return;
+      const source = video.querySelector("source");
 
-      if (item.nodeName === "VIDEO") {
-        const source = item.querySelector("source");
-        const sourceData = source.getAttribute("data-mobile");
+      source.setAttribute("src", data);
+      video.load();
 
-        item.pause();
-        item.setAttribute("poster", data);
-
-        source.setAttribute("src", sourceData);
-        item.load();
-        item.play();
-      } else {
-        item.setAttribute("src", data);
-      }
+      video.addEventListener("canplay", () => {
+        video.play();
+      })
     })
   }
   else if (window.matchMedia("(min-width: 1024px)").matches) {
     const mediaItems = gsap.utils.toArray("[data-desktop]");
 
-    mediaItems.forEach(item => {
-      const data = item.getAttribute("data-desktop");
+    mediaItems.forEach(video => {
+      const data = video.getAttribute("data-desktop");
 
-      if (item.nodeName === "SOURCE") return;
+      const source = video.querySelector("source");
 
-      if (item.nodeName === "VIDEO") {
-        const source = item.querySelector("source");
-        const sourceData = source.getAttribute("data-mobile");
+      source.setAttribute("src", data);
+      video.load();
 
-        item.setAttribute("poster", data);
+      video.addEventListener("canplay", () => {
 
-        source.setAttribute("src", sourceData);
-        item.load();
-
-        if (item.classList.contains("main-render-list-item-video__video")) {
-          const parent = item.parentElement;
-          item.pause();
-          item.currentTime = 0;
+        if (video.classList.contains("main-render-list-item-video__video")) {
+          video.pause();
+          const parent = video.parentElement;
 
           parent.addEventListener("mouseenter", () => {
-            item.play();
+            video.currentTime = 0;
+            video.play();
           })
-          parent.addEventListener("mouseout", () => {
-            item.pause();
-            item.currentTime = 0;
+
+          parent.addEventListener("mouseleave", () => {
+            video.pause();
           })
         } else {
-          item.play();
+          video.play();
         }
-      } else {
-        item.setAttribute("src", data);
-      }
+      })
     })
   }
   //<==
