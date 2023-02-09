@@ -530,25 +530,15 @@ body.compensate-for-scrollbar {
   margin-bottom: 2rem;
   overflow: hidden;
 }
+@media (max-width: 1330px) {
+  .project-card-img {
+    height: 48.3rem;
+  }
+}
 @media (max-width: 1023px) {
   .project-card-img {
-    height: 46rem;
+    height: calc((100vw - 3rem) * 0.767);
     margin-bottom: 1rem;
-  }
-}
-@media (max-width: 650px) {
-  .project-card-img {
-    height: 36rem;
-  }
-}
-@media (max-width: 500px) {
-  .project-card-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .project-card-img {
-    height: 26.4rem;
   }
 }
 .project-card-img__img {

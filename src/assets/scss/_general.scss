@@ -81,22 +81,26 @@ body {
     margin-bottom: 2rem;
     overflow: hidden;
 
+    @include breakpoint($cos-bp) {
+      height: 48.3rem;
+    }
+
     @include breakpoint($xl-bp) {
-      height: 46rem;
+      height: calc((100vw - 3rem) * 0.767);
       margin-bottom: 1rem;
     }
 
-    @include breakpoint($lb-bp) {
-      height: 36rem;
-    }
+    // @include breakpoint($lb-bp) {
+    //   height: 36rem;
+    // }
 
-    @include breakpoint($sm-bp) {
-      height: 30rem;
-    }
+    // @include breakpoint($sm-bp) {
+    //   height: 30rem;
+    // }
 
-    @include breakpoint($xs-bp) {
-      height: 26.4rem;
-    }
+    // @include breakpoint($xs-bp) {
+    //   height: 26.4rem;
+    // }
 
     &__img {
       object-fit: cover;
