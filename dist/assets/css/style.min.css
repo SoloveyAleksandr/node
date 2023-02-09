@@ -1412,6 +1412,11 @@ svg {
   gap: 1.7rem;
   position: relative;
 }
+@media (max-width: 1330px) {
+  .form {
+    margin-left: 6rem;
+  }
+}
 @media (max-width: 1023px) {
   .form {
     margin-left: auto;

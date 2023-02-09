@@ -8,6 +8,10 @@
   gap: 1.7rem;
   position: relative;
 
+  @include breakpoint($cos-bp) {
+    margin-left: 6rem;
+  }
+
   @include breakpoint($xl-bp) {
     margin-left: auto;
   }
