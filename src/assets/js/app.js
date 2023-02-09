@@ -518,26 +518,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (document.querySelector(".main-render-list")) {
+    // if (document.querySelector(".main-render-list")) {
 
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        const items = gsap.utils.toArray(".main-render-list-item-video");
+    //   if (window.matchMedia("(min-width: 1024px)").matches) {
+    //     const items = gsap.utils.toArray(".main-render-list-item-video");
 
-        items.forEach(item => {
-          const video = item.querySelector(".main-render-list-item-video__video");
-          video.pause();
-          video.currentTime = 0;
+    //     items.forEach(item => {
+    //       const video = item.querySelector(".main-render-list-item-video__video");
+    //       video.pause();
+    //       video.currentTime = 0;
 
-          item.addEventListener("mouseenter", () => {
-            video.play();
-          })
-          item.addEventListener("mouseout", () => {
-            video.pause();
-            video.currentTime = 0;
-          })
-        })
-      }
-    }
+    //       item.addEventListener("mouseenter", () => {
+    //         video.play();
+    //       })
+    //       item.addEventListener("mouseout", () => {
+    //         video.pause();
+    //         video.currentTime = 0;
+    //       })
+    //     })
+    //   }
+    // }
   }
   // <==
 
@@ -672,22 +672,55 @@ document.addEventListener("DOMContentLoaded", () => {
         item.pause();
         item.setAttribute("poster", data);
 
-        source.removeAttribute("src");
         source.setAttribute("src", sourceData);
         item.load();
         item.play();
       } else {
-        if (item.hasAttribute("src")) {
-          item.removeAttribute("src");
-          item.setAttribute("src", data);
+        item.setAttribute("src", data);
+      }
+    })
+  }
+  else if (window.matchMedia("(min-width: 1024px)").matches) {
+    const mediaItems = gsap.utils.toArray("[data-desktop]");
+
+    mediaItems.forEach(item => {
+      const data = item.getAttribute("data-desktop");
+
+      if (item.nodeName === "SOURCE") return;
+
+      if (item.nodeName === "VIDEO") {
+        const source = item.querySelector("source");
+        const sourceData = source.getAttribute("data-mobile");
+
+        item.setAttribute("poster", data);
+
+        source.setAttribute("src", sourceData);
+        item.load();
+
+        if (item.classList.contains("main-render-list-item-video__video")) {
+          const parent = item.parentElement;
+          item.pause();
+          item.currentTime = 0;
+
+          parent.addEventListener("mouseenter", () => {
+            item.play();
+          })
+          parent.addEventListener("mouseout", () => {
+            item.pause();
+            item.currentTime = 0;
+          })
+        } else {
+          item.play();
         }
+      } else {
+        item.setAttribute("src", data);
       }
     })
   }
   //<==
   const startWindowWidth = window.innerWidth;
   window.addEventListener("resize", (e) => {
-    if (e.currentTarget.innerWidth < startWindowWidth * 0.9  || e.currentTarget.innerWidth > startWindowWidth * 1.1) {
+    if (e.currentTarget.innerWidth < startWindowWidth * 0.9 || e.currentTarget.innerWidth > startWindowWidth * 1.1) {
       location.reload();
     }
   })
