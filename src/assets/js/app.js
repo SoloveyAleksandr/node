@@ -672,6 +672,7 @@ document.addEventListener("DOMContentLoaded", () => {
       video.addEventListener("canplay", () => {
         if (!videoIsLoaded) {
           video.play();
+          videoIsLoaded = true;
         }
       })
     })
@@ -691,24 +692,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       video.addEventListener("canplay", () => {
         if (!videoIsLoaded) {
-          if (video.classList.contains("main-render-list-item-video__video")) {
-            video.pause();
-            video.currentTime = 0;
-            const parent = video.parentElement;
+          // if (video.classList.contains("main-render-list-item-video__video")) {
+          //   video.pause();
+          //   video.currentTime = 0;
+          //   const parent = video.parentElement;
 
-            parent.addEventListener("mouseenter", () => {
-              video.play();
-            })
+          //   parent.addEventListener("mouseenter", () => {
+          //     video.play();
+          //   })
 
-            parent.addEventListener("mouseleave", () => {
-              video.pause();
-              video.currentTime = 0;
-            })
-          } else {
-            video.play();
-          }
+          //   parent.addEventListener("mouseleave", () => {
+          //     video.pause();
+          //     video.currentTime = 0;
+          //   })
+          // } else {
+          video.play();
+          // }
+          videoIsLoaded = true;
         }
-        videoIsLoaded = true;
       })
     })
   }
