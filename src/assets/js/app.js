@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActions: "reverse play reverse play",
       }
     })
-    if (window.matchMedia("(min-width: 1025px)").matches) {
+    if (window.matchMedia("(min-width: 1024px)").matches) {
       if (document.querySelector(".header-info")) {
         tl.to('.header-info', {
           height: 0,
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new Menu(MENU_BTN, MENU);
 
-      if (window.matchMedia("(max-width: 1025px)").matches) {
+      if (window.matchMedia("(max-width: 1024px)").matches) {
         const menuDropdown = document.querySelector(".menu-dropdown");
         new MenuDropdownBtn(menuDropdown);
       }
@@ -473,7 +473,6 @@ document.addEventListener("DOMContentLoaded", () => {
         videoTL.add(gsap.to(video, { y: 0 }).timeScale(2));
         videoTL.add(gsap.to(video, { width: "100%" }));
 
-      } else if (window.matchMedia("(min-width: 851px)").matches) {
       }
     }
 
