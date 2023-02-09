@@ -28,7 +28,8 @@
   &-social {
     display: flex;
     flex-direction: column;
-    gap: 5.1rem;
+    justify-content: space-between;
+    // gap: 5.1rem;
 
     &-list {
       display: flex;
@@ -97,7 +98,8 @@
   &-contacts {
     display: flex;
     flex-direction: column;
-    gap: 11.9rem;
+    // gap: 11.9rem;
+    justify-content: space-between;
 
     @include breakpoint($jb-bp) {
       gap: 4rem;
@@ -130,7 +132,8 @@
   &-info {
     display: flex;
     flex-direction: column;
-    gap: 11.1rem;
+    justify-content: space-between;
+    // gap: 11.1rem;
     margin-left: auto;
 
     @include breakpoint($jb-bp) {

@@ -1231,7 +1231,8 @@ svg {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  gap: 5.1rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 .footer-social-list {
   display: -ms-flexbox;
@@ -1303,7 +1304,8 @@ svg {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  gap: 11.9rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 @media (max-width: 850px) {
   .footer-contacts {
@@ -1338,7 +1340,8 @@ svg {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  gap: 11.1rem;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   margin-left: auto;
 }
 @media (max-width: 850px) {
