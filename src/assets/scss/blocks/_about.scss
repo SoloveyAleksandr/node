@@ -33,28 +33,28 @@
     margin-bottom: 12rem;
 
     @include breakpoint($cos-bp) {
-      height: 80rem;
+      height: calc((100vw - 1.5rem) * 0.52);
     }
 
     @include breakpoint($xl-bp) {
-      height: 60rem;
+      // height: 60rem;
       margin-bottom: 6rem;
     }
 
     @include breakpoint($jb-bp) {
-      height: 50rem;
+      // height: 50rem;
     }
 
     @include breakpoint($lb-bp) {
-      height: 40rem;
+      // height: 40rem;
     }
 
     @include breakpoint($sm-bp) {
-      height: 30rem;
+      // height: 30rem;
     }
 
     @include breakpoint($xs-bp) {
-      height: 22.8rem;
+      // height: 22.8rem;
     }
 
     &__img {

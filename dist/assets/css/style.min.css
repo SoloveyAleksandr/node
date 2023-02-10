@@ -2508,33 +2508,12 @@ svg {
 }
 @media (max-width: 1330px) {
   .about-img {
-    height: 80rem;
+    height: calc((100vw - 1.5rem) * 0.52);
   }
 }
 @media (max-width: 1023px) {
   .about-img {
-    height: 60rem;
     margin-bottom: 6rem;
-  }
-}
-@media (max-width: 850px) {
-  .about-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .about-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .about-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .about-img {
-    height: 22.8rem;
   }
 }
 .about-img__img {
