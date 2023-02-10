@@ -228,10 +228,15 @@
       align-items: flex-start;
       gap: 8rem;
 
+      @include breakpoint($cos-bp) {
+        padding-bottom: 4rem;
+      }
+
       @include breakpoint($xl-bp) {
         position: static;
         flex-direction: column;
         gap: 1.5rem;
+        padding-bottom: 0;
       }
 
       &-item {

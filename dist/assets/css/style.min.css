@@ -5850,12 +5850,18 @@ svg {
       align-items: flex-start;
   gap: 8rem;
 }
+@media (max-width: 1330px) {
+  .menu-dropdown-list {
+    padding-bottom: 4rem;
+  }
+}
 @media (max-width: 1023px) {
   .menu-dropdown-list {
     position: static;
     -ms-flex-direction: column;
         flex-direction: column;
     gap: 1.5rem;
+    padding-bottom: 0;
   }
 }
 .menu-dropdown-list-item {
