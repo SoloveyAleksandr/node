@@ -49,6 +49,12 @@ svg {
   transition: all 0.1s linear;
 }
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
 @import "./blocks/dropdown";
 
 @import "./blocks/loader";

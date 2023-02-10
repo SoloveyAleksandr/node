@@ -145,6 +145,7 @@
     margin-bottom: 20rem;
     display: grid;
     grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(24, auto);
 
     @include breakpoint($cos-bp) {
       // display: flex;
@@ -168,14 +169,11 @@
       grid-area: 1/1/2/2;
       max-width: 81.6rem;
 
-      @include breakpoint($cos-bp) {
-        order: 1;
-      }
-
       @include breakpoint($xl-bp) {
         font-size: 2.4rem;
         line-height: 3.4rem;
         margin-bottom: 2rem;
+        order: 1;
       }
     }
 
@@ -183,11 +181,17 @@
       font-size: 2rem;
       font-weight: $font-r;
       line-height: 140%;
-      grid-area: 2/1/5/2;
       max-width: 81.6rem;
 
+      &_1 {
+        grid-area: 2/1/11/2;
+      }
+
+      &_2 {
+        grid-area: 11/1/25/2;
+      }
+
       @include breakpoint($cos-bp) {
-        order: 3;
         max-width: 100%;
         margin-bottom: 3rem;
       }
@@ -196,6 +200,14 @@
         font-size: 1.4rem;
         line-height: 2rem;
         margin-bottom: 2rem;
+
+        &_1 {
+          order: 2;
+        }
+
+        &_2 {
+          order: 4;
+        }
       }
     }
 
@@ -206,50 +218,28 @@
 
       @include breakpoint($cos-bp) {
         width: 100%;
-
         height: 70rem;
       }
 
       @include breakpoint($xl-bp) {
-        // height: 55rem;
-
         height: calc((100vw - 3rem) * 0.73);
       }
 
-      // @include breakpoint($jb-bp) {
-      //   height: 50rem;
-      // }
-
-      // @include breakpoint($lb-bp) {
-      //   height: 40rem;
-      // }
-
-      // @include breakpoint($sm-bp) {
-      //   height: 30rem;
-      // }
-
-      // @include breakpoint($xs-bp) {
-      //   height: 23.4rem;
-      // }
-
       &_1 {
-        grid-area: 1/2/3/3;
+        grid-area: 1/2/12/3;
         margin-bottom: 6rem;
-
-        @include breakpoint($cos-bp) {
-          order: 2;
-        }
 
         @include breakpoint($xl-bp) {
           margin-bottom: 3rem;
+          order: 3;
         }
       }
 
       &_2 {
-        grid-area: 3/2/5/3;
+        grid-area: 12/2/25/3;
 
-        @include breakpoint($cos-bp) {
-          order: 4;
+        @include breakpoint($xl-bp) {
+          order: 5;
         }
       }
 

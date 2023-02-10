@@ -744,6 +744,14 @@ svg {
   transition: all 0.1s linear;
 }
 
+.page {
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
 .dropdown-btn {
   border: none;
   outline: none;
@@ -5334,6 +5342,7 @@ svg {
   margin-bottom: 20rem;
   display: grid;
   grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(24, auto);
 }
 @media (max-width: 1330px) {
   .article-main {
@@ -5360,30 +5369,29 @@ svg {
   grid-area: 1/1/2/2;
   max-width: 81.6rem;
 }
-@media (max-width: 1330px) {
-  .article-main__title {
-    -ms-flex-order: 1;
-        order: 1;
-  }
-}
 @media (max-width: 1023px) {
   .article-main__title {
     font-size: 2.4rem;
     line-height: 3.4rem;
     margin-bottom: 2rem;
+    -ms-flex-order: 1;
+        order: 1;
   }
 }
 .article-main__text {
   font-size: 2rem;
   font-weight: 400;
   line-height: 140%;
-  grid-area: 2/1/5/2;
   max-width: 81.6rem;
+}
+.article-main__text_1 {
+  grid-area: 2/1/11/2;
+}
+.article-main__text_2 {
+  grid-area: 11/1/25/2;
 }
 @media (max-width: 1330px) {
   .article-main__text {
-    -ms-flex-order: 3;
-        order: 3;
     max-width: 100%;
     margin-bottom: 3rem;
   }
@@ -5393,6 +5401,14 @@ svg {
     font-size: 1.4rem;
     line-height: 2rem;
     margin-bottom: 2rem;
+  }
+  .article-main__text_1 {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+  .article-main__text_2 {
+    -ms-flex-order: 4;
+        order: 4;
   }
 }
 .article-main-img {
@@ -5412,27 +5428,23 @@ svg {
   }
 }
 .article-main-img_1 {
-  grid-area: 1/2/3/3;
+  grid-area: 1/2/12/3;
   margin-bottom: 6rem;
-}
-@media (max-width: 1330px) {
-  .article-main-img_1 {
-    -ms-flex-order: 2;
-        order: 2;
-  }
 }
 @media (max-width: 1023px) {
   .article-main-img_1 {
     margin-bottom: 3rem;
+    -ms-flex-order: 3;
+        order: 3;
   }
 }
 .article-main-img_2 {
-  grid-area: 3/2/5/3;
+  grid-area: 12/2/25/3;
 }
-@media (max-width: 1330px) {
+@media (max-width: 1023px) {
   .article-main-img_2 {
-    -ms-flex-order: 4;
-        order: 4;
+    -ms-flex-order: 5;
+        order: 5;
   }
 }
 .article-main-img__img {
@@ -5446,6 +5458,8 @@ svg {
 
 .contacts {
   padding-top: 15.2rem;
+  -ms-flex: 1;
+      flex: 1;
 }
 @media (max-width: 1023px) {
   .contacts {

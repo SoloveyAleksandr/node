@@ -2,6 +2,7 @@
 
 .contacts {
   padding-top: 15.2rem;
+  flex: 1;
 
   @include breakpoint($xl-bp) {
     padding-top: 8.4rem;
