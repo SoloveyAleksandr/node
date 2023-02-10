@@ -5642,10 +5642,6 @@ svg {
 @media (max-width: 1023px) {
   .menu-container {
     padding-bottom: 10rem;
-  }
-}
-@media (max-width: 650px) {
-  .menu-container {
     -ms-flex-direction: column;
         flex-direction: column;
     gap: 4rem;
@@ -5713,10 +5709,6 @@ svg {
         flex-direction: column;
     -ms-flex-align: end;
         align-items: flex-end;
-  }
-}
-@media (max-width: 650px) {
-  .menu-inner:nth-child(2) {
     -ms-flex-align: start;
         align-items: flex-start;
     gap: 4rem;
@@ -5786,7 +5778,7 @@ svg {
   -ms-flex-align: end;
       align-items: flex-end;
 }
-@media (max-width: 650px) {
+@media (max-width: 1023px) {
   .menu-contacts {
     -ms-flex-align: start;
         align-items: flex-start;

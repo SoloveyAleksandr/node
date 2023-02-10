@@ -29,12 +29,14 @@
 
     @include breakpoint($xl-bp) {
       padding-bottom: 10rem;
-    }
-
-    @include breakpoint($lb-bp) {
       flex-direction: column;
       gap: 4rem;
     }
+
+    // @include breakpoint($lb-bp) {
+    //   flex-direction: column;
+    //   gap: 4rem;
+    // }
   }
 
   &-box {
@@ -85,12 +87,14 @@
       @include breakpoint($xl-bp) {
         flex-direction: column;
         align-items: flex-end;
-      }
-
-      @include breakpoint($lb-bp) {
         align-items: flex-start;
         gap: 4rem;
       }
+
+      // @include breakpoint($lb-bp) {
+      //   align-items: flex-start;
+      //   gap: 4rem;
+      // }
     }
   }
 
@@ -165,9 +169,13 @@
   &-contacts {
     align-items: flex-end;
 
-    @include breakpoint($lb-bp) {
+    @include breakpoint($xl-bp) {
       align-items: flex-start;
     }
+
+    // @include breakpoint($lb-bp) {
+    //   align-items: flex-start;
+    // }
 
     &-inner {
       display: flex;
