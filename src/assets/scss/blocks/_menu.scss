@@ -26,7 +26,7 @@
     align-items: flex-start;
     justify-content: space-between;
     padding-bottom: 4rem;
-    
+
     @include breakpoint($xl-bp) {
       padding-bottom: 10rem;
     }
@@ -82,7 +82,7 @@
         gap: 5rem;
       }
 
-      @include breakpoint($xl-bp)  {
+      @include breakpoint($xl-bp) {
         flex-direction: column;
         align-items: flex-end;
       }
@@ -178,6 +178,13 @@
 
       @include breakpoint($cos-bp) {
         margin-top: 0;
+        position: absolute;
+        left: 1.5rem;
+        top: 71rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        position: static;
       }
     }
 
@@ -189,7 +196,7 @@
 
   &-dropdown {
 
-    &._active &{
+    &._active & {
       &-btn {
         @include breakpoint($xl-bp) {
           margin-bottom: 1.5rem;

@@ -3851,6 +3851,11 @@ svg {
 .visualization-swiper-btn:hover {
   opacity: 0.5;
 }
+@media (max-width: 1023px) {
+  .visualization-swiper-btn:hover {
+    opacity: 1;
+  }
+}
 .visualization-swiper-btn.swiper-button-disabled {
   opacity: 0.5;
 }
@@ -5800,6 +5805,14 @@ svg {
 @media (max-width: 1330px) {
   .menu-contacts-inner {
     margin-top: 0;
+    position: absolute;
+    left: 1.5rem;
+    top: 71rem;
+  }
+}
+@media (max-width: 1023px) {
+  .menu-contacts-inner {
+    position: static;
   }
 }
 .menu-contacts__link {

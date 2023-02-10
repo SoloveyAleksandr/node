@@ -384,6 +384,10 @@
 
       &:hover {
         opacity: 0.5;
+
+        @include breakpoint($xl-bp) {
+          opacity: 1;
+        }
       }
 
       &.swiper-button-disabled {
