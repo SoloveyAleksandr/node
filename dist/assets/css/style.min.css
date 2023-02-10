@@ -5273,14 +5273,14 @@ svg {
 }
 @media (max-width: 1330px) {
   .article-description {
-    -ms-flex-direction: column;
-        flex-direction: column;
     gap: 3rem;
   }
 }
 @media (max-width: 1023px) {
   .article-description {
     margin-bottom: 6rem;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 }
 .article-description__text {
@@ -5294,9 +5294,6 @@ svg {
 }
 @media (max-width: 1330px) {
   .article-description__text {
-    -ms-flex: auto;
-        flex: auto;
-    max-width: 100%;
     padding-top: 0;
   }
 }
@@ -5313,26 +5310,16 @@ svg {
 @media (max-width: 1330px) {
   .article-description-img {
     width: 100%;
+    -ms-flex: 1;
+        flex: 1;
+    height: 80rem;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 1023px) {
   .article-description-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .article-description-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .article-description-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .article-description-img {
-    height: 25.4rem;
+    -ms-flex: unset;
+        flex: unset;
+    height: calc((100vw - 3rem) * 0.73);
   }
 }
 .article-description-img__img {
@@ -5350,15 +5337,19 @@ svg {
 }
 @media (max-width: 1330px) {
   .article-main {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+            column-gap: 3rem;
   }
 }
 @media (max-width: 1023px) {
   .article-main {
     margin-bottom: 10rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 }
 .article-main__title {
@@ -5407,30 +5398,17 @@ svg {
 .article-main-img {
   width: 80rem;
   height: 54.4rem;
+  margin-left: auto;
 }
 @media (max-width: 1330px) {
   .article-main-img {
     width: 100%;
+    height: 70rem;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 1023px) {
   .article-main-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .article-main-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .article-main-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .article-main-img {
-    height: 23.4rem;
+    height: calc((100vw - 3rem) * 0.73);
   }
 }
 .article-main-img_1 {

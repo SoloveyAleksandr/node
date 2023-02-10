@@ -70,12 +70,14 @@
     justify-content: space-between;
 
     @include breakpoint($cos-bp) {
-      flex-direction: column;
+      // flex-direction: column;
       gap: 3rem;
     }
 
     @include breakpoint($xl-bp) {
       margin-bottom: 6rem;
+
+      flex-direction: column;
     }
 
     &__text {
@@ -87,8 +89,8 @@
       max-width: 86rem;
 
       @include breakpoint($cos-bp) {
-        flex: auto;
-        max-width: 100%;
+        // flex: auto;
+        // max-width: 100%;
         padding-top: 0;
       }
 
@@ -104,23 +106,31 @@
 
       @include breakpoint($cos-bp) {
         width: 100%;
+
+        flex: 1;
+        height: 80rem;
       }
 
-      @include breakpoint($jb-bp) {
-        height: 50rem;
+      @include breakpoint($xl-bp) {
+        flex: unset;
+        height: calc((100vw - 3rem) * 0.73);
       }
 
-      @include breakpoint($lb-bp) {
-        height: 40rem;
-      }
+      // @include breakpoint($jb-bp) {
+      //   height: 50rem;
+      // }
 
-      @include breakpoint($sm-bp) {
-        height: 30rem;
-      }
+      // @include breakpoint($lb-bp) {
+      //   height: 40rem;
+      // }
 
-      @include breakpoint($xs-bp) {
-        height: 25.4rem;
-      }
+      // @include breakpoint($sm-bp) {
+      //   height: 30rem;
+      // }
+
+      // @include breakpoint($xs-bp) {
+      //   height: 25.4rem;
+      // }
 
       &__img {
         object-fit: cover;
@@ -137,12 +147,17 @@
     grid-template-columns: repeat(2, auto);
 
     @include breakpoint($cos-bp) {
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
     }
 
     @include breakpoint($xl-bp) {
       margin-bottom: 10rem;
+
+      display: flex;
+      flex-direction: column;
     }
 
     &__title {
@@ -187,26 +202,35 @@
     &-img {
       width: 80rem;
       height: 54.4rem;
+      margin-left: auto;
 
       @include breakpoint($cos-bp) {
         width: 100%;
+
+        height: 70rem;
       }
 
-      @include breakpoint($jb-bp) {
-        height: 50rem;
+      @include breakpoint($xl-bp) {
+        // height: 55rem;
+
+        height: calc((100vw - 3rem) * 0.73);
       }
 
-      @include breakpoint($lb-bp) {
-        height: 40rem;
-      }
+      // @include breakpoint($jb-bp) {
+      //   height: 50rem;
+      // }
 
-      @include breakpoint($sm-bp) {
-        height: 30rem;
-      }
+      // @include breakpoint($lb-bp) {
+      //   height: 40rem;
+      // }
 
-      @include breakpoint($xs-bp) {
-        height: 23.4rem;
-      }
+      // @include breakpoint($sm-bp) {
+      //   height: 30rem;
+      // }
+
+      // @include breakpoint($xs-bp) {
+      //   height: 23.4rem;
+      // }
 
       &_1 {
         grid-area: 1/2/3/3;
