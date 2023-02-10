@@ -33,7 +33,7 @@
     margin-bottom: 12rem;
 
     @include breakpoint($cos-bp) {
-      height: calc((100vw - 1.5rem) * 0.52);
+      height: calc((100vw - 3rem) * 0.52);
     }
 
     @include breakpoint($xl-bp) {

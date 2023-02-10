@@ -2508,7 +2508,7 @@ svg {
 }
 @media (max-width: 1330px) {
   .about-img {
-    height: calc((100vw - 1.5rem) * 0.52);
+    height: calc((100vw - 3rem) * 0.52);
   }
 }
 @media (max-width: 1023px) {
