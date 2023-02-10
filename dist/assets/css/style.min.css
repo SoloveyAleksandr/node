@@ -4097,17 +4097,13 @@ svg {
   display: grid;
   grid-template-columns: repeat(2, auto);
 }
-@media (max-width: 1330px) {
+@media (max-width: 1023px) {
   .animation-portfolio {
+    margin-bottom: 15rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
-  }
-}
-@media (max-width: 1023px) {
-  .animation-portfolio {
-    margin-bottom: 15rem;
   }
 }
 .animation-portfolio__title {
@@ -4174,16 +4170,18 @@ svg {
 }
 @media (max-width: 1330px) {
   .animation-portfolio__text {
-    -ms-flex-order: 2;
-        order: 2;
-    margin-bottom: 4rem;
-    margin-left: 0;
+    max-width: 81.9rem;
   }
 }
 @media (max-width: 1023px) {
   .animation-portfolio__text {
     font-size: 1.4rem;
     line-height: 2rem;
+    -ms-flex-order: 2;
+        order: 2;
+    margin-bottom: 4rem;
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 

@@ -171,12 +171,14 @@
     grid-template-columns: repeat(2, auto);
 
     @include breakpoint($cos-bp) {
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
     }
 
     @include breakpoint($xl-bp) {
       margin-bottom: 15rem;
+      display: flex;
+      flex-direction: column;
     }
 
     &__title {
@@ -231,14 +233,16 @@
       margin-left: auto;
 
       @include breakpoint($cos-bp) {
-        order: 2;
-        margin-bottom: 4rem;
-        margin-left: 0;
+        max-width: 81.9rem;
       }
 
       @include breakpoint($xl-bp) {
         font-size: 1.4rem;
         line-height: 2rem;
+        order: 2;
+        margin-bottom: 4rem;
+        margin-left: 0;
+        max-width: 100%;
       }
     }
   }
