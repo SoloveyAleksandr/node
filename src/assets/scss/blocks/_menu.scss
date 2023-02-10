@@ -26,6 +26,10 @@
     align-items: flex-start;
     justify-content: space-between;
     padding-bottom: 4rem;
+    
+    @include breakpoint($xl-bp) {
+      padding-bottom: 10rem;
+    }
 
     @include breakpoint($lb-bp) {
       flex-direction: column;

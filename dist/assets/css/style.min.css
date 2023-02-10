@@ -5634,6 +5634,11 @@ svg {
       justify-content: space-between;
   padding-bottom: 4rem;
 }
+@media (max-width: 1023px) {
+  .menu-container {
+    padding-bottom: 10rem;
+  }
+}
 @media (max-width: 650px) {
   .menu-container {
     -ms-flex-direction: column;

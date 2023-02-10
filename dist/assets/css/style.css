@@ -542,28 +542,16 @@ body.compensate-for-scrollbar {
     overflow: hidden;
 }
 
+@media (max-width: 1330px) {
+    .project-card-img {
+        height: 48.3rem;
+    }
+}
+
 @media (max-width: 1023px) {
     .project-card-img {
-        height: 46rem;
+        height: calc((100vw - 3rem) * 0.767);
         margin-bottom: 1rem;
-    }
-}
-
-@media (max-width: 650px) {
-    .project-card-img {
-        height: 36rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .project-card-img {
-        height: 30rem;
-    }
-}
-
-@media (max-width: 375px) {
-    .project-card-img {
-        height: 26.4rem;
     }
 }
 
@@ -1337,7 +1325,8 @@ svg {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 5.1rem;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .footer-social-list {
@@ -1419,7 +1408,8 @@ svg {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 11.9rem;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 @media (max-width: 850px) {
@@ -1459,7 +1449,8 @@ svg {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 11.1rem;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin-left: auto;
 }
 
@@ -1541,6 +1532,12 @@ svg {
     flex-direction: column;
     gap: 1.7rem;
     position: relative;
+}
+
+@media (max-width: 1330px) {
+    .form {
+        margin-left: 6rem;
+    }
 }
 
 @media (max-width: 1023px) {
