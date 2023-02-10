@@ -27,24 +27,8 @@
     height: 94rem;
     margin-bottom: 10rem;
 
-    @include breakpoint($xl-bp) {
-      height: 60rem;
-    }
-
-    @include breakpoint($jb-bp) {
-      height: 50rem;
-    }
-
-    @include breakpoint($lb-bp) {
-      height: 40rem;
-    }
-
-    @include breakpoint($sm-bp) {
-      height: 30rem;
-    }
-
-    @include breakpoint($xs-bp) {
-      height: 18.6rem;
+    @include breakpoint($cos-bp) {
+      height: calc((100vw - 3rem) * 0.53);
     }
 
     &__img {
@@ -73,7 +57,12 @@
       font-weight: $font-m;
       line-height: 140%;
 
+      @include breakpoint($cos-bp) {
+        max-width: 41.5rem;
+      }
+
       @include breakpoint($xl-bp) {
+        max-width: unset;
         font-size: 1.4rem;
         line-height: 2rem;
       }
@@ -81,39 +70,19 @@
 
     &-img {
       width: 106.6rem;
-      height: 67rem;
 
       @include breakpoint($cos-bp) {
         flex: 1;
       }
 
       @include breakpoint($xl-bp) {
-        height: 60rem;
         width: 100%;
         flex: auto;
       }
 
-      @include breakpoint($jb-bp) {
-        height: 50rem;
-      }
-
-      @include breakpoint($lb-bp) {
-        height: 40rem;
-      }
-
-      @include breakpoint($sm-bp) {
-        height: 30rem;
-      }
-
-      @include breakpoint($xs-bp) {
-        height: 21.6rem;
-      }
-
       &__img {
-        object-fit: cover;
-        object-position: center center;
+        object-fit: contain;
         width: 100%;
-        height: 100%;
       }
     }
   }
@@ -176,39 +145,21 @@
 
     &-img {
       width: 106.6rem;
-      height: 67.1rem;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       margin-left: auto;
 
       @include breakpoint($cos-bp) {
-        width: 100%;
+        width: 81.9rem;
       }
 
       @include breakpoint($xl-bp) {
-        height: 60rem;
-      }
-
-      @include breakpoint($jb-bp) {
-        height: 50rem;
-      }
-
-      @include breakpoint($lb-bp) {
-        height: 40rem;
-      }
-
-      @include breakpoint($sm-bp) {
-        height: 30rem;
-      }
-
-      @include breakpoint($xs-bp) {
-        height: 21.9rem;
+        width: 100%;
       }
 
       &__img {
-        object-fit: cover;
-        height: 100%;
+        object-fit: contain;
         width: 100%;
       }
     }

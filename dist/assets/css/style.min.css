@@ -3930,29 +3930,9 @@ svg {
   height: 94rem;
   margin-bottom: 10rem;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1330px) {
   .animation-img {
-    height: 60rem;
-  }
-}
-@media (max-width: 850px) {
-  .animation-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .animation-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .animation-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .animation-img {
-    height: 18.6rem;
+    height: calc((100vw - 3rem) * 0.53);
   }
 }
 .animation-img__img {
@@ -3986,15 +3966,20 @@ svg {
   font-weight: 500;
   line-height: 140%;
 }
+@media (max-width: 1330px) {
+  .animation-description__text {
+    max-width: 41.5rem;
+  }
+}
 @media (max-width: 1023px) {
   .animation-description__text {
+    max-width: unset;
     font-size: 1.4rem;
     line-height: 2rem;
   }
 }
 .animation-description-img {
   width: 106.6rem;
-  height: 67rem;
 }
 @media (max-width: 1330px) {
   .animation-description-img {
@@ -4004,39 +3989,15 @@ svg {
 }
 @media (max-width: 1023px) {
   .animation-description-img {
-    height: 60rem;
     width: 100%;
     -ms-flex: auto;
         flex: auto;
   }
 }
-@media (max-width: 850px) {
-  .animation-description-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .animation-description-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .animation-description-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .animation-description-img {
-    height: 21.6rem;
-  }
-}
 .animation-description-img__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
-  height: 100%;
 }
 .animation-info {
   display: -ms-flexbox;
@@ -4108,7 +4069,6 @@ svg {
 }
 .animation-info-img {
   width: 106.6rem;
-  height: 67.1rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -4119,38 +4079,17 @@ svg {
 }
 @media (max-width: 1330px) {
   .animation-info-img {
-    width: 100%;
+    width: 81.9rem;
   }
 }
 @media (max-width: 1023px) {
   .animation-info-img {
-    height: 60rem;
-  }
-}
-@media (max-width: 850px) {
-  .animation-info-img {
-    height: 50rem;
-  }
-}
-@media (max-width: 650px) {
-  .animation-info-img {
-    height: 40rem;
-  }
-}
-@media (max-width: 500px) {
-  .animation-info-img {
-    height: 30rem;
-  }
-}
-@media (max-width: 375px) {
-  .animation-info-img {
-    height: 21.9rem;
+    width: 100%;
   }
 }
 .animation-info-img__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 .animation-portfolio {
