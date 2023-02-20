@@ -5645,6 +5645,16 @@ svg {
     border-bottom: 0.1rem solid #000;
 }
 
+.blog-filter-list-item__link {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+
+.blog-filter-list-item__link._active {
+    font-weight: 700;
+}
+
 .blog-filter-btn {
     display: -ms-flexbox;
     display: flex;

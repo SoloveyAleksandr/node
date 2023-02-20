@@ -101,6 +101,16 @@
       &-item {
         padding-bottom: 0.45rem;
         border-bottom: 0.1rem solid #000;
+
+        &__link {
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+          font-weight: $font-m;
+
+          &._active {
+            font-weight: $font-b;
+          }
+        }
       }
     }
 
@@ -153,7 +163,7 @@
         //   }
         // }
 
-        &:hover .blog-list-item__title{
+        &:hover .blog-list-item__title {
           &::after {
             width: 100%;
           }
