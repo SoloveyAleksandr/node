@@ -230,14 +230,14 @@
         pointer-events: all;
       }
 
-      &.swiper-slide-active &__text {
+      &.swiper-slide-active p {
         opacity: 1;
         transform: translate(0);
         transition: .8s 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         pointer-events: all;
       }
 
-      &.swiper-slide-duplicate-active &__text {
+      &.swiper-slide-duplicate-active p {
         opacity: 1;
         transform: translate(0);
         transition: .8s 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -261,7 +261,7 @@
         }
       }
 
-      &__text {
+      p {
         font-size: 1.6rem;
         font-weight: $font_r;
         line-height: 138%;

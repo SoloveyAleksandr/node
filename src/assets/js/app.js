@@ -387,15 +387,15 @@ document.addEventListener("DOMContentLoaded", () => {
     new Select('.form-select');
   }
 
-  if (document.querySelector(".form")) {
-    const form = document.querySelector(".form");
-    const send = document.querySelector(".form-send");
+  // if (document.querySelector(".form")) {
+  //   const form = document.querySelector(".form");
+  //   const send = document.querySelector(".form-send");
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      send.classList.add("_active")
-    })
-  }
+  //   form.addEventListener("submit", (e) => {
+  //     e.preventDefault();
+  //     send.classList.add("_active")
+  //   })
+  // }
   // <==
 
   // MAIN
@@ -719,5 +719,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.currentTarget.innerWidth < startWindowWidth * 0.9 || e.currentTarget.innerWidth > startWindowWidth * 1.1) {
       location.reload();
     }
-  })
-})
+  });
+});

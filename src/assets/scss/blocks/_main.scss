@@ -293,28 +293,55 @@
         transition: 0.8s 2s;
       }
 
-      &.swiper-slide-active &__text:nth-child(1) {
+      // &.swiper-slide-active &__text:nth-child(1) {
+      //   opacity: 1;
+      //   transform: translateX(0);
+      //   pointer-events: all;
+      //   transition: 0.8s 0.8s;
+      // }
+
+      // &.swiper-slide-duplicate-active &__text:nth-child(1) {
+      //   opacity: 1;
+      //   transform: translateX(0);
+      //   pointer-events: all;
+      //   transition: 0.8s 0.8s;
+      // }
+
+      // &.swiper-slide-active &__text:nth-child(2) {
+      //   opacity: 1;
+      //   transform: translateX(0);
+      //   pointer-events: all;
+      //   transition: 0.8s 1.5s;
+      // }
+
+      // &.swiper-slide-duplicate-active &__text:nth-child(2) {
+      //   opacity: 1;
+      //   transform: translateX(0);
+      //   pointer-events: all;
+      //   transition: 0.8s 1.5s;
+      // }
+      &.swiper-slide-active p:nth-child(1) {
         opacity: 1;
         transform: translateX(0);
         pointer-events: all;
         transition: 0.8s 0.8s;
       }
 
-      &.swiper-slide-duplicate-active &__text:nth-child(1) {
+      &.swiper-slide-duplicate-active p:nth-child(1) {
         opacity: 1;
         transform: translateX(0);
         pointer-events: all;
         transition: 0.8s 0.8s;
       }
 
-      &.swiper-slide-active &__text:nth-child(2) {
+      &.swiper-slide-active p:nth-child(2) {
         opacity: 1;
         transform: translateX(0);
         pointer-events: all;
         transition: 0.8s 1.5s;
       }
 
-      &.swiper-slide-duplicate-active &__text:nth-child(2) {
+      &.swiper-slide-duplicate-active p:nth-child(2) {
         opacity: 1;
         transform: translateX(0);
         pointer-events: all;
@@ -402,7 +429,36 @@
         }
       }
 
-      &__text {
+      // &__text {
+      //   font-size: 2.4rem;
+      //   font-weight: $font_m;
+      //   line-height: 3.4rem;
+      //   max-width: 47.1rem;
+      //   opacity: 0;
+      //   pointer-events: none;
+      //   transform: translateX(10rem);
+
+      //   &:nth-child(1) {
+      //     transition: 0.8s 0.1s;
+      //   }
+
+      //   &:nth-child(2) {
+      //     transition: 0.8s 0.3s;
+      //   }
+
+      //   @include breakpoint($xl-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+
+      //   @include breakpoint($lb-bp) {
+      //     opacity: 1;
+      //     pointer-events: all;
+      //     transform: translate(0);
+      //   }
+      // }
+
+      p {
         font-size: 2.4rem;
         font-weight: $font_m;
         line-height: 3.4rem;
@@ -701,7 +757,17 @@
         }
       }
 
-      &__text {
+      // &__text {
+      //   font-size: 1.6rem;
+      //   font-weight: $font_r;
+      //   line-height: 2.2rem;
+
+      //   @include breakpoint($xl-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+      // }
+      p {
         font-size: 1.6rem;
         font-weight: $font_r;
         line-height: 2.2rem;
