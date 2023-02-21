@@ -178,10 +178,10 @@
     }
 
     &__text {
-      font-size: 2rem;
-      font-weight: $font-r;
-      line-height: 140%;
       max-width: 81.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
 
       &_1 {
         grid-area: 2/1/11/2;
@@ -197,9 +197,8 @@
       }
 
       @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
-        line-height: 2rem;
         margin-bottom: 2rem;
+        gap: 2rem;
 
         &_1 {
           order: 2;
@@ -207,6 +206,17 @@
 
         &_2 {
           order: 4;
+        }
+      }
+
+      p {
+        font-size: 2rem;
+        font-weight: $font-r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
         }
       }
     }

@@ -6259,10 +6259,12 @@ svg {
 }
 
 .article-main__text {
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 140%;
     max-width: 81.6rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2.8rem;
 }
 
 .article-main__text_1 {
@@ -6282,9 +6284,8 @@ svg {
 
 @media (max-width: 1023px) {
     .article-main__text {
-        font-size: 1.4rem;
-        line-height: 2rem;
         margin-bottom: 2rem;
+        gap: 2rem;
     }
 
     .article-main__text_1 {
@@ -6295,6 +6296,19 @@ svg {
     .article-main__text_2 {
         -ms-flex-order: 4;
         order: 4;
+    }
+}
+
+.article-main__text p {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+@media (max-width: 1023px) {
+    .article-main__text p {
+        font-size: 1.4rem;
+        line-height: 2rem;
     }
 }
 
