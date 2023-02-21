@@ -83,20 +83,28 @@
     &__text {
       padding-top: 1.5rem;
       flex: 1;
-      font-size: 1.8rem;
-      font-weight: $font-r;
-      line-height: 140%;
       max-width: 86rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.52rem;
 
       @include breakpoint($cos-bp) {
-        // flex: auto;
-        // max-width: 100%;
         padding-top: 0;
       }
 
       @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: $font-r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 

@@ -6163,10 +6163,12 @@ svg {
     padding-top: 1.5rem;
     -ms-flex: 1;
     flex: 1;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 140%;
     max-width: 86rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2.52rem;
 }
 
 @media (max-width: 1330px) {
@@ -6177,6 +6179,18 @@ svg {
 
 @media (max-width: 1023px) {
     .article-description__text {
+        gap: 2rem;
+    }
+}
+
+.article-description__text p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+@media (max-width: 1023px) {
+    .article-description__text p {
         font-size: 1.4rem;
         line-height: 2rem;
     }
