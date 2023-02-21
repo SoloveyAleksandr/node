@@ -53,9 +53,9 @@
 
     &__text {
       flex: 1;
-      font-size: 1.8rem;
-      font-weight: $font-m;
-      line-height: 140%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.52rem;
 
       @include breakpoint($cos-bp) {
         max-width: 41.5rem;
@@ -63,8 +63,18 @@
 
       @include breakpoint($xl-bp) {
         max-width: unset;
-        font-size: 1.4rem;
-        line-height: 2rem;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: $font-m;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 
@@ -128,18 +138,28 @@
     }
 
     &__text {
-      font-size: 1.8rem;
-      font-weight: $font-r;
-      line-height: 140%;
       max-width: 106.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.52rem;
 
       @include breakpoint($cos-bp) {
         flex: 1;
       }
 
       @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: $font-r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 
@@ -169,11 +189,6 @@
     margin-bottom: 22.5rem;
     display: grid;
     grid-template-columns: repeat(2, auto);
-
-    @include breakpoint($cos-bp) {
-      // display: flex;
-      // flex-direction: column;
-    }
 
     @include breakpoint($xl-bp) {
       margin-bottom: 15rem;
@@ -225,24 +240,34 @@
     }
 
     &__text {
-      font-size: 1.8rem;
-      font-weight: $font-r;
-      line-height: 140%;
       max-width: 106.6rem;
       grid-area: 1/2/3/3;
       margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.52rem;
 
       @include breakpoint($cos-bp) {
         max-width: 81.9rem;
       }
 
       @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
-        line-height: 2rem;
         order: 2;
         margin-bottom: 4rem;
         margin-left: 0;
         max-width: 100%;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: $font-r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
   }

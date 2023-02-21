@@ -105,9 +105,6 @@
     }
 
     &__subtitle {
-      font-size: 1.8rem;
-      font-weight: $font_m;
-      line-height: 140%;
       max-width: 71.1rem;
       grid-area: 1 / 2 / 2 / 3;
 
@@ -117,21 +114,37 @@
         order: 1;
         margin-bottom: 3rem;
       }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: $font_m;
+        line-height: 140%;
+      }
     }
 
     &__text {
-      font-size: 1.6rem;
-      font-weight: $font_r;
-      line-height: 140%;
       max-width: 51.8rem;
       grid-area: 2 / 2 / 3 / 3;
+      display: flex;
+      flex-direction: column;
+      gap: 2.24rem;
 
       @include breakpoint($xl-bp) {
         max-width: 100%;
         margin-bottom: 2rem;
-        font-size: 1.4rem;
-        line-height: 2rem;
         order: 3;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        font-weight: $font_r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 
@@ -193,17 +206,27 @@
     }
 
     &__text {
-      font-size: 2rem;
-      font-weight: $font_r;
-      line-height: 140%;
       grid-area: 2 / 1 / 3 / 2;
       max-width: 81.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
 
       @include breakpoint($xl-bp) {
         order: 3;
-        font-size: 1.4rem;
-        line-height: 2rem;
         max-width: 100%;
+        gap: 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+        font-weight: $font_r;
+        line-height: 140%;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 
