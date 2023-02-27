@@ -236,6 +236,8 @@
       align-items: flex-start;
       gap: 8rem;
 
+      padding-left: 1rem;
+
       @include breakpoint($cos-bp) {
         padding-bottom: 4rem;
       }

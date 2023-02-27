@@ -332,10 +332,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       })
 
-      if (window.matchMedia("(max-width: 1024px)").matches) {
-        const menuDropdown = document.querySelector(".menu-dropdown");
-        new MenuDropdownBtn(menuDropdown);
-      }
+      // if (window.matchMedia("(max-width: 1024px)").matches) {
+      //   const menuDropdown = document.querySelector(".menu-dropdown");
+      //   new MenuDropdownBtn(menuDropdown);
+      // }
     }
     // <==
   }

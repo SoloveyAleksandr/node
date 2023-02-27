@@ -6810,6 +6810,7 @@ svg {
     -ms-flex-align: start;
     align-items: flex-start;
     gap: 8rem;
+    padding-left: 1rem;
 }
 
 @media (max-width: 1330px) {
