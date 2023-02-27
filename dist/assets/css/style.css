@@ -3162,10 +3162,12 @@ svg {
 
 @media (max-width: 850px) {
     .portfolio-nav-inner {
-        width: 100%;
-        -ms-flex-pack: center;
-        justify-content: center;
-        border-bottom: 0.2rem solid #000000;
+        display: grid;
+        -webkit-column-gap: 6rem;
+        -moz-column-gap: 6rem;
+        column-gap: 6rem;
+        row-gap: 3rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -3187,8 +3189,26 @@ svg {
 }
 
 @media (max-width: 850px) {
-    .portfolio-nav-wrapper {
-        border-bottom: none;
+    .portfolio-nav-item {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .portfolio-nav-item:nth-child(2) {
+        position: relative;
+    }
+
+    .portfolio-nav-item:nth-child(2)::after {
+        content: "";
+        width: 100vw;
+        height: 0.2rem;
+        background-color: #000000;
+        position: absolute;
+        top: 3rem;
     }
 }
 
