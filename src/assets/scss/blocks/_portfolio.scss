@@ -121,6 +121,7 @@
   &-block {
     padding-top: 4rem;
     margin-bottom: 20rem;
+    padding-top: 8rem;
 
     @include breakpoint($xl-bp) {
       margin-bottom: 10rem;

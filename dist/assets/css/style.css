@@ -1262,6 +1262,7 @@ svg {
     gap: 0.3rem;
     position: absolute;
     left: 50vw;
+    margin-left: -0.7rem;
 }
 
 @media (max-width: 1023px) {
@@ -3249,6 +3250,7 @@ svg {
 .portfolio-block {
     padding-top: 4rem;
     margin-bottom: 20rem;
+    padding-top: 8rem;
 }
 
 @media (max-width: 1023px) {

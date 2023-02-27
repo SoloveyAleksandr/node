@@ -323,7 +323,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      new Menu(MENU_BTN, MENU);
+      const menu = new Menu(MENU_BTN, MENU);
+
+      const menuLinks = gsap.utils.toArray(".menu a");
+      menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          menu.toggleMenu();
+        });
+      })
 
       if (window.matchMedia("(max-width: 1024px)").matches) {
         const menuDropdown = document.querySelector(".menu-dropdown");
