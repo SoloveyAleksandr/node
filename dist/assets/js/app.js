@@ -525,8 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // if (document.querySelector(".main-render-list")) {
-
+    // if (document.querySelector(".main-render-list")) {     
     //   if (window.matchMedia("(min-width: 1024px)").matches) {
     //     const items = gsap.utils.toArray(".main-render-list-item-video");
 
@@ -699,26 +698,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
       video.addEventListener("canplay", () => {
         if (!videoIsLoaded) {
-          // if (video.classList.contains("main-render-list-item-video__video")) {
-          //   video.pause();
-          //   video.currentTime = 0;
-          //   const parent = video.parentElement;
-
-          //   parent.addEventListener("mouseenter", () => {
-          //     video.play();
-          //   })
-
-          //   parent.addEventListener("mouseleave", () => {
-          //     video.pause();
-          //     video.currentTime = 0;
-          //   })
-          // } else {
+          video.classList.add("_canplay");
           video.play();
-          // }
           videoIsLoaded = true;
         }
       })
     })
+  }
+  if (document.querySelector(".main-render-list")) {
+    class RenderVideo {
+      constructor(item) {
+        this.wrapper = item;
+        this.poster = this.wrapper.querySelector(".main-render-list-item-video__poster");
+        this.videoContainer = this.wrapper.querySelector(".main-render-list-item-video");
+        this.video = this.wrapper.querySelector(".main-render-list-item-video__video");
+        if (this.wrapper && this.poster && this.video) {
+          this.init();
+        }
+      }
+
+      init() {
+        this.poster.classList.remove("_hide");
+        this.videoContainer.addEventListener("mouseenter", () => {
+          if (this.video.classList.contains("_canplay")) {
+            this.poster.classList.add("_hide");
+            this.video.currentTime = 0;
+            this.video.play();
+          }
+        })
+        this.videoContainer.addEventListener("mouseleave", () => {
+          if (this.video.classList.contains("_canplay")) {
+            this.poster.classList.remove("_hide");
+            this.video.currentTime = 0;
+            this.video.pause();
+          }
+        })
+      }
+    }
+
+    const renderItems = gsap.utils.toArray(".main-render-list-item");
+    renderItems.forEach(item => {
+      new RenderVideo(item);
+    });
   }
   //<==
   const startWindowWidth = window.innerWidth;

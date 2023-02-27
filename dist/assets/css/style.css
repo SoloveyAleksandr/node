@@ -2447,10 +2447,6 @@ svg {
     position: relative;
 }
 
-.main-render-list-item-video:hover .main-render-list-item-video__poster {
-    opacity: 0;
-}
-
 @media (max-width: 1330px) {
     .main-render-list-item-video {
         height: 60rem;
@@ -2488,6 +2484,10 @@ svg {
     object-position: center center;
     width: 100%;
     height: 100%;
+}
+
+.main-render-list-item-video__poster._hide {
+    opacity: 0;
 }
 
 @media (max-width: 1023px) {
