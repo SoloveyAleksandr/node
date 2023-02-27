@@ -419,6 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const mainTl = gsap.timeline({
+        duration: 4,
         repeat: -1,
         repeatDelay: 2
       });
