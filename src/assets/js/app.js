@@ -327,8 +327,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const menuLinks = gsap.utils.toArray(".menu a");
       menuLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        const index = href.indexOf("#");
+        let anchor = null;
+        let y = null;
+
+        if (index >= 0) {
+          anchor = document.getElementById(href.slice(index + 1).trim());
+          if (anchor) {
+            y = anchor.getBoundingClientRect().y;
+          }
+        }
+
         link.addEventListener("click", () => {
           menu.toggleMenu();
+
+          if (anchor) {
+            window.scrollTo(0, y);
+          }
         });
       })
 
@@ -734,6 +750,20 @@ document.addEventListener("DOMContentLoaded", () => {
             this.video.pause();
           }
         })
+        this.videoContainer.addEventListener("touchstart", () => {
+          if (this.video.classList.contains("_canplay")) {
+            this.poster.classList.add("_hide");
+            this.video.currentTime = 0;
+            this.video.play();
+          }
+        })
+        this.videoContainer.addEventListener("touchend", () => {
+          if (this.video.classList.contains("_canplay")) {
+            this.poster.classList.remove("_hide");
+            this.video.currentTime = 0;
+            this.video.pause();
+          }
+        })
       }
     }
 
@@ -749,4 +779,8 @@ document.addEventListener("DOMContentLoaded", () => {
       location.reload();
     }
   });
+
+  // anchors
+
+  //<==
 });

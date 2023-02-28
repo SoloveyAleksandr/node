@@ -27,6 +27,14 @@ body {
   line-height: 100%;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .container {
   max-width: 179rem;
   margin: 0 auto;
@@ -51,6 +59,7 @@ body {
     text-transform: uppercase;
     // white-space: nowrap;
     line-height: 7.8rem;
+    letter-spacing: -0.3rem;
 
     @include breakpoint($xl-bp) {
       font-size: 3.6rem;

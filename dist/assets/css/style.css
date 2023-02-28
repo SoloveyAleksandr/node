@@ -489,6 +489,14 @@ body.compensate-for-scrollbar {
     line-height: 100%;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .container {
     max-width: 179rem;
     margin: 0 auto;
@@ -515,6 +523,7 @@ body.compensate-for-scrollbar {
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.8rem;
+    letter-spacing: -0.3rem;
 }
 
 @media (max-width: 1023px) {
@@ -6624,7 +6633,7 @@ svg {
 
 @media (max-width: 1330px) {
     .menu-inner:nth-child(1) {
-        gap: 9rem;
+        gap: 4rem;
     }
 }
 
@@ -6646,7 +6655,7 @@ svg {
 
 @media (max-width: 1330px) {
     .menu-inner:nth-child(2) {
-        gap: 5rem;
+        gap: 15rem;
     }
 }
 
@@ -6810,7 +6819,6 @@ svg {
     -ms-flex-align: start;
     align-items: flex-start;
     gap: 8rem;
-    padding-left: 1rem;
 }
 
 @media (max-width: 1330px) {
@@ -6826,6 +6834,7 @@ svg {
         flex-direction: column;
         gap: 1.5rem;
         padding-bottom: 0;
+        padding-left: 1rem;
     }
 }
 

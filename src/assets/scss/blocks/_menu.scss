@@ -66,7 +66,7 @@
       gap: 13.1rem;
 
       @include breakpoint($cos-bp) {
-        gap: 9rem;
+        gap: 4rem;
       }
 
       @include breakpoint($xl-bp) {
@@ -81,7 +81,7 @@
       gap: 28rem;
 
       @include breakpoint($cos-bp) {
-        gap: 5rem;
+        gap: 15rem;
       }
 
       @include breakpoint($xl-bp) {
@@ -236,8 +236,6 @@
       align-items: flex-start;
       gap: 8rem;
 
-      padding-left: 1rem;
-
       @include breakpoint($cos-bp) {
         padding-bottom: 4rem;
       }
@@ -247,6 +245,7 @@
         flex-direction: column;
         gap: 1.5rem;
         padding-bottom: 0;
+        padding-left: 1rem;
       }
 
       &-item {
