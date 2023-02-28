@@ -98,6 +98,14 @@
           padding-bottom: 0.4rem;
         }
 
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.8rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.8rem;
+        }
+
         &._active {
           font-weight: $font_b;
           border-bottom: 0.4rem solid #000000;
@@ -139,6 +147,16 @@
         line-height: 2.9rem;
         margin-bottom: 2rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.33);
+        line-height: calc(2.9rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
     }
 
     &__text {
@@ -152,6 +170,16 @@
         font-size: 1.4rem;
         line-height: 2rem;
         margin-bottom: 4rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(2rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 2rem;
       }
     }
 

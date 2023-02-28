@@ -104,6 +104,16 @@
         font-size: 1.4rem;
         line-height: 1.7rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(1.7rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
     }
 
     &__date {
@@ -111,6 +121,16 @@
       line-height: 2.7rem;
 
       @include breakpoint($xl-bp) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.2rem * 1.33);
+        line-height: calc(1.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
         font-size: 1.2rem;
         line-height: 1.6rem;
       }
@@ -165,22 +185,20 @@
             }
           }
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(1.7rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+        }
       }
     }
   }
 
-  // &__description {
-  //   font-size: 1.6rem;
-  //   line-height: 2.2rem;
-  //   max-width: 88.5rem;
-  //   margin-bottom: 6rem;
-
-  //   @include breakpoint($xl-bp) {
-  //     margin-bottom: 3rem;
-  //     font-size: 1.4rem;
-  //     line-height: 2rem;
-  //   }
-  // }
   p {
     font-size: 1.6rem;
     line-height: 2.2rem;
@@ -189,6 +207,16 @@
 
     @include breakpoint($xl-bp) {
       margin-bottom: 3rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.4rem * 1.33);
+      line-height: calc(2rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
       font-size: 1.4rem;
       line-height: 2rem;
     }

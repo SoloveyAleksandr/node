@@ -62,6 +62,16 @@
         line-height: 2.8rem;
         margin-bottom: 2rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2rem * 1.33);
+        line-height: calc(2.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
     }
 
     &__subtitle {
@@ -70,6 +80,16 @@
       font-weight: $font_m;
 
       @include breakpoint($xl-bp) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.33);
+        line-height: calc(2.2rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
         font-size: 1.6rem;
         line-height: 2.2rem;
       }
@@ -103,6 +123,14 @@
     border-bottom-color: #4f4f4f;
     outline: none;
     border-radius: 0;
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.6rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.6rem;
+    }
 
     &::placeholder {
       color: #828282;
@@ -158,6 +186,14 @@
     //   }
     // }
 
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.6rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.6rem;
+    }
+
     &-icon {
       width: 8.2rem;
       height: 1.6rem;
@@ -212,6 +248,14 @@
       border-bottom-color: #4f4f4f;
       text-align: left;
 
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+      }
+
       &._placeholder {
         color: #4f4f4f;
       }
@@ -244,6 +288,14 @@
           text-align: left;
           transition: .3s;
 
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.6rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
+            font-size: 1.6rem;
+          }
+
           &:hover {
             padding-left: 3rem;
           }
@@ -273,6 +325,14 @@
       @include breakpoint($xl-bp) {
         font-size: 3.6rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(3.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 3.6rem;
+      }
     }
 
     &__text {
@@ -281,6 +341,16 @@
       line-height: 140%;
 
       @include breakpoint($xl-bp) {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2rem * 1.33);
+        line-height: calc(2.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
         font-size: 2rem;
         line-height: 2.8rem;
       }

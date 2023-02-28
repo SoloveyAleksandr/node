@@ -25,6 +25,16 @@
       line-height: 4.4rem;
       margin-bottom: 3rem;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(3.6rem * 1.33);
+      line-height: calc(4.4rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-img {
@@ -108,6 +118,16 @@
           font-size: 1.8rem;
           line-height: 2.5rem;
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.8rem * 1.33);
+          line-height: calc(2.5rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+        }
       }
     }
 
@@ -122,10 +142,17 @@
         line-height: 2.5rem;
       }
 
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.8rem * 1.33);
+        line-height: calc(2.5rem * 1.33);
+      }
+
       @include breakpoint($xs-bp) {
         width: 100%;
         gap: 0rem;
         justify-content: space-between;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
       }
     }
 
@@ -201,6 +228,16 @@
           line-height: 140%;
 
           @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
             font-size: 1.4rem;
             line-height: 2rem;
           }
@@ -298,6 +335,14 @@
         order: 1;
         margin-bottom: 2rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(3.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 3.6rem;
+      }
     }
 
     &-text {
@@ -322,6 +367,14 @@
         font-size: 2rem;
         font-weight: $font-r;
         line-height: 140%;
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 2rem;
+        }
       }
     }
   }

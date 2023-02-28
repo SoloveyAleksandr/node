@@ -44,6 +44,16 @@
       font-size: 3.6rem;
       line-height: 4.4rem;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(3.6rem * 1.33);
+      line-height: calc(4.4rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-list {
@@ -69,6 +79,14 @@
         font-size: 2.4rem;
         font-weight: $font-s;
         line-height: 120%;
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(2.4rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 2.4rem;
+        }
       }
 
       &__link {
@@ -103,6 +121,14 @@
       font-weight: $font-m;
       line-height: 140%;
       width: fit-content;
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(3.2rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 3.2rem;
+      }
     }
   }
 }

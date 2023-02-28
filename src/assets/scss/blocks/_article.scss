@@ -28,6 +28,16 @@
       font-size: 2.4rem;
       line-height: 2.9rem;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(2.4rem * 1.33);
+      line-height: calc(2.9rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 2.4rem;
+      line-height: 2.9rem;
+    }
   }
 
   &-img {
@@ -102,6 +112,16 @@
         line-height: 140%;
 
         @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
           font-size: 1.4rem;
           line-height: 2rem;
         }
@@ -183,6 +203,16 @@
         margin-bottom: 2rem;
         order: 1;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.33);
+        line-height: calc(3.4rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+      }
     }
 
     &__text {
@@ -223,6 +253,16 @@
         line-height: 140%;
 
         @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
           font-size: 1.4rem;
           line-height: 2rem;
         }

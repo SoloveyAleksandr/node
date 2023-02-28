@@ -26,6 +26,16 @@
       line-height: 2.8rem;
       max-width: 100%;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(2rem * 1.33);
+      line-height: calc(2.8rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
   }
 
   &-img {
@@ -166,6 +176,16 @@
             font-size: 1.4rem;
             line-height: 2.1rem;
           }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2.1rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+          }
         }
 
         &__text {
@@ -182,9 +202,16 @@
             text-align: left;
           }
 
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2.1rem * 1.33);
+          }
+
           @include breakpoint($xs-bp) {
             flex: 1;
             margin-right: 1rem;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
           }
         }
 
@@ -259,6 +286,14 @@
           pointer-events: all;
           transform: translate(0);
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 2rem;
+        }
       }
 
       p {
@@ -281,6 +316,16 @@
           font-size: 1.4rem;
           line-height: 2rem;
           max-width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
         }
       }
     }

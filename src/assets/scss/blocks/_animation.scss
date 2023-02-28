@@ -75,6 +75,16 @@
           font-size: 1.4rem;
           line-height: 2rem;
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
       }
     }
 
@@ -135,6 +145,16 @@
         font-size: 2.4rem;
         line-height: 3.4rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.33);
+        line-height: calc(3.4rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+      }
     }
 
     &__text {
@@ -157,6 +177,16 @@
         line-height: 140%;
 
         @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
           font-size: 1.4rem;
           line-height: 2rem;
         }
@@ -212,6 +242,16 @@
         font-size: 2.4rem;
         line-height: 3.4rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.33);
+        line-height: calc(3.4rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 3.4rem;
+      }
     }
 
     &__link {
@@ -233,9 +273,16 @@
         line-height: 2.5rem;
       }
 
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.8rem * 1.33);
+        line-height: calc(2.5rem * 1.33);
+      }
+
       @include breakpoint($xs-bp) {
         width: 100%;
         justify-content: space-between;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
       }
     }
 
@@ -265,6 +312,16 @@
         line-height: 140%;
 
         @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
           font-size: 1.4rem;
           line-height: 2rem;
         }

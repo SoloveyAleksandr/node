@@ -52,6 +52,14 @@
           // &:hover {
           //   text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
           // }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
+            font-size: 1.4rem;
+          }
         }
       }
 
@@ -92,6 +100,13 @@
       // &:hover {
       //   text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
       // }
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -120,6 +135,13 @@
       // &:hover {
       //   text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
       // }
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
+      }
     }
 
     &__phones {
@@ -159,6 +181,11 @@
 
       @include breakpoint($sm-bp) {
         text-align: center;
+        font-size: calc(1.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
       }
     }
 
@@ -186,6 +213,13 @@
         // &:hover {
         //   text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
         // }
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+        }
       }
     }
   }

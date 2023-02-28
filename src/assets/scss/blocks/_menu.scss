@@ -117,12 +117,22 @@
       @include breakpoint($xl-bp) {
         margin-bottom: 1.5rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2rem * 1.33);
+        line-height: calc(2.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
     }
 
     &_main {
       font-size: 3.2rem;
-      font-weight: $font-s;
       line-height: 3.8rem;
+      font-weight: $font-s;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -149,6 +159,16 @@
       @include breakpoint($xl-bp) {
         margin-bottom: 2rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(3.2rem * 1.33);
+        line-height: calc(3.8rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+      }
     }
 
     &_grey {
@@ -162,6 +182,16 @@
       &:hover {
         color: #040404;
         opacity: 0.5;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.8rem * 1.33);
+        line-height: calc(2.5rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
       }
     }
   }
@@ -199,6 +229,16 @@
     &__link {
       font-size: 1.4rem;
       line-height: 2.1rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(2.1rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+      }
     }
   }
 

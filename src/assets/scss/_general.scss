@@ -32,7 +32,7 @@ textarea,
 button,
 select,
 a {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -65,6 +65,16 @@ a {
       font-size: 3.6rem;
       line-height: 4.4rem;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(3.6rem * 1.33);
+      line-height: calc(4.4rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-description {
@@ -73,6 +83,16 @@ a {
     line-height: 2.5rem;
     max-width: 71.1rem;
     margin-right: auto;
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.8rem * 1.33);
+      line-height: calc(2.5rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+    }
   }
 }
 
@@ -150,6 +170,16 @@ a {
         font-size: 1.4rem;
         line-height: 1.7rem;
       }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(1.7rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
     }
 
     &__date {
@@ -158,6 +188,16 @@ a {
       line-height: 136%;
 
       @include breakpoint($xl-bp) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.2rem * 1.33);
+        line-height: calc(1.6rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
         font-size: 1.2rem;
         line-height: 1.6rem;
       }
@@ -209,6 +249,9 @@ a {
       }
 
       @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(1.7rem * 1.33);
+
         &:nth-child(even) {
           // flex: 1;
           // margin-right: auto;
@@ -219,6 +262,11 @@ a {
             margin-right: 0.8rem;
           }
         }
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
       }
     }
   }
@@ -258,6 +306,14 @@ a {
 
     &:hover {
       color: #040404;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(1.2rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.2rem;
     }
   }
 }

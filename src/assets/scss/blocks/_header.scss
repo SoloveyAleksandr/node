@@ -117,9 +117,27 @@
       color: #828282;
       transition: 0.3s;
 
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.6rem * 1.33);
+        line-height: calc(2rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+
       &:first-child {
         font-size: 1.8rem;
         line-height: 120%;
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.8rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.8rem;
+        }
       }
 
       &:hover {

@@ -21,6 +21,16 @@
       font-size: 3.6rem;
       line-height: 4.4rem;
     }
+
+    @include breakpoint($sm-bp) {
+      font-size: calc(3.6rem * 1.33);
+      line-height: calc(4.4rem * 1.33);
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
   }
 
   &-inner {
@@ -91,6 +101,14 @@
       font-size: 2.4rem;
       font-weight: $font-s;
       line-height: 140%;
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2.4rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+      }
     }
 
     &-list {
@@ -109,6 +127,16 @@
 
           &._active {
             font-weight: $font-b;
+          }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.8rem * 1.33);
+            line-height: calc(2.5rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
           }
         }
       }
@@ -130,6 +158,16 @@
       &__icon {
         width: 2.4rem;
         height: 2.4rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.8rem * 1.33);
+        line-height: 140%;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
+        line-height: 140%;
       }
     }
   }
@@ -226,6 +264,16 @@
           line-height: 2.2rem;
           margin-bottom: 1rem;
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.6rem * 1.33);
+          line-height: calc(2.2rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
       }
 
       &__description {
@@ -239,12 +287,28 @@
           margin-bottom: 1rem;
           max-width: 100%;
         }
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+        }
       }
 
       &__date {
         font-size: 1.4rem;
         font-weight: $font-r;
         line-height: 140%;
+
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+        }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -285,6 +349,14 @@
           height: 0.1rem;
           background-color: #000;
         }
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: calc(2rem * 1.33);
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2rem;
       }
     }
 
