@@ -24,6 +24,8 @@
       flex-direction: column;
       gap: 3rem;
       justify-content: center;
+      border-bottom: 2px solid #000000;
+      overflow: hidden;
     }
 
     &-inner {
@@ -42,7 +44,10 @@
       }
 
       @include breakpoint($sm-bp) {
-        gap: 1.5rem;
+        column-gap: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
       }
     }
 
@@ -50,15 +55,16 @@
       border-bottom: 2px solid #000000;
       // border-bottom: 0.2rem solid #000000;
       margin-bottom: 8rem;
+      overflow: hidden;
 
       @include breakpoint($xl-bp) {
         margin-bottom: 2rem;
       }
 
-      // @include breakpoint($jb-bp) {
-        // border-bottom: none;
+      @include breakpoint($jb-bp) {
+        border-bottom: none;
         // border-bottom: 1px solid #000000;
-      // }
+      }
     }
 
     &-item {
@@ -75,7 +81,7 @@
 
         &::after {
           content: "";
-          width: 100vw;
+          width: 200vw;
           height: 2px;
           // height: 0.1rem;
           background-color: #000000;
@@ -91,6 +97,20 @@
           // @include breakpoint($lb-bp) {
           //   height: 0.1rem;
           // }
+        }
+      }
+
+      @include breakpoint($jb-bp) {
+        &:nth-child(1) {
+          justify-content: flex-end;
+        }
+
+        &:nth-child(3n) {
+          justify-content: flex-start;
+        }
+
+        &:nth-child(4n) {
+          justify-content: flex-end;
         }
       }
 
@@ -112,11 +132,13 @@
         }
 
         @include breakpoint($sm-bp) {
-          font-size: calc(1.8rem * 1.33);
+          font-size: calc(1.6rem * 1.33);
+          line-height: calc(2.2rem * 1.33);
         }
 
         @include breakpoint($xs-bp) {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
         }
 
         &._active {
@@ -142,6 +164,11 @@
       // @include breakpoint($jb-bp) {
       //   height: 2px;
       // }
+
+      @include breakpoint($jb-bp) {
+        max-width: calc(100vw - 3rem);
+        margin: 0 auto;
+      }
     }
   }
 
@@ -149,7 +176,7 @@
     padding-top: 4rem;
     margin-bottom: 20rem;
     padding-top: 8rem;
-    margin-top: -4rem;
+    margin-top: -5rem;
 
     @include breakpoint($xl-bp) {
       margin-bottom: 10rem;

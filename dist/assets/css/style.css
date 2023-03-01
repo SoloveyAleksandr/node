@@ -523,7 +523,7 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.8rem;
-    letter-spacing: -0.3rem;
+    letter-spacing: -0.04em;
 }
 
 @media (max-width: 1023px) {
@@ -3750,6 +3750,8 @@ svg {
         gap: 3rem;
         -ms-flex-pack: center;
         justify-content: center;
+        border-bottom: 2px solid #000000;
+        overflow: hidden;
     }
 }
 
@@ -3774,18 +3776,33 @@ svg {
 
 @media (max-width: 500px) {
     .portfolio-nav-inner {
-        gap: 1.5rem;
+        -webkit-column-gap: 3rem;
+        -moz-column-gap: 3rem;
+        column-gap: 3rem;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 }
 
 .portfolio-nav-wrapper {
     border-bottom: 2px solid #000000;
     margin-bottom: 8rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
     .portfolio-nav-wrapper {
         margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .portfolio-nav-wrapper {
+        border-bottom: none;
     }
 }
 
@@ -3806,7 +3823,7 @@ svg {
 
 .portfolio-nav-item:nth-child(2)::after {
     content: "";
-    width: 100vw;
+    width: 200vw;
     height: 2px;
     background-color: #000000;
     position: absolute;
@@ -3817,6 +3834,23 @@ svg {
 @media (max-width: 850px) {
     .portfolio-nav-item:nth-child(2)::after {
         display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .portfolio-nav-item:nth-child(1) {
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+
+    .portfolio-nav-item:nth-child(3n) {
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .portfolio-nav-item:nth-child(4n) {
+        -ms-flex-pack: end;
+        justify-content: flex-end;
     }
 }
 
@@ -3842,13 +3876,15 @@ svg {
 
 @media (max-width: 500px) {
     .portfolio-nav-item__link {
-        font-size: 2.394rem;
+        font-size: 2.128rem;
+        line-height: 2.926rem;
     }
 }
 
 @media (max-width: 375px) {
     .portfolio-nav-item__link {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
     }
 }
 
@@ -3866,11 +3902,18 @@ svg {
     background-color: #000000;
 }
 
+@media (max-width: 850px) {
+    .portfolio-sections-border {
+        max-width: calc(100vw - 3rem);
+        margin: 0 auto;
+    }
+}
+
 .portfolio-block {
     padding-top: 4rem;
     margin-bottom: 20rem;
     padding-top: 8rem;
-    margin-top: -4rem;
+    margin-top: -5rem;
 }
 
 @media (max-width: 1023px) {
