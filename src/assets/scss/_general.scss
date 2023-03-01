@@ -153,8 +153,13 @@ a {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 0.2rem solid #000;
+      // border-bottom: 0.2rem solid #000;
+      border-bottom: 2px solid #000;
       padding-bottom: 0.7rem;
+
+      // @include breakpoint($jb-bp) {
+      //   border-bottom: 1px solid #000;
+      // }
 
       @include breakpoint($xl-bp) {
         padding-bottom: 0.8rem;
@@ -206,21 +211,23 @@ a {
     &__box {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 2.4rem;
 
       @include breakpoint($cos-bp) {
-        gap: 0rem;
-        justify-content: space-between;
+        // gap: 0rem;
+        // justify-content: space-between;
+        gap: 1rem;
       }
 
       @include breakpoint($xl-bp) {
         gap: 1rem;
-        justify-content: flex-start;
+        // justify-content: flex-start;
       }
 
       @include breakpoint($sm-bp) {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
+        // display: grid;
+        // grid-template-columns: repeat(2, auto);
       }
 
       & span+span {
@@ -229,9 +236,9 @@ a {
           display: inline-block;
           margin-right: 0.8rem;
 
-          @include breakpoint($sm-bp) {
-            display: none;
-          }
+          // @include breakpoint($sm-bp) {
+          //   display: none;
+          // }
         }
       }
     }
@@ -252,16 +259,16 @@ a {
         font-size: calc(1.4rem * 1.33);
         line-height: calc(1.7rem * 1.33);
 
-        &:nth-child(even) {
-          // flex: 1;
-          // margin-right: auto;
+        // &:nth-child(even) {
+        //   // flex: 1;
+        //   // margin-right: auto;
 
-          &::before {
-            content: '+';
-            display: inline-block;
-            margin-right: 0.8rem;
-          }
-        }
+        //   &::before {
+        //     content: '+';
+        //     display: inline-block;
+        //     margin-right: 0.8rem;
+        //   }
+        // }
       }
 
       @include breakpoint($xs-bp) {

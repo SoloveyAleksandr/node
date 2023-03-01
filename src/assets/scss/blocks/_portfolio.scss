@@ -42,21 +42,23 @@
       }
 
       @include breakpoint($sm-bp) {
-        gap: 3rem;
+        gap: 1.5rem;
       }
     }
 
     &-wrapper {
-      border-bottom: 0.2rem solid #000000;
+      border-bottom: 2px solid #000000;
+      // border-bottom: 0.2rem solid #000000;
       margin-bottom: 8rem;
 
       @include breakpoint($xl-bp) {
         margin-bottom: 2rem;
       }
 
-      @include breakpoint($jb-bp) {
+      // @include breakpoint($jb-bp) {
         // border-bottom: none;
-      }
+        // border-bottom: 1px solid #000000;
+      // }
     }
 
     &-item {
@@ -69,15 +71,26 @@
       &:nth-child(2) {
         @include breakpoint($jb-bp) {
           position: relative;
+        }
 
-          &::after {
-            content: "";
-            width: 100vw;
-            height: 0.2rem;
-            background-color: #000000;
-            position: absolute;
-            top: 3rem;
+        &::after {
+          content: "";
+          width: 100vw;
+          height: 2px;
+          // height: 0.1rem;
+          background-color: #000000;
+          position: absolute;
+          // top: 3rem;
+          bottom: -2px;
+          display: none;
+
+          @include breakpoint($jb-bp) {
+            display: block;
           }
+
+          // @include breakpoint($lb-bp) {
+          //   height: 0.1rem;
+          // }
         }
       }
 
@@ -108,10 +121,12 @@
 
         &._active {
           font-weight: $font_b;
+          // border-bottom: 4px solid #000000;
           border-bottom: 0.4rem solid #000000;
         }
 
         &:hover {
+          // border-bottom: 4px solid #000000;
           border-bottom: 0.4rem solid #000000;
         }
       }
@@ -121,8 +136,12 @@
   &-sections {
 
     &-border {
-      height: 0.2rem;
+      height: 2px;
       background-color: #000000;
+
+      // @include breakpoint($jb-bp) {
+      //   height: 2px;
+      // }
     }
   }
 
@@ -130,6 +149,7 @@
     padding-top: 4rem;
     margin-bottom: 20rem;
     padding-top: 8rem;
+    margin-top: -4rem;
 
     @include breakpoint($xl-bp) {
       margin-bottom: 10rem;

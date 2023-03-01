@@ -623,7 +623,7 @@ a {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    border-bottom: 0.2rem solid #000;
+    border-bottom: 2px solid #000;
     padding-bottom: 0.7rem;
 }
 
@@ -692,29 +692,20 @@ a {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 2.4rem;
 }
 
 @media (max-width: 1330px) {
     .project-card-info__box {
-        gap: 0rem;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+        gap: 1rem;
     }
 }
 
 @media (max-width: 1023px) {
     .project-card-info__box {
         gap: 1rem;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-    }
-}
-
-@media (max-width: 500px) {
-    .project-card-info__box {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
     }
 }
 
@@ -722,12 +713,6 @@ a {
     content: "+";
     display: inline-block;
     margin-right: 0.8rem;
-}
-
-@media (max-width: 500px) {
-    .project-card-info__box span + span::before {
-        display: none;
-    }
 }
 
 .project-card-info__name {
@@ -749,12 +734,6 @@ a {
     .project-card-info__name {
         font-size: 1.862rem;
         line-height: 2.261rem;
-    }
-
-    .project-card-info__name:nth-child(even)::before {
-        content: "+";
-        display: inline-block;
-        margin-right: 0.8rem;
     }
 }
 
@@ -3795,12 +3774,12 @@ svg {
 
 @media (max-width: 500px) {
     .portfolio-nav-inner {
-        gap: 3rem;
+        gap: 1.5rem;
     }
 }
 
 .portfolio-nav-wrapper {
-    border-bottom: 0.2rem solid #000000;
+    border-bottom: 2px solid #000000;
     margin-bottom: 8rem;
 }
 
@@ -3823,14 +3802,21 @@ svg {
     .portfolio-nav-item:nth-child(2) {
         position: relative;
     }
+}
 
+.portfolio-nav-item:nth-child(2)::after {
+    content: "";
+    width: 100vw;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -2px;
+    display: none;
+}
+
+@media (max-width: 850px) {
     .portfolio-nav-item:nth-child(2)::after {
-        content: "";
-        width: 100vw;
-        height: 0.2rem;
-        background-color: #000000;
-        position: absolute;
-        top: 3rem;
+        display: block;
     }
 }
 
@@ -3876,7 +3862,7 @@ svg {
 }
 
 .portfolio-sections-border {
-    height: 0.2rem;
+    height: 2px;
     background-color: #000000;
 }
 
@@ -3884,6 +3870,7 @@ svg {
     padding-top: 4rem;
     margin-bottom: 20rem;
     padding-top: 8rem;
+    margin-top: -4rem;
 }
 
 @media (max-width: 1023px) {
