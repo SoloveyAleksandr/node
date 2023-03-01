@@ -463,42 +463,60 @@
         }
       }
 
-      p {
-        font-size: 2.4rem;
-        font-weight: $font_m;
-        line-height: 3.4rem;
-        max-width: 47.1rem;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateX(10rem);
-
-        &:nth-child(1) {
-          transition: 0.8s 0.1s;
-        }
-
-        &:nth-child(2) {
-          transition: 0.8s 0.3s;
-        }
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 3.4rem;
 
         @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
-
-        @include breakpoint($lb-bp) {
-          opacity: 1;
-          pointer-events: all;
-          transform: translate(0);
+          gap: 2rem;
         }
 
         @include breakpoint($sm-bp) {
-          font-size: calc(1.4rem * 1.33);
-          line-height: calc(2rem * 1.33);
+          gap: calc(2rem * 1.33);
         }
 
         @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
+          gap: 2rem;
+        }
+
+        p {
+          font-size: 2.4rem;
+          font-weight: $font_m;
+          line-height: 3.4rem;
+          max-width: 47.1rem;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(10rem);
+
+          &:nth-child(1) {
+            transition: 0.8s 0.1s;
+          }
+
+          &:nth-child(2) {
+            transition: 0.8s 0.3s;
+          }
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
+
+          @include breakpoint($lb-bp) {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(0);
+          }
+
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2rem * 1.33);
+          }
+
+          @include breakpoint($xs-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
         }
       }
     }
@@ -588,18 +606,18 @@
           margin-bottom: 1rem;
 
           @include breakpoint($xl-bp) {
-            font-size: 1.2rem;
-            line-height: 1.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
           }
 
           @include breakpoint($sm-bp) {
-            font-size: calc(1.2rem * 1.33);
-            line-height: calc(1.6rem * 1.33);
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2rem * 1.33);
           }
 
           @include breakpoint($xs-bp) {
-            font-size: 1.2rem;
-            line-height: 1.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
           }
         }
 
@@ -620,12 +638,13 @@
           }
 
           @include breakpoint($xl-bp) {
-            height: 48.4rem;
-          }
-
-          @include breakpoint($jb-bp) {
+            // height: 48.4rem;
             height: calc((100vw - 3rem) * 1.4);
           }
+
+          // @include breakpoint($jb-bp) {
+          //   height: calc((100vw - 3rem) * 1.4);
+          // }
 
           &__video {
             object-fit: cover;

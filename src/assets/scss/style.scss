@@ -22,7 +22,7 @@ html {
   }
 
   @include breakpoint($lb-bp) {
-    font-size: calc(100vw / 650 * 10);
+    font-size: calc(100vw / 620 * 10);
   }
 
   @include breakpoint($sm-bp) {
