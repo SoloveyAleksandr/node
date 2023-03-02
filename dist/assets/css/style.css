@@ -523,7 +523,6 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.8rem;
-    letter-spacing: -0.04em;
 }
 
 @media (max-width: 1023px) {
@@ -1004,7 +1003,7 @@ svg {
 
 @media (max-width: 1023px) {
     .project-modal-container {
-        padding: 1rem 1rem 7.5rem 1rem;
+        padding: 1rem 1rem 0rem 1rem;
     }
 }
 

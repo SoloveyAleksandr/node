@@ -59,8 +59,7 @@ a {
     text-transform: uppercase;
     // white-space: nowrap;
     line-height: 7.8rem;
-    // letter-spacing: -0.3rem;
-    letter-spacing: -0.04em;
+    // letter-spacing: -0.04em;
 
     @include breakpoint($xl-bp) {
       font-size: 3.6rem;
