@@ -97,9 +97,10 @@
     flex-direction: column;
     gap: 0.3rem;
     position: absolute;
-    left: 50vw;
+    // left: 50vw;
+    left: 50%;
 
-    margin-left: -0.7rem;
+    // margin-left: -0.7rem;
 
     // @include breakpoint($cos-bp) {
     //   margin-left: 0;

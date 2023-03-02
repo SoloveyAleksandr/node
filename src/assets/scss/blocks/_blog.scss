@@ -38,7 +38,7 @@
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    margin-bottom: 20rem;
+    // margin-bottom: 20rem;
 
     @include breakpoint($cos-bp) {
       flex-direction: column;
@@ -46,7 +46,7 @@
     }
 
     @include breakpoint($xl-bp) {
-      margin-bottom: 10rem;
+      // margin-bottom: 10rem;
     }
   }
 

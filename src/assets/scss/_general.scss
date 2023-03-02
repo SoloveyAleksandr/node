@@ -60,6 +60,8 @@ a {
     // white-space: nowrap;
     line-height: 7.8rem;
     // letter-spacing: -0.04em;
+    padding-right: 1.5rem;
+    overflow: hidden;
 
     @include breakpoint($xl-bp) {
       font-size: 3.6rem;
@@ -282,21 +284,31 @@ a {
 .page-links {
   display: flex;
   align-items: center;
-  gap: 3rem;
-  margin-bottom: 4.3rem;
+  // gap: 3rem;
+  // margin-bottom: 4.3rem;
+  margin-bottom: 8rem;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+
+  @include breakpoint($jb-bp) {
+    margin-bottom: 5rem;
+  }
+
+  @include breakpoint($lb-bp) {
+    margin-bottom: 3rem;
+  }
 
   & a+a {
-    position: relative;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 
     &::before {
       content: '';
       width: 2rem;
       height: 0.1rem;
       background-color: #828282;
-      position: absolute;
-      left: -2.5rem;
     }
   }
 

@@ -55,6 +55,7 @@
 
         @include breakpoint($lb-bp) {
           padding: 0;
+          align-items: flex-start;
         }
       }
 

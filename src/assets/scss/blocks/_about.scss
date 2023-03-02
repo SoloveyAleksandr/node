@@ -296,36 +296,38 @@
         }
       }
 
-      p {
-        font-size: 1.6rem;
-        font-weight: $font_r;
-        line-height: 138%;
-        max-width: 51.8rem;
-        opacity: 0;
-        transform: translate(5rem, 0);
-        transition: .5s .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        pointer-events: none;
+      &__text {
+        p {
+          font-size: 1.6rem;
+          font-weight: $font_r;
+          line-height: 138%;
+          max-width: 51.8rem;
+          opacity: 0;
+          transform: translate(5rem, 0);
+          transition: .5s .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          pointer-events: none;
 
-        @include breakpoint($cos-bp) {
-          opacity: 1;
-          pointer-events: all;
-          transform: translate(0);
-        }
+          @include breakpoint($cos-bp) {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(0);
+          }
 
-        @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-          max-width: 100%;
-        }
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            max-width: 100%;
+          }
 
-        @include breakpoint($sm-bp) {
-          font-size: calc(1.4rem * 1.33);
-          line-height: calc(2rem * 1.33);
-        }
+          @include breakpoint($sm-bp) {
+            font-size: calc(1.4rem * 1.33);
+            line-height: calc(2rem * 1.33);
+          }
 
-        @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
+          @include breakpoint($xs-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
         }
       }
     }
