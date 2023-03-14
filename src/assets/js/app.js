@@ -780,7 +780,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // anchors
+  const articleMain = document.querySelector(".article-main");
 
-  //<==
+  if (articleMain && window.matchMedia("(min-width: 1024px)").matches) {
+    const title = articleMain.querySelector(".article-main__title");
+    const texts = articleMain.querySelectorAll(".article-main__text");
+    const images = articleMain.querySelectorAll(".article-main-img");
+
+    const docFragment = document.createDocumentFragment();
+    const box_1 = document.createElement("div");
+    box_1.className = "article-main__box";
+    const box_2 = document.createElement("div");
+    box_2.className = "article-main__box";
+    box_1.appendChild(title);
+    texts.forEach(item => box_1.appendChild(item));
+    images.forEach(item => box_2.appendChild(item));
+    docFragment.appendChild(box_1);
+    docFragment.appendChild(box_2);
+
+    articleMain.append(docFragment);
+  }
 });

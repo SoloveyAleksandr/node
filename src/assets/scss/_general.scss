@@ -299,18 +299,18 @@ a {
     margin-bottom: 3rem;
   }
 
-  & a+a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  // & a+a {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 0.5rem;
 
-    &::before {
-      content: '';
-      width: 2rem;
-      height: 0.1rem;
-      background-color: #828282;
-    }
-  }
+  //   &::before {
+  //     content: '';
+  //     width: 2rem;
+  //     height: 0.1rem;
+  //     background-color: #828282;
+  //   }
+  // }
 
   &__link {
     font-size: 1.2rem;
@@ -321,10 +321,24 @@ a {
 
     &._active {
       color: #040404;
+      pointer-events: none;
     }
 
     &:hover {
       color: #040404;
+    }
+
+    &:not(:first-child) {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: '';
+        width: 2rem;
+        height: 0.1rem;
+        background-color: #828282;
+      }
     }
 
     @include breakpoint($sm-bp) {

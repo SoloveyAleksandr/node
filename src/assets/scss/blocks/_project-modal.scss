@@ -240,6 +240,8 @@
   &-img {
     width: 100%;
     height: 91rem;
+    display: flex;
+    justify-content: center;
 
     @include breakpoint($xl-bp) {
       height: 60rem;
@@ -262,10 +264,12 @@
     }
 
     &__img {
-      object-fit: cover;
+      // object-fit: cover;
+      object-fit: contain;
       object-position: center center;
-      width: 100%;
+      // width: 100%;
       height: 100%;
+      max-width: 100%;
     }
   }
 }

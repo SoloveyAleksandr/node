@@ -89,30 +89,49 @@
         flex: 1;
         gap: 2.24rem;
 
+        font-size: 1.6rem;
+        font-weight: $font_r;
+        line-height: 140%;
+
         @include breakpoint($xl-bp) {
           gap: 2;
+
+          font-size: 1.4rem;
+          line-height: 2rem;
         }
 
-        p {
-          font-size: 1.6rem;
-          font-weight: $font_r;
-          line-height: 140%;
-
-          @include breakpoint($xl-bp) {
-            font-size: 1.4rem;
-            line-height: 2rem;
-          }
-
-          @include breakpoint($sm-bp) {
-            font-size: calc(1.4rem * 1.33);
-            line-height: calc(2rem * 1.33);
-          }
-
-          @include breakpoint($xs-bp) {
-            font-size: 1.4rem;
-            line-height: 2rem;
-          }
+        @include breakpoint($sm-bp) {
+          font-size: calc(1.4rem * 1.33);
+          line-height: calc(2rem * 1.33);
         }
+
+        @include breakpoint($xs-bp) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        @include editor;
+
+        // p {
+        // font-size: 1.6rem;
+        // font-weight: $font_r;
+        // line-height: 140%;
+
+        // @include breakpoint($xl-bp) {
+        //   font-size: 1.4rem;
+        //   line-height: 2rem;
+        // }
+
+        // @include breakpoint($sm-bp) {
+        //   font-size: calc(1.4rem * 1.33);
+        //   line-height: calc(2rem * 1.33);
+        // }
+
+        // @include breakpoint($xs-bp) {
+        //   font-size: 1.4rem;
+        //   line-height: 2rem;
+        // }
+        // }
       }
 
       &__link {

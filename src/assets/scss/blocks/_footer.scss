@@ -3,6 +3,8 @@
   transform-origin: center bottom;
   overflow: hidden;
 
+  margin-top: auto;
+
   &-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

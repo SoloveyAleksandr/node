@@ -57,6 +57,10 @@
       flex-direction: column;
       gap: 2.52rem;
 
+      font-size: 1.8rem;
+      font-weight: $font-m;
+      line-height: 140%;
+
       @include breakpoint($cos-bp) {
         max-width: 41.5rem;
       }
@@ -64,28 +68,43 @@
       @include breakpoint($xl-bp) {
         max-width: unset;
         gap: 2rem;
+
+        font-size: 1.4rem;
+        line-height: 2rem;
       }
 
-      p {
-        font-size: 1.8rem;
-        font-weight: $font-m;
-        line-height: 140%;
-
-        @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
-
-        @include breakpoint($sm-bp) {
-          font-size: calc(1.4rem * 1.33);
-          line-height: calc(2rem * 1.33);
-        }
-
-        @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(2rem * 1.33);
       }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      // p {
+      //   font-size: 1.8rem;
+      //   font-weight: $font-m;
+      //   line-height: 140%;
+
+      //   @include breakpoint($xl-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+
+      //   @include breakpoint($sm-bp) {
+      //     font-size: calc(1.4rem * 1.33);
+      //     line-height: calc(2rem * 1.33);
+      //   }
+
+      //   @include breakpoint($xs-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+      // }
+
+      @include editor;
     }
 
     &-img {
@@ -163,34 +182,53 @@
       flex-direction: column;
       gap: 2.52rem;
 
+      font-size: 1.8rem;
+      font-weight: $font-r;
+      line-height: 140%;
+
       @include breakpoint($cos-bp) {
         flex: 1;
       }
 
       @include breakpoint($xl-bp) {
         gap: 2rem;
+
+        font-size: 1.4rem;
+        line-height: 2rem;
       }
 
-      p {
-        font-size: 1.8rem;
-        font-weight: $font-r;
-        line-height: 140%;
-
-        @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
-
-        @include breakpoint($sm-bp) {
-          font-size: calc(1.4rem * 1.33);
-          line-height: calc(2rem * 1.33);
-        }
-
-        @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(2rem * 1.33);
       }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      // p {
+      //   font-size: 1.8rem;
+      //   font-weight: $font-r;
+      //   line-height: 140%;
+
+      //   @include breakpoint($xl-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+
+      //   @include breakpoint($sm-bp) {
+      //     font-size: calc(1.4rem * 1.33);
+      //     line-height: calc(2rem * 1.33);
+      //   }
+
+      //   @include breakpoint($xs-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+      // }
+
+      @include editor;
     }
 
     &-img {
@@ -294,6 +332,10 @@
       flex-direction: column;
       gap: 2.52rem;
 
+      font-size: 1.8rem;
+      font-weight: $font-r;
+      line-height: 140%;
+
       @include breakpoint($cos-bp) {
         max-width: 81.9rem;
       }
@@ -304,28 +346,43 @@
         margin-left: 0;
         max-width: 100%;
         gap: 2rem;
+
+        font-size: 1.4rem;
+        line-height: 2rem;
       }
 
-      p {
-        font-size: 1.8rem;
-        font-weight: $font-r;
-        line-height: 140%;
-
-        @include breakpoint($xl-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
-
-        @include breakpoint($sm-bp) {
-          font-size: calc(1.4rem * 1.33);
-          line-height: calc(2rem * 1.33);
-        }
-
-        @include breakpoint($xs-bp) {
-          font-size: 1.4rem;
-          line-height: 2rem;
-        }
+      @include breakpoint($sm-bp) {
+        font-size: calc(1.4rem * 1.33);
+        line-height: calc(2rem * 1.33);
       }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      // p {
+      //   font-size: 1.8rem;
+      //   font-weight: $font-r;
+      //   line-height: 140%;
+
+      //   @include breakpoint($xl-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+
+      //   @include breakpoint($sm-bp) {
+      //     font-size: calc(1.4rem * 1.33);
+      //     line-height: calc(2rem * 1.33);
+      //   }
+
+      //   @include breakpoint($xs-bp) {
+      //     font-size: 1.4rem;
+      //     line-height: 2rem;
+      //   }
+      // }
+
+      @include editor;
     }
   }
 }
