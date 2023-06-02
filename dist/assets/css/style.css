@@ -2613,36 +2613,18 @@ svg {
     transition: 0.8s 2s;
 }
 
-.main-swiper-slide.swiper-slide-active p:nth-child(1) {
+.main-swiper-slide.swiper-slide-active * {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     pointer-events: all;
-    transition: 0.8s 0.8s;
 }
 
-.main-swiper-slide.swiper-slide-duplicate-active p:nth-child(1) {
+.main-swiper-slide.swiper-slide-duplicate-active * {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     pointer-events: all;
-    transition: 0.8s 0.8s;
-}
-
-.main-swiper-slide.swiper-slide-active p:nth-child(2) {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    pointer-events: all;
-    transition: 0.8s 1.5s;
-}
-
-.main-swiper-slide.swiper-slide-duplicate-active p:nth-child(2) {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    pointer-events: all;
-    transition: 0.8s 1.5s;
 }
 
 .main-swiper-slide-btn {
@@ -2773,18 +2755,6 @@ svg {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transform: translateX(10rem);
-    transform: translateX(10rem);
-}
-
-.main-swiper-slide__text p:nth-child(1) {
-    transition: 0.8s 0.1s;
-}
-
-.main-swiper-slide__text p:nth-child(2) {
-    transition: 0.8s 0.3s;
 }
 
 @media (max-width: 620px) {
@@ -2794,6 +2764,37 @@ svg {
         -webkit-transform: translate(0);
         transform: translate(0);
     }
+}
+
+.main-swiper-slide__text * {
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: translateX(10rem);
+    transform: translateX(10rem);
+}
+
+.main-swiper-slide__text *:nth-child(1) {
+    transition: 0.8s 0.1s;
+}
+
+.main-swiper-slide__text *:nth-child(2) {
+    transition: 0.8s 0.3s;
+}
+
+.main-swiper-slide__text *:nth-child(3) {
+    transition: 0.8s 0.5s;
+}
+
+.main-swiper-slide__text *:nth-child(4) {
+    transition: 0.8s 0.7s;
+}
+
+.main-swiper-slide__text *:nth-child(5) {
+    transition: 0.8s 0.9s;
+}
+
+.main-swiper-slide__text *:nth-child(6) {
+    transition: 0.8s 0.11s;
 }
 
 .main-swiper-slide__text > p {

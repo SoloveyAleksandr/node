@@ -525,6 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
           speed: 1000,
           spaceBetween: 100,
           allowTouchMove: false,
+          autoHeight: true,
         });
 
         const swiperBtns = gsap.utils.toArray(".main-swiper-btns-btn");
